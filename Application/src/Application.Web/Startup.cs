@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Application.Web.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
 
 namespace Application.Web
 {
@@ -27,8 +31,26 @@ namespace Application.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
-            //services.AddMvc();
+
+            var context = new CleanMarineContext();
+            context.Database.Migrate();
+
+            services.AddDbContext<CleanMarineContext>();
+
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireDigit = false;
+               
+
+            })
+                    .AddEntityFrameworkStores<CleanMarineContext>()
+                    .AddDefaultTokenProviders();
+
+
+
             services.AddMvc();
         }
 
@@ -46,6 +68,8 @@ namespace Application.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseIdentity();
 
             app.UseDefaultFiles();
 

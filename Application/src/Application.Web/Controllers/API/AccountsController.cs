@@ -3,44 +3,89 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
+using Application.Web.Data;
+using Application.Web.Models;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Application.Web.Controllers.API
 {
-    [Route("api/[controller]")]
+    [Produces("application/json")]
     public class AccountsController : Controller
     {
-        // GET: api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+        public SignInManager<ApplicationUser> SignInManager { get; set; }
+        public UserManager<ApplicationUser> UserManager { get; set; }
+
+        public AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
-            return new string[] { "value1", "value2" };
+            UserManager = userManager;
+            SignInManager = signInManager;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+
+        [Route("~/accounts/login")]
+        // GET: /<controller>/
+        public IActionResult Login()
         {
-            return "value";
+            return View();
         }
 
-        // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        [Route("~/api/accounts/login")]
+        public async Task<IActionResult> Login([FromBody]LoginRequest model)
         {
+
+            var user = await UserManager.FindByEmailAsync(model.Email);
+
+
+            if (user != null)
+            {
+                var result = await SignInManager.PasswordSignInAsync(user, model.Password, false, true);
+                return Ok();
+
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [Route("~/accounts/register")]
+        public IActionResult Register()
         {
+            return View();
         }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpPost]
+        [Route("~/api/accounts/register")]
+        public async Task<IActionResult> Register([FromBody]RegisterRequest model)
         {
+            var user = new ApplicationUser();
+            user.Email = model.Email;
+            user.UserName = model.UserName;
+
+            var result = await UserManager.CreateAsync(user, model.Password);
+
+            if (result.Succeeded)
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
+
         }
+
+        [HttpGet]
+        [Route("~/accounts/logout")]
+        public async Task<IActionResult> Logout()
+        {
+            await SignInManager.SignOutAsync();
+
+            return Redirect("~/");
+        }
+
     }
 }
