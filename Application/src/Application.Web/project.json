@@ -1,11 +1,7 @@
 {
   "dependencies": {
     "Microsoft.NETCore.App": {
-<<<<<<< HEAD
-      "version": "1.0.0 ",
-=======
       "version": "1.0.0",
->>>>>>> 2df62f11644169e4f9ecddc692e676e563967dd9
       "type": "platform"
     },
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
