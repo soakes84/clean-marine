@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Application.Web.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,6 +22,28 @@ namespace Application.Web.Controllers.API
         {
             _userManager = userManager;
             _context = context;
+        }
+
+        [HttpGet]
+        [Route("~/api/debris/{id}")]
+        public async Task<IActionResult> GetDebris(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var userId = _userManager.GetUserId(User);
+            Debris debris = await _context.Debris
+                .SingleOrDefaultAsync(p => p.UserId == userId && p.Id == id);
+
+            if (debris == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(debris);
+
         }
 
         [HttpPost]
@@ -40,6 +63,7 @@ namespace Application.Web.Controllers.API
             return CreatedAtAction("GetTank", new { id = debris.Id }, debris);
         }
 
+        
 
         // GET: api/values
         [HttpGet]
