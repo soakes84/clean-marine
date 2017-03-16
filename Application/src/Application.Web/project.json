@@ -27,8 +27,9 @@
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
     "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.1.1",
-    "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
-    "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.1.1"
+    "Microsoft.EntityFrameworkCore.Tools": "1.1.0-preview4-final",
+    "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.1.1",
+    "Microsoft.AspNetCore.Identity": "1.1.1"
   },
 
   "tools": {

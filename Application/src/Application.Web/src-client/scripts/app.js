@@ -1,6 +1,8 @@
 import Backbone from 'backbone';
 import ReactDOM from 'react-dom'
 import React from 'react'
+import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
+
 
 const SomeComponent = React.createClass({
 	render: function(){
@@ -15,9 +17,6 @@ const SomeComponent = React.createClass({
 	}
 })
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
 
 const coords = {
   lat: 51.5258541,
