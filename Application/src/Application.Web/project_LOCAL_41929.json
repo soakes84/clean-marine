@@ -1,11 +1,7 @@
-{
+﻿{
   "dependencies": {
     "Microsoft.NETCore.App": {
-<<<<<<< HEAD
       "version": "1.0.0 ",
-=======
-      "version": "1.0.0",
->>>>>>> 2df62f11644169e4f9ecddc692e676e563967dd9
       "type": "platform"
     },
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
@@ -20,15 +16,11 @@
     "Microsoft.AspNetCore.StaticFiles": "1.0.0",
     "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
     "Microsoft.Extensions.Configuration.Json": "1.0.0",
-    "Microsoft.Extensions.Logging": "1.1.1",
+    "Microsoft.Extensions.Logging": "1.0.0",
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
-    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
-    "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
-    "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.1.1",
-    "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
-    "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.1.1"
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0"
   },
 
   "tools": {
