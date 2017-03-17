@@ -1,5 +1,10 @@
 * {
 	box-sizing: border-box;
+	font-family: 'Herculanum'
+}
+
+body {
+	background-color: #86E2D5;
 }
 
 img {
@@ -11,10 +16,24 @@ h1 {
 	color: #D91E18;
 	font-size: 13vw;
 	text-align: center;
-	font-family: 'Helvetica';
 }
 
 p {
 	text-align: center;
 	color: #aaa;
+}
+
+nav {
+	.nav-option {
+		width: 15%;
+		color: #fff;
+		padding: 15px 0;
+		border: 2px solid #ddd;
+		cursor: pointer;
+		text-align: center;
+		background-color: #BDC3C7;
+		display: inline-block;
+		margin: 0 8px;
+		font-size: 1em;
+	}
 }
