@@ -74,8 +74,7 @@ namespace Application.Web.Migrations
 
                     b.Property<double>("Longitude");
 
-                    b.Property<string>("OwnerId")
-                        .IsRequired();
+                    b.Property<string>("OwnerId");
 
                     b.Property<DateTime>("TimeStamp");
 
@@ -199,8 +198,7 @@ namespace Application.Web.Migrations
                 {
                     b.HasOne("Application.Web.Data.ApplicationUser", "Owner")
                         .WithMany("Debris")
-                        .HasForeignKey("OwnerId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("OwnerId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>

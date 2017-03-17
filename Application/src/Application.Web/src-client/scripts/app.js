@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import React from 'react'
 // import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import GoogleMap from 'google-map-react';
+//import GoogleMap from 'google-map-react';
 import MyGreatPlace from './my_great_place.jsx';
 
 // const SomeComponent = React.createClass({
