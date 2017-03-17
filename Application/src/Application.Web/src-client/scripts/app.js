@@ -1,82 +1,64 @@
-import Backbone from 'backbone';
+import Backbone from 'backbone'
 import ReactDOM from 'react-dom'
 import React from 'react'
-// import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
-//import GoogleMap from 'google-map-react';
-import MyGreatPlace from './my_great_place.jsx';
-
-// const SomeComponent = React.createClass({
-// 	render: function(){
-// 		return (
-// 			<div>
-// 				<h1>Hallooooo</h1>
-// 				<p><small>
-// 					you make my hair so soft and i know you will never make me cry.
-// 				</small></p>
-// 			</div>
-// 		)
-// 	}
-// }),
-//
+import {DebrisModel} from './models/model-debris.js'
+import {ViewController} from './viewController.js'
 
 
+const AppRouter = Backbone.Router.extend({
+  initialize: function(){
+    Backbone.history.start();
+  },
 
-// const GoogleMap = ({ text }) => <div>{text}</div>;
-//
-// class SimpleMap extends Component {
-//   static defaultProps = {
-//     center: {lat: 59.95, lng: 30.33},
-//     zoom: 11
-//   };
-//
-//   render() {
-//     return (
-//       <GoogleMapReact
-//         defaultCenter={this.props.center}
-//         defaultZoom={this.props.zoom}
-//       >
-//         <AnyReactComponent
-//           lat={59.955413}
-//           lng={30.337844}
-//           text={'Kreyser Avrora'}
-//         />
-//       </GoogleMapReact>
-//     );
-//   }
-// }
-// export default class SimpleMapPage extends Component {
-//   static propTypes = {
-//     center: PropTypes.array,
-//     zoom: PropTypes.number,
-//     greatPlaceCoords: PropTypes.any
-//   };
-//
-//   static defaultProps = {
-//     center: [59.938043, 30.337157],
-//     zoom: 9,
-//     greatPlaceCoords: {lat: 59.724465, lng: 30.080121}
-//   };
-//
-//   shouldComponentUpdate = shouldPureComponentUpdate;
-//
-//   constructor(props) {
-//     super(props);
-//   }
-//
-//   render() {
-//     return (
-//        <GoogleMap
-//         // apiKey={YOUR_GOOGLE_MAP_API_KEY} // set if you need stats etc ...
-//         center={this.props.center}
-//         zoom={this.props.zoom}>
-//         <MyGreatPlace lat={59.955413} lng={30.337844} text={'A'} /* Kreyser Avrora */ />
-//         <MyGreatPlace {...this.props.greatPlaceCoords} text={'B'} /* road circle */ />
-//       </GoogleMap>
-//     );
-//   }
-// }
+  routes: {
 
-// ReactDOM.render(<GoogleMap/>, document.querySelector('#app-container'))
+  'register' : 'registrationPage',
+  'login' : 'loginPage',
+  'user-info' : 'singleUserPage',
+  'adopt' : 'adoptABeach',
+  'debris' : 'recordDebris',
+  'all' : 'displayAll',
+  'about' : 'about',
+  '' : 'homePage'
+  },
 
-ReactDOM.render(<SomeComponent/>, document.querySelector('#app-container'))
+  homePage: function(){
+    let debrisDataView = new DebrisModel()
+    debrisDataView.fetch()
+    console.log(debrisDataView.props);
+
+    ReactDOM.render(<ViewController from route = {'HOME'}/>, document.querySelector('#app-container'))
+  },
+
+  recordDebris: function(){
+    ReactDOM.render(<ViewController fromRoute = {'DEBRIS'}/>, document.querySelector('#app-container'))
+  },
+
+  registrationPage: function(){
+    ReactDOM.render(<ViewController fromRoute = {'REGISTRATION'}/>, document.querySelector('#app-container'))
+  },
+
+  loginPage: function(){
+    ReactDOM.render(<ViewController fromRoute = {'LOGIN'}/>, document.querySelector('#app-container'))
+  },
+
+  adoptABeach: function(){
+    ReactDOM.render(<ViewController fromRoute = {'ADOPT'}/>, document.querySelector('#app-container'))
+  },
+
+  singleUserPage: function(){
+    ReactDOM.render(<ViewController fromRoute = {'USER'}/>, document.querySelector('#app-container'))
+  },
+
+  displayAll: function(){
+    ReactDOM.render(<ViewController fromRoute = {'ALL'}/>, document.querySelector('#app-container'))
+  },
+
+  about: function(){
+    ReactDOM.render(<ViewController fromRoute = {'ABOUT'}/>, document.querySelector('#app-container'))
+  },
+
+})
+
+
+new AppRouter ()
