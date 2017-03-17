@@ -69,9 +69,9 @@ namespace Application.Web.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Latitude = table.Column<double>(nullable: false),
                     Longitude = table.Column<double>(nullable: false),
-                    OwnerId = table.Column<string>(nullable: true),
-                    Type = table.Column<string>(nullable: true),
-                    UserId = table.Column<string>(nullable: true)
+                    OwnerId = table.Column<string>(nullable: false),
+                    TimeStamp = table.Column<DateTime>(nullable: false),
+                    Type = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -81,7 +81,7 @@ namespace Application.Web.Migrations
                         column: x => x.OwnerId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

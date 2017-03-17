@@ -24,20 +24,11 @@ namespace Application.Web.Controllers.API
         }
 
 
-        [Route("~/accounts/login")]
-        // GET: /<controller>/
-        public IActionResult Login()
-        {
-            return View();
-        }
-
         [HttpPost]
         [Route("~/api/accounts/login")]
         public async Task<IActionResult> Login([FromBody]LoginRequest model)
         {
-
             var user = await UserManager.FindByEmailAsync(model.Email);
-
 
             if (user != null)
             {
@@ -51,11 +42,6 @@ namespace Application.Web.Controllers.API
             }
         }
 
-        [Route("~/accounts/register")]
-        public IActionResult Register()
-        {
-            return View();
-        }
 
         [HttpPost]
         [Route("~/api/accounts/register")]
@@ -79,7 +65,7 @@ namespace Application.Web.Controllers.API
         }
 
         [HttpGet]
-        [Route("~/accounts/logout")]
+        [Route("~/api/accounts/logout")]
         public async Task<IActionResult> Logout()
         {
             await SignInManager.SignOutAsync();
