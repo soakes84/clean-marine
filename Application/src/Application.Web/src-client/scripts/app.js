@@ -1,82 +1,82 @@
 import Backbone from 'backbone';
 import ReactDOM from 'react-dom'
 import React from 'react'
-import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
+import React, { Component } from 'react';
+import GoogleMapReact from 'google-map-react';
+import GoogleMap from 'google-map-react';
+import MyGreatPlace from './my_great_place.jsx';
+
+// const SomeComponent = React.createClass({
+// 	render: function(){
+// 		return (
+// 			<div>
+// 				<h1>Hallooooo</h1>
+// 				<p><small>
+// 					you make my hair so soft and i know you will never make me cry.
+// 				</small></p>
+// 			</div>
+// 		)
+// 	}
+// }),
+//
 
 
-const SomeComponent = React.createClass({
-	render: function(){
-		return (
-			<div>
-				<h1>Hallooooo</h1>
-				<p><small>
-					you make my hair so soft and i know you will never make me cry.
-				</small></p>
-			</div>
-		)
-	}
-})
 
+// const GoogleMap = ({ text }) => <div>{text}</div>;
+//
+// class SimpleMap extends Component {
+//   static defaultProps = {
+//     center: {lat: 59.95, lng: 30.33},
+//     zoom: 11
+//   };
+//
+//   render() {
+//     return (
+//       <GoogleMapReact
+//         defaultCenter={this.props.center}
+//         defaultZoom={this.props.zoom}
+//       >
+//         <AnyReactComponent
+//           lat={59.955413}
+//           lng={30.337844}
+//           text={'Kreyser Avrora'}
+//         />
+//       </GoogleMapReact>
+//     );
+//   }
+// }
+// export default class SimpleMapPage extends Component {
+//   static propTypes = {
+//     center: PropTypes.array,
+//     zoom: PropTypes.number,
+//     greatPlaceCoords: PropTypes.any
+//   };
+//
+//   static defaultProps = {
+//     center: [59.938043, 30.337157],
+//     zoom: 9,
+//     greatPlaceCoords: {lat: 59.724465, lng: 30.080121}
+//   };
+//
+//   shouldComponentUpdate = shouldPureComponentUpdate;
+//
+//   constructor(props) {
+//     super(props);
+//   }
+//
+//   render() {
+//     return (
+//        <GoogleMap
+//         // apiKey={YOUR_GOOGLE_MAP_API_KEY} // set if you need stats etc ...
+//         center={this.props.center}
+//         zoom={this.props.zoom}>
+//         <MyGreatPlace lat={59.955413} lng={30.337844} text={'A'} /* Kreyser Avrora */ />
+//         <MyGreatPlace {...this.props.greatPlaceCoords} text={'B'} /* road circle */ />
+//       </GoogleMap>
+//     );
+//   }
+// }
 
-const coords = {
-  lat: 51.5258541,
-  lng: -0.08040660000006028
-};
-
-const params = {v: '3.exp', key: 'YOUR_API_KEY'};
-
-const App = React.createClass({
-
-  onMapCreated(map) {
-    map.setOptions({
-      disableDefaultUI: true
-    });
-  },
-
-  onDragEnd(e) {
-    console.log('onDragEnd', e);
-  },
-
-  onCloseClick() {
-    console.log('onCloseClick');
-  },
-
-  onClick(e) {
-    console.log('onClick', e);
-  },
-
-  render() {
-    return (
-      <Gmaps
-        width={'800px'}
-        height={'600px'}
-        lat={coords.lat}
-        lng={coords.lng}
-        zoom={12}
-        loadingMessage={'Be happy'}
-        params={params}
-        onMapCreated={this.onMapCreated}>
-        <Marker
-          lat={coords.lat}
-          lng={coords.lng}
-          draggable={true}
-          onDragEnd={this.onDragEnd} />
-        <InfoWindow
-          lat={coords.lat}
-          lng={coords.lng}
-          content={'Hello, React :)'}
-          onCloseClick={this.onCloseClick} />
-        <Circle
-          lat={coords.lat}
-          lng={coords.lng}
-          radius={500}
-          onClick={this.onClick} />
-      </Gmaps>
-    );
-  }
-
-});
-
-ReactDOM.render(<App />, document.getElementById('gmaps'));
+// ReactDOM.render(<GoogleMap/>, document.querySelector('#app-container'))
 
 ReactDOM.render(<SomeComponent/>, document.querySelector('#app-container'))
