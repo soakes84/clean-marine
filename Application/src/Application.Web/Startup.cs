@@ -43,7 +43,7 @@ namespace Application.Web
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireLowercase = false;
                 options.Password.RequireDigit = false;
-               
+
 
             })
                     .AddEntityFrameworkStores<CleanMarineContext>()
@@ -82,6 +82,19 @@ namespace Application.Web
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
+            var context = app.ApplicationServices.GetRequiredService<CleanMarineContext>();
+            var user = new ApplicationUser() { Email = "t@t.com", PasswordHash = "3fsdka3", UserName = "BigTime", Id = "123456" };
+            context.Users.Add(user);
+            var debris = new Debris() {Type = "Plastic bottle", Latitude = 32.123, Longitude = 33.333};
+            debris.Owner = user;
+            context.Debris.Add(debris);
+            debris = new Debris() { Type = "tin can", Latitude = 13.244, Longitude = 31.34 };
+            debris.Owner = user;    
+            context.Add(debris);
+
+            context.SaveChanges();
+
         }
+
     }
 }
