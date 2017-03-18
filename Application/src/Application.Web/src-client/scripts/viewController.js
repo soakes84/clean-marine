@@ -3,8 +3,8 @@ import {Navbar} from './components/component-navbar.js';
 import {STORE} from './store.js';
 import {ACTIONS} from './actions.js';
 
-// import {HomeView} from './views/view-home.js';
-// import {LoginView} from './views/view-login.js';
+import {HomeView} from './views/view-home.js';
+import {LoginView} from './views/view-login.js';
 // import {AdoptView} from './views/view-adopt.js';
 // import {RegisterView} from './views/view-register.js';
 import {UserView} from './views/view-user.js';
