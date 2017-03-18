@@ -2,7 +2,7 @@ import React from 'react';
 import {Navbar} from '../components/component-navbar.js';
 import {ACTIONS} from '../actions.js';
 import {STORE} from '../store.js';
-import {DebrisListComponent} from '../components/component-debris_list.js'
+import {DebrisListComponent} from '../components/component-debris_list.js';
 
 export const HomeView = React.createClass({
   getInitialState: function(){
@@ -17,7 +17,7 @@ export const HomeView = React.createClass({
   },
 
   render: function(){
-    let side = <h3 className="text-center" style={{ background: #E87E04, padding: '12px', color: '#ddd', fontWeight: 200}}>User Data</h3>
+    let side = <h3 className="text-center" style={{ background: "#E87E04", padding: '12px', color: '#ddd', fontWeight: 200}}>Hello</h3>
 
 
   return (
