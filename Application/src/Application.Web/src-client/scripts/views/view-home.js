@@ -17,7 +17,7 @@ export const HomeView = React.createClass({
   },
 
   render: function(){
-    let side = <h3 className="text-center" style={{ background: "#E87E04", padding: '12px', color: '#ddd', fontWeight: 200}}>Hello</h3>
+    let side = <h3 className="text-center">Hello</h3>
 
 
   return (

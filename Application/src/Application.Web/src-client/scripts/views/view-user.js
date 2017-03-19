@@ -17,7 +17,7 @@ export const UserView = React.createClass({
   },
 
   render: function(){
-    let side = <h3 className="text-center" style={{ background: "#67809F", padding: '12px', color: '#ddd', fontWeight: 200}}>User Data</h3>
+    let side = <h3 className="text-center">User Data</h3>
 
 
   return (
