@@ -1,10 +1,10 @@
 import Backbone from 'backbone';
 import ReactDOM from 'react-dom'
 import React from 'react'
-import GoogleMapReact from 'google-map-react';
-import GoogleMap from 'google-map-react';
+// import GoogleMapReact from 'google-map-react';
+// import GoogleMap from 'google-map-react';
 // import MyGreatPlace from './my_great_place.jsx';
-import Registration from './registration-form.js'
+// import Registration from './registration-form.js'
 
 // const GoogleMap = ({ text }) => <div>{text}</div>;
 //
