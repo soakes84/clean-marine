@@ -3,23 +3,8 @@ import ReactDOM from 'react-dom'
 import React from 'react'
 import GoogleMapReact from 'google-map-react';
 import GoogleMap from 'google-map-react';
-import MyGreatPlace from './my_great_place.jsx';
-
-// const SomeComponent = React.createClass({
-// 	render: function(){
-// 		return (
-// 			<div>
-// 				<h1>Hallooooo</h1>
-// 				<p><small>
-// 					you make my hair so soft and i know you will never make me cry.
-// 				</small></p>
-// 			</div>
-// 		)
-// 	}
-// }),
-//
-
-
+// import MyGreatPlace from './my_great_place.jsx';
+import Registration from './registration-form.js'
 
 // const GoogleMap = ({ text }) => <div>{text}</div>;
 //
@@ -77,5 +62,5 @@ import MyGreatPlace from './my_great_place.jsx';
 // }
 
 // ReactDOM.render(<GoogleMap/>, document.querySelector('#app-container'))
-
-ReactDOM.render(<SomeComponent/>, document.querySelector('#app-container'))
+//
+// ReactDOM.render(<SomeComponent/>, document.querySelector('#app-container'))
