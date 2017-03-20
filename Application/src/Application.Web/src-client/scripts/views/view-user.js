@@ -18,11 +18,43 @@ export const UserView = React.createClass({
 
   render: function(){
     let side = <h3 className="text-center">User Data</h3>
+    let information = <h2>MAP GOES HERE</h2>
+    let inputDebris =
+    <form>
+      <table>
+        <tr>
+          <th>Debris Type</th>
+          <th>Quantity</th>
+        </tr>
+        <tr>
+          <td>Aluminum cans</td>
+          <td><button> + </button> # <button> - </button></td>
+        </tr>
+        <tr>
+          <td>Aluminum cans</td>
+          <td><button> + </button> # <button> - </button></td>
+        </tr>
+        <tr>
+          <td>Aluminum cans</td>
+          <td><button> + </button> # <button> - </button></td>
+        </tr>
+        <tr>
+          <td>Aluminum cans</td>
+          <td><button> + </button> # <button> - </button></td>
+        </tr>
+        <tr>
+          <td>Aluminum cans</td>
+          <td><button> + </button> # <button> - </button></td>
+        </tr>
+      </table>
+    </form>
 
 
   return (
       <div>
         {side}
+        {information}
+        {inputDebris}
       </div>
     )
   }
