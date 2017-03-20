@@ -4,10 +4,8 @@ import React from 'react'
 import {DebrisModel} from './models/model-debris.js'
 import {ViewController} from './viewController.js'
 
-console.log('waththththht')
 const AppRouter = Backbone.Router.extend({
   initialize: function(){
-    console.log('wahtttt')
     Backbone.history.start();
   },
 

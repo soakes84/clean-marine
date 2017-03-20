@@ -24,8 +24,9 @@ export default class SimpleMap extends Component {
 
 
   render() {
-    console.log(this.props)
+    console.log(this.props, 'okk')
     return (
+      <div style={{height: '400px'}}>
        <GoogleMapReact
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
@@ -41,6 +42,7 @@ export default class SimpleMap extends Component {
           text={'Plastic garbage'}
         />
       </GoogleMapReact>
+      </div>
     );
   }
 
