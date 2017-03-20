@@ -4,10 +4,20 @@ import {ACTIONS} from '../actions.js';
 import {STORE} from '../store.js';
 import {DebrisListComponent} from '../components/component-debris_list.js';
 
-export const HomeView = React.createClass({
-  
+export const AdoptView = React.createClass({
+  getInitialState: function(){
+    return STORE.getStoreData()
+  },
+
+  componentDidMount: function(){
+    let component = this
+
+    ACTIONS.fetchAllDebris
+
+  },
+
   render: function(){
-    let side = <h3>Home Page</h3>
+    let side = <h3>Adopt Some Stuff</h3>
 
 
   return (

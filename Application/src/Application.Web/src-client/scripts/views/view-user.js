@@ -22,9 +22,7 @@ export const UserView = React.createClass({
 
   return (
       <div>
-      {side}
-      {this.props.debrisList}
-      <DebrisListComponent {...this.props}/>
+        {side}
       </div>
     )
   }

@@ -17,15 +17,13 @@ export const LoginView = React.createClass({
   },
 
   render: function(){
-    let side = <input className="text-center">Email</input>
+    let side = <input>Email</input>
     let password = <input>Password</input>
 
   return (
       <div>
-      {side}
-      {password}
-      {this.props.debrisList}
-      <DebrisListComponent {...this.props}/>
+        {side}
+        {password}
       </div>
     )
   }
