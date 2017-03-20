@@ -3,6 +3,8 @@ import {Navbar} from '../components/component-navbar.js';
 import {ACTIONS} from '../actions.js';
 import {STORE} from '../store.js';
 import {DebrisListComponent} from '../components/component-debris_list.js'
+import SimpleMap from '../components/component-debrimap.js'
+const API_KEY = 'AIzaSyCVsRPLuLQW5TRej4APIZAtgIEAhILiQ2U';
 
 export const UserView = React.createClass({
   getInitialState: function(){
@@ -16,8 +18,17 @@ export const UserView = React.createClass({
 
   },
 
+
+
   render: function(){
-    let information = <h1>MAP GOES HERE</h1>
+    let information =
+          <div>
+            <SimpleMap center={{lat: 32.78, lng: -79.93}} zoom={11} bootstrapURLKeys={{
+        key: API_KEY,
+        language: 'en'
+      }}/>
+          </div>
+
     let inputDebris =
     <form>
       <table className='formview'>
@@ -56,6 +67,8 @@ export const UserView = React.createClass({
       </table>
       <input className='submit-button' type="submit" value="Submit"></input>
     </form>
+
+
 
 
   return (

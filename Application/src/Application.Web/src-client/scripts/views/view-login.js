@@ -3,6 +3,7 @@ import {Navbar} from '../components/component-navbar.js';
 import {ACTIONS} from '../actions.js';
 import {STORE} from '../store.js';
 import {DebrisListComponent} from '../components/component-debris_list.js'
+import SimpleMap from '../components/component-debrimap.js'
 
 export const LoginView = React.createClass({
   getInitialState: function(){
