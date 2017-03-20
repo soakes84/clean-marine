@@ -10,7 +10,7 @@ export const HomeView = React.createClass({
 
   render: function(){
     let side = <h3>Home Page</h3>
-
+    console.log('alllooo')
 
   return (
       <div>
