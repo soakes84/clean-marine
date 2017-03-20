@@ -17,8 +17,8 @@ export const LoginView = React.createClass({
   },
 
   render: function(){
-    let side = <input>Email</input>
-    let password = <input>Password</input>
+    let side = <p>Email</p>
+    let password = <p>Password</p>
 
   return (
       <div>
