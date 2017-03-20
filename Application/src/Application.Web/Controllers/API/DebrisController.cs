@@ -28,10 +28,14 @@ namespace Application.Web.Controllers.API
         [Route("~/api/debris")]
         public IEnumerable<Debris> GetAllDebris()
         {
-            var userId = _userManager.GetUserId(User);
-            return _context.Debris.Where(q => q.Owner.Id == userId).ToList();
+            //foreach (var user in _context.Users)
+            //{
+                var userId = _userManager.GetUserId(User);
+                return _context.Debris.Where(q => q.Owner.Id == userId).ToList();
+           // }
+
         }
-    
+
         [HttpGet]
         [Route("~/api/debris/{id}")]
         public async Task<IActionResult> GetDebris(int id)
@@ -53,6 +57,9 @@ namespace Application.Web.Controllers.API
             return Ok(debris);
         }
 
+        [HttpGet]
+        [Route("~/api/debris/")]
+
         [HttpPost]
         [Route("~/api/debris")]
         public async Task<IActionResult> PostDebris([FromBody] Debris debris)
@@ -71,7 +78,7 @@ namespace Application.Web.Controllers.API
             return CreatedAtAction("GetDebris", new { id = debris.Id }, debris);
         }
 
-        
+
 
     }
 }

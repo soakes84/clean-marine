@@ -2,9 +2,9 @@ import React from 'react';
 import {Navbar} from '../components/component-navbar.js';
 import {ACTIONS} from '../actions.js';
 import {STORE} from '../store.js';
-import {DebrisListComponent} from '../components/component-debris_list.js'
+import {DebrisListComponent} from '../components/component-debris_list.js';
 
-export const LoginView = React.createClass({
+export const AdoptView = React.createClass({
   getInitialState: function(){
     return STORE.getStoreData()
   },
@@ -17,13 +17,12 @@ export const LoginView = React.createClass({
   },
 
   render: function(){
-    let side = <input className="text-center" style={{ background: '#E87E04', padding: '12px', color: '#ddd', fontWeight: 200}}/>
-    let password = <input/>
+    let side = <h3>Adopt Some Stuff</h3>
+
 
   return (
       <div>
         {side}
-        {password}
       </div>
     )
   }

@@ -20,21 +20,19 @@ const AnyReactComponent = React.createClass({
    }
 });
 
-class SimpleMap extends React.Component {
-  static defaultProps = {
-    center: {lat: 59.95, lng: 30.33},
-    zoom: 11
-  };
+export default class SimpleMap extends Component {
+
 
   render() {
+    console.log(this.props)
     return (
        <GoogleMapReact
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
       >
         <AnyReactComponent
-          lat={59.955413}
-          lng={30.337844}
+          lat={32.55}
+          lng={-79.22}
           text={'Abandoned Ship'}
         />
        <AnyReactComponent
@@ -46,13 +44,13 @@ class SimpleMap extends React.Component {
     );
   }
 
+}
 
+// ReactDOM.render(
+//   <div style={{width: '100%', height: '400px'}}>
+//     <SimpleMap/>
+//   </div>,
+//   document.getElementById('main')
+// )
 
-ReactDOM.render(
-  <div style={{width: '100%', height: '400px'}}>
-    <SimpleMap/>
-  </div>,
-  document.getElementById('main')
-);
-
-ReactDOM.render(<SimpleMap/>, document.querySelector('#app-container'))
+// ReactDOM.render(<SimpleMap/>, document.querySelector('#app-container'))
