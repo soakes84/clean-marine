@@ -17,42 +17,49 @@ export const UserView = React.createClass({
   },
 
   render: function(){
-    let side = <h3 className="text-center">User Data</h3>
-    let information = <h2>MAP GOES HERE</h2>
+    let information = <h1>MAP GOES HERE</h1>
     let inputDebris =
     <form>
-      <table>
-        <tr>
-          <th>Debris Type</th>
-          <th>Quantity</th>
-        </tr>
-        <tr>
-          <td>Aluminum cans</td>
-          <td><button> + </button> # <button> - </button></td>
-        </tr>
-        <tr>
-          <td>Aluminum cans</td>
-          <td><button> + </button> # <button> - </button></td>
-        </tr>
-        <tr>
-          <td>Aluminum cans</td>
-          <td><button> + </button> # <button> - </button></td>
-        </tr>
-        <tr>
-          <td>Aluminum cans</td>
-          <td><button> + </button> # <button> - </button></td>
-        </tr>
-        <tr>
-          <td>Aluminum cans</td>
-          <td><button> + </button> # <button> - </button></td>
-        </tr>
+      <table className='formview'>
+        <thead>
+          <tr>
+            <th>Debris Type</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Aluminum cans</td>
+            <td><button className='green'> + </button> # <button className='red'> - </button></td>
+          </tr>
+          <tr>
+            <td>Plastic bags</td>
+            <td><button className='green'> + </button> # <button className='red'> - </button></td>
+          </tr>
+          <tr>
+            <td>Cigarette butts</td>
+            <td><button className='green'> + </button> # <button className='red'> - </button></td>
+          </tr>
+          <tr>
+            <td>Glass bottles</td>
+            <td><button className='green'> + </button> # <button className='red'> - </button></td>
+          </tr>
+          <tr>
+            <td>Clothing</td>
+            <td><button className='green'> + </button> # <button className='red'> - </button></td>
+          </tr>
+          <tr>
+            <td>Miscellaneous items</td>
+            <td><button className='green'> + </button> # <button className='red'> - </button></td>
+          </tr>
+        </tbody>
       </table>
+      <input className='submit-button' type="submit" value="Submit"></input>
     </form>
 
 
   return (
       <div>
-        {side}
         {information}
         {inputDebris}
       </div>
