@@ -88,8 +88,7 @@ namespace Application.Web
                 user = new ApplicationUser();
                 user.Email = "t@t.com";
                 user.UserName = "BigTime";
-                context.Users.Add(user);
-
+                await userManager.CreateAsync(user, "Testtest1");
                 var debris = new Debris() { Type = "Plastic bottle", Latitude = 32.738605, Longitude = -79.871332 };
                 debris.Owner = user;
                 context.Debris.Add(debris);
@@ -99,14 +98,14 @@ namespace Application.Web
                 
             }
 
-            if(!context.Users.Any(r=>r.Email == user.Email))
-            {
-                var password = new PasswordHasher<ApplicationUser>();
-                var hashed = password.HashPassword(user, "Testtest1");
-                user.PasswordHash = hashed;
-                context.Add(user);
-                context.SaveChanges();
-            }
+            //if(!context.Users.Any(r=>r.Email == user.Email))
+            //{
+            //    var password = new PasswordHasher<ApplicationUser>();
+            //    var hashed = password.HashPassword(user, "Testtest1");
+            //    user.PasswordHash = hashed;
+            //    context.Add(user);
+            //    context.SaveChanges();
+            //}
 
             //var user = new ApplicationUser() { Email = "t@t.com", PasswordHash = "3fsdka3", UserName = "BigTime", Id = "123456" };
             //context.Users.Add(user);
