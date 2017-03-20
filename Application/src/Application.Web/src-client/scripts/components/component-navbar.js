@@ -8,8 +8,10 @@ export const Navbar = React.createClass({
     if (typeof currentUserOnStore._id === 'undefined'){
       routeList = [
         {appRouteName: 'HOME', displayText: 'HOME', hashRoute: ''},
+        {appRouteName: 'USER', displayText: 'User', hashRoute: 'user-info'},
         {appRouteName: 'ALL', displayText: 'Debris Totals', hashRoute: 'all'},
         {appRouteName: 'ABOUT', displayText: 'About', hashRoute: 'about'},
+        {appRouteName: 'ADOPT', displayText: 'Adopt', hashRoute: 'adopt'},
         {appRouteName: 'DEBRIS', displayText: 'Report Debris', hashRoute: 'debris'},
         {appRouteName: 'REGISTER', displayText: 'Register', hashRoute: 'register'},
         {appRouteName: 'LOGIN', displayText: 'Log-in', hashRoute: 'login'}
@@ -54,7 +56,7 @@ export const Navbar = React.createClass({
 
   const RouteOption = React.createClass({
     _handleNavClick: function(evt){
-
+console.log('something happened');
       ACTIONS.changeCurrentNav(this.props.appRouteName, this.props.hashRoute)
     },
 

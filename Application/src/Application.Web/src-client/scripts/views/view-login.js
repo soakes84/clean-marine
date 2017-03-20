@@ -4,7 +4,7 @@ import {ACTIONS} from '../actions.js';
 import {STORE} from '../store.js';
 import {DebrisListComponent} from '../components/component-debris_list.js'
 
-export const UserView = React.createClass({
+export const LoginView = React.createClass({
   getInitialState: function(){
     return STORE.getStoreData()
   },
@@ -17,12 +17,13 @@ export const UserView = React.createClass({
   },
 
   render: function(){
-    let side = <h3 className="text-center">User Data</h3>
-
+    let side = <input>Email</input>
+    let password = <input>Password</input>
 
   return (
       <div>
         {side}
+        {password}
       </div>
     )
   }

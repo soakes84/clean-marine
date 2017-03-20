@@ -25,7 +25,9 @@ const AppRouter = Backbone.Router.extend({
   homePage: function(){
     let debrisDataView = new DebrisModel()
     debrisDataView.fetch()
-    console.log(debrisDataView.props);
+    console.log('get the props')
+    console.log(this.props);
+
 
     ReactDOM.render(<ViewController from route = {'HOME'}/>, document.querySelector('#app-container'))
   },

@@ -18,7 +18,7 @@ p {
   text-align: center;
   color: #aaa; }
 
-nav .nav-option {
+nav {
   width: 15%;
   color: #fff;
   padding: 15px 0;
@@ -28,6 +28,7 @@ nav .nav-option {
   background-color: #BDC3C7;
   display: inline-block;
   margin: 0 8px;
-  font-size: 1em; }
+  font-size: 1em;
+  margin: 2px; }
 
 /*# sourceMappingURL=styles.css.map*/

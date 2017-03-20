@@ -3,14 +3,14 @@ import {Navbar} from './components/component-navbar.js';
 import {STORE} from './store.js';
 import {ACTIONS} from './actions.js';
 
-// import {HomeView} from './views/view-home.js';
-// import {LoginView} from './views/view-login.js';
-// import {AdoptView} from './views/view-adopt.js';
-// import {RegisterView} from './views/view-register.js';
+import {HomeView} from './views/view-home.js';
+import {LoginView} from './views/view-login.js';
+import {AdoptView} from './views/view-adopt.js';
+import {RegisterView} from './views/view-register.js';
 import {UserView} from './views/view-user.js';
-// import {AllView} from './views/view-all.js';
-// import {AboutView} from './views/view-about.js';
-// import {DebrisView} from './views/view-debris.js';
+import {AllView} from './views/view-all.js';
+import {AboutView} from './views/view-about.js';
+import {DebrisView} from './views/view-debris.js';
 
 export const ViewController = React.createClass({
 
