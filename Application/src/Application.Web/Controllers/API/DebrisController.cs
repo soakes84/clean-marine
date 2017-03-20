@@ -28,12 +28,8 @@ namespace Application.Web.Controllers.API
         [Route("~/api/debris")]
         public IEnumerable<Debris> GetAllDebris()
         {
-            //foreach (var user in _context.Users)
-            //{
                 var userId = _userManager.GetUserId(User);
                 return _context.Debris.Where(q => q.Owner.Id == userId).ToList();
-           // }
-
         }
 
         [HttpGet]
@@ -56,9 +52,6 @@ namespace Application.Web.Controllers.API
 
             return Ok(debris);
         }
-
-        [HttpGet]
-        [Route("~/api/debris/")]
 
         [HttpPost]
         [Route("~/api/debris")]
