@@ -4,9 +4,10 @@ import React from 'react'
 import {DebrisModel} from './models/model-debris.js'
 import {ViewController} from './viewController.js'
 
-
+console.log('waththththht')
 const AppRouter = Backbone.Router.extend({
   initialize: function(){
+    console.log('wahtttt')
     Backbone.history.start();
   },
 
@@ -25,11 +26,12 @@ const AppRouter = Backbone.Router.extend({
   homePage: function(){
     let debrisDataView = new DebrisModel()
     debrisDataView.fetch()
-    console.log('get the props')
-    console.log(this.props);
 
+    // console.log('get the props', debrisDataView.props.item)
 
-    ReactDOM.render(<ViewController from route = {'HOME'}/>, document.querySelector('#app-container'))
+    console.log('whatt')
+
+    ReactDOM.render(<ViewController fromRoute = {'HOME'}/>, document.querySelector('#app-container'))
   },
 
   recordDebris: function(){
@@ -63,4 +65,4 @@ const AppRouter = Backbone.Router.extend({
 })
 
 
-new AppRouter ()
+new AppRouter()

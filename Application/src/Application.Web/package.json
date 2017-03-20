@@ -11,7 +11,7 @@
     "build-dist": "npm-run-all --parallel compile-project compile-static-assets",
     "compile-static-assets": "webpack",
     "compile-project": "dotnet restore",
-    "cleardb" : "rm bin/Debug/netcoreapp1.0/CleanMarine.db"
+    "cleardb": "rm bin/Debug/netcoreapp1.0/CleanMarine.db"
   },
   "author": "",
   "license": "ISC",

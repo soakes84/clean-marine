@@ -17,8 +17,8 @@ export const LoginView = React.createClass({
   },
 
   render: function(){
-    let side = <p>Email</p>
-    let password = <p>Password</p>
+    let side = <input className="text-center" style={{ background: '#E87E04', padding: '12px', color: '#ddd', fontWeight: 200}}/>
+    let password = <input/>
 
   return (
       <div>
