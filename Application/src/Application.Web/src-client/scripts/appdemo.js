@@ -1,4 +1,1 @@
-
-
-
-// <img src= "clean marine logo" >
+import SimpleMapPage from './components/component-debrimap.js'

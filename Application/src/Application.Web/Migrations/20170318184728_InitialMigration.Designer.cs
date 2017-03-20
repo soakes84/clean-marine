@@ -8,7 +8,7 @@ using Application.Web.Data;
 namespace Application.Web.Migrations
 {
     [DbContext(typeof(CleanMarineContext))]
-    [Migration("20170317135038_InitialMigration")]
+    [Migration("20170318184728_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -75,8 +75,7 @@ namespace Application.Web.Migrations
 
                     b.Property<double>("Longitude");
 
-                    b.Property<string>("OwnerId")
-                        .IsRequired();
+                    b.Property<string>("OwnerId");
 
                     b.Property<DateTime>("TimeStamp");
 
@@ -200,8 +199,7 @@ namespace Application.Web.Migrations
                 {
                     b.HasOne("Application.Web.Data.ApplicationUser", "Owner")
                         .WithMany("Debris")
-                        .HasForeignKey("OwnerId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("OwnerId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>

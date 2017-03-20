@@ -10,7 +10,7 @@ namespace Application.Web.Data
     {
         public int Id { get; set; }
         public string Type { get; set; }
-        [Required]
+        
         public ApplicationUser Owner { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
