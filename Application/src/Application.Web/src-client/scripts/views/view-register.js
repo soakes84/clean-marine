@@ -17,7 +17,44 @@ export const RegisterView = React.createClass({
   },
 
   render: function(){
-    let side = <h3>Please Register Here</h3>
+    let side = <form>
+      <table className='formview'>
+        <thead>
+          <tr>
+            <th>Debris Type</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Aluminum cans</td>
+            <td><button className='green'> + </button> # <button className='red'> - </button></td>
+          </tr>
+          <tr>
+            <td>Plastic bags</td>
+            <td><button className='green'> + </button> # <button className='red'> - </button></td>
+          </tr>
+          <tr>
+            <td>Cigarette butts</td>
+            <td><button className='green'> + </button> # <button className='red'> - </button></td>
+          </tr>
+          <tr>
+            <td>Glass bottles</td>
+            <td><button className='green'> + </button> # <button className='red'> - </button></td>
+          </tr>
+          <tr>
+            <td>Clothing</td>
+            <td><button className='green'> + </button> # <button className='red'> - </button></td>
+          </tr>
+          <tr>
+            <td>Miscellaneous items</td>
+            <td><button className='green'> + </button> # <button className='red'> - </button></td>
+          </tr>
+        </tbody>
+      </table>
+      <input className='submit-button' type="submit" value="Submit"></input>
+    </form>
+
 
 
   return (
