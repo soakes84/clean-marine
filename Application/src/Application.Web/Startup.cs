@@ -93,7 +93,8 @@ namespace Application.Web
                 context.Debris.Add(debris);
                 debris = new Debris() { Type = "tin can", Latitude = 32.74567, Longitude = -79.93333 };
                 debris.Owner = user;
-                context.Debris.Add(debris);                
+                context.Debris.Add(debris);
+                context.SaveChanges();                
             }
 
         }
