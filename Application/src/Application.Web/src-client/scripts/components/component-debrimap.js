@@ -9,6 +9,7 @@ const AnyReactComponent = React.createClass({
    render: function(){
       let theColor = 'red'
       if(this.props.text.length <= 3){ theColor= "blue" }
+      
 
       console.log('????')
       return <div style={{

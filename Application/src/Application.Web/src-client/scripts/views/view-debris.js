@@ -9,6 +9,13 @@ export const DebrisView = React.createClass({
     return STORE.getStoreData()
   },
 
+  _createDebrisJSX: function(arrOfDebris){
+    let jsxArray = arrOfDebris.map(function(debrisList){
+      return <p>{debrisList}</p>
+    })
+    return jsxArray
+  },
+
   componentDidMount: function(){
     let component = this
 

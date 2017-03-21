@@ -13,7 +13,7 @@ export const HomeView = React.createClass({
     console.log('alllooo')
 
   return (
-      <div>
+      <div className='map'>
         <SimpleMap center={{lat: 32.78, lng: -79.93}} zoom={11} bootstrapURLKeys={{
     key: API_KEY,
     language: 'en'

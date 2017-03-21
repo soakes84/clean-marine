@@ -3,22 +3,27 @@
 	font-family: 'Open Sands Condensed'
 }
 
-body {
-	background-color: #86E2D5;
-	background-image: url('https://cdn.pixabay.com/photo/2017/02/16/20/32/bridge-2072419_1280.jpg');
-	background-size: cover;
+// ALL MY VARIABLES
 
+$darkBlue:  #2B7E7E;
+$red: #76B8B8;
+$backGroundGrey: #459393;
+$skyBlue: #176C6C;
+$oceanBlue: #085656;
+
+body {
+	background-color: $backGroundGrey;
 }
 
 h1 {
-	color: #5C97BF;
+	color: $oceanBlue;
 	font-size: 10vw;
 	text-align: center;
 }
 
 p {
 	text-align: center;
-	color: #aaa;
+	color: $oceanBlue;
 }
 
 .green {
@@ -33,17 +38,17 @@ p {
 
 .styling {
 	width: 100%;
-	background-color: #66CC99;
+	background-color: $darkBlue;
 }
 
 .nav-option {
 		width: 10%;
-		color: #fff;
+		color: $backGroundGrey;
 		padding: 15px 0;
 		border: 2px solid #ddd;
 		cursor: pointer;
 		text-align: center;
-		background-color: #BDC3C7;
+		background-color: $oceanBlue;
 		display: inline-block;
 		margin: 4px 8px;
 		font-size: 1em;
@@ -52,21 +57,41 @@ p {
 }
 
 .nav-option--active {
-	background-color: #1BBC9B;
+	background-color: $red;
+}
+
+.map {
+	position: relative;
+	height: 1000px;
+	margin-top: 40px;
 }
 
 .formview {
-	background-color: #EEEEEE;
+	position: fixed;
+	top: 120px;
+	left: 20px;
+	background-color: $backGroundGrey;
 	padding: 	12px;
 	box-shadow: 2px 2px black;
 }
 
 .submit-button {
+	position: fixed;
+	left: 500px;
 	width: 200px;
 	padding: 12px;
 	margin: 12px;
-	background-color: #EEEEEE;
-	color: #1BA39C;
+	background-color: $oceanBlue;
+	color: $backGroundGrey;
+	font-size: 1em;
+	border-radius: 2px;
+}
+
+.registration-page {
+	background-image: url('https://images.pexels.com/photos/296879/pexels-photo-296879.jpeg?h=350&auto=compress&cs=tinysrgb');
+	background-size: cover;
+	height: 100%;
+	width: 100%;
 }
 
 .map {
