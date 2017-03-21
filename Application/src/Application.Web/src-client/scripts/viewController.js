@@ -36,6 +36,7 @@ export const ViewController = React.createClass({
   render: function(){
 
     let componentToRender
+    console.log(this.state)
 
     switch(this.state.currentNavRoute){
       case 'HOME':
