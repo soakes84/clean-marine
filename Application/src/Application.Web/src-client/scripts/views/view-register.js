@@ -20,6 +20,7 @@ export const RegisterView = React.createClass({
     let side = <h3>Please Register Here</h3>
 
 
+
   return (
       <div>
         {side}
