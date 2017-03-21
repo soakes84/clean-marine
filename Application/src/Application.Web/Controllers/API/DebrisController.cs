@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Application.Web.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -26,6 +27,7 @@ namespace Application.Web.Controllers.API
 
         [HttpGet]
         [Route("~/api/debris")]
+        [Authorize]
         public IEnumerable<Debris> GetUserDebris()
         {
                 var userId = _userManager.GetUserId(User);
@@ -62,6 +64,7 @@ namespace Application.Web.Controllers.API
 
         [HttpPost]
         [Route("~/api/debris")]
+        [Authorize]
         public async Task<IActionResult> PostDebris([FromBody] Debris debris)
         {
             if (!ModelState.IsValid)
@@ -69,7 +72,9 @@ namespace Application.Web.Controllers.API
                 return BadRequest(ModelState);
             }
 
-            debris.Owner = await _userManager.GetUserAsync(User);
+            var user = await _userManager.GetUserAsync(User);
+            debris.Owner = user;
+            debris.UserName = user.UserName;
             debris.TimeStamp = DateTime.UtcNow;
             _context.Debris.Add(debris);
 

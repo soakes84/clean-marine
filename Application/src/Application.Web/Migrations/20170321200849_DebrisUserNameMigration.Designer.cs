@@ -8,9 +8,10 @@ using Application.Web.Data;
 namespace Application.Web.Migrations
 {
     [DbContext(typeof(CleanMarineContext))]
-    partial class CleanMarineContextModelSnapshot : ModelSnapshot
+    [Migration("20170321200849_DebrisUserNameMigration")]
+    partial class DebrisUserNameMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1");
