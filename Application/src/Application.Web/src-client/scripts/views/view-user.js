@@ -11,13 +11,17 @@ export const UserView = React.createClass({
     return STORE.getStoreData()
   },
 
+
+  componentWillMount: function(){
+  },
+
   componentDidMount: function(){
     let component = this
 
-    ACTIONS.fetchAllDebris
+    let daData = ACTIONS.fetchAllDebris
+    console.log(daData)
 
   },
-
 
 
   render: function(){

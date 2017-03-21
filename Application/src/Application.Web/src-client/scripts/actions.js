@@ -1,5 +1,6 @@
 import Backbone from 'backbone';
 import {STORE} from './store.js';
+const $ = require('jquery');
 import {DebrisModel, DebrisCollection} from './models/model-debris.js'
 
 
@@ -11,6 +12,10 @@ export const ACTIONS = {
 
       ACTIONS.fetchAllDebris()
     })
+  },
+
+  saveAllDebris: function(ary){
+    $.post()
   },
 
   fetchAllDebris: function(){
