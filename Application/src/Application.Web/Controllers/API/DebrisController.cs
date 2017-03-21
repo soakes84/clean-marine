@@ -26,10 +26,17 @@ namespace Application.Web.Controllers.API
 
         [HttpGet]
         [Route("~/api/debris")]
-        public IEnumerable<Debris> GetAllDebris()
+        public IEnumerable<Debris> GetUserDebris()
         {
                 var userId = _userManager.GetUserId(User);
                 return _context.Debris.Where(q => q.Owner.Id == userId).ToList();
+        }
+
+        [HttpGet]
+        [Route("~/api/debris/all")]
+        public IEnumerable<Debris> GetAllDebris()
+        {
+            return _context.Debris.ToList();
         }
 
         [HttpGet]
