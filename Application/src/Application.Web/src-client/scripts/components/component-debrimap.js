@@ -9,6 +9,7 @@ const AnyReactComponent = React.createClass({
    render: function(){
       let theColor = 'red'
       if(this.props.text.length <= 3){ theColor= "blue" }
+      
 
       console.log('????')
       return <div style={{
@@ -26,7 +27,7 @@ export default class SimpleMap extends Component {
   render() {
     console.log(this.props, 'okk')
     return (
-      <div style={{height: '400px'}}>
+      <div style={{height: '500px'}}>
        <GoogleMapReact
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}

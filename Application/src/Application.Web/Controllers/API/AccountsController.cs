@@ -34,7 +34,6 @@ namespace Application.Web.Controllers.API
             {
                 var result = await SignInManager.PasswordSignInAsync(user, model.Password, false, true);
                 return Ok();
-
             }
             else
             {
@@ -70,7 +69,7 @@ namespace Application.Web.Controllers.API
         {
             await SignInManager.SignOutAsync();
 
-            return Redirect("~/");
+            return Ok();
         }
 
     }
