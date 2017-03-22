@@ -93,3 +93,14 @@ p {
 	height: 100%;
 	width: 100%;
 }
+
+.counter-action, .debrisTotal {
+	display: inline-block;
+	margin-left: 2px;
+}
+
+.debrisTotal {
+	width: 30px;
+	padding: 10px;
+	vertical-align: middle;
+}

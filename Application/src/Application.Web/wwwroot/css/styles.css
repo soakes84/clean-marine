@@ -1,34 +1,76 @@
 * {
   box-sizing: border-box;
-  font-family: 'Herculanum'; }
+  font-family: 'Open Sands Condensed'; }
 
 body {
-  background-color: #86E2D5; }
-
-img {
-  width: 100%;
-  display: block; }
+  background-color: #F6FBFC; }
 
 h1 {
-  color: #D91E18;
-  font-size: 13vw;
+  color: #0074AF;
+  font-size: 10vw;
   text-align: center; }
 
 p {
   text-align: center;
-  color: #aaa; }
+  color: #0074AF; }
 
-nav {
-  width: 15%;
-  color: #fff;
+.green {
+  background-color: #26A65B;
+  color: #DADFE1; }
+
+.red {
+  background-color: #C0392B;
+  color: #DADFE1; }
+
+.styling {
+  width: 100%;
+  background-color: #223652; }
+
+.nav-option {
+  width: 10%;
+  color: #F6FBFC;
   padding: 15px 0;
   border: 2px solid #ddd;
   cursor: pointer;
   text-align: center;
-  background-color: #BDC3C7;
+  background-color: #0074AF;
   display: inline-block;
-  margin: 0 8px;
+  margin: 4px 8px;
   font-size: 1em;
-  margin: 2px; }
+  box-shadow: 1px 1px 2px 2px #95A5A6;
+  border-radius: 2px; }
+
+.nav-option--active {
+  background-color: #F8393F; }
+
+.map {
+  position: relative;
+  height: 1000px;
+  margin-top: 40px; }
+
+.formview {
+  position: fixed;
+  top: 120px;
+  left: 20px;
+  background-color: #F6FBFC;
+  padding: 12px;
+  box-shadow: 2px 2px black; }
+
+.submit-button {
+  position: fixed;
+  left: 500px;
+  width: 200px;
+  padding: 12px;
+  margin: 12px;
+  background-color: #0074AF;
+  color: #F6FBFC;
+  font-size: 1em;
+  border-radius: 2px; }
+
+.registration-page {
+  background-image: url("https://images.pexels.com/photos/296879/pexels-photo-296879.jpeg?h=350&auto=compress&cs=tinysrgb");
+  background-size: cover;
+  height: 100%;
+  width: 100%; }
 
 /*# sourceMappingURL=styles.css.map*/

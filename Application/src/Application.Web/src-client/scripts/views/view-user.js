@@ -18,8 +18,7 @@ export const UserView = React.createClass({
   componentDidMount: function(){
     let component = this
 
-    let daData = ACTIONS.fetchAllDebris
-    console.log(daData)
+    ACTIONS.fetchAllDebris
 
   },
 

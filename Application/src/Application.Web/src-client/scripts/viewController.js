@@ -36,7 +36,6 @@ export const ViewController = React.createClass({
   render: function(){
 
     let componentToRender
-    console.log(this.state)
 
     switch(this.state.currentNavRoute){
       case 'HOME':
@@ -65,7 +64,7 @@ export const ViewController = React.createClass({
       break;
       default:
     }
-console.log(this.state);
+
     return (
       <div>
         <Navbar {...this.state}/>

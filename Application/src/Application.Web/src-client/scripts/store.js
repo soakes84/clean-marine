@@ -11,7 +11,7 @@ export const STORE = {
 
   setStore: function(debrisProp, payload){
     this._data[debrisProp] = payload
-    console.log(payload);
+  
   },
 
   onStoreChange: function(cbFunc){
