@@ -56,7 +56,7 @@ export const Navbar = React.createClass({
 
   const RouteOption = React.createClass({
     _handleNavClick: function(evt){
-console.log('something happened');
+
       ACTIONS.changeCurrentNav(this.props.appRouteName, this.props.hashRoute)
     },
 

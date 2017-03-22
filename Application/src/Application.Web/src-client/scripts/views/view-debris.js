@@ -20,9 +20,13 @@ const DebrisCounter = React.createClass({
   },
 
   decrementDebris: function(evt){
+    if (this.state.amount === 0) {
+      this.state.amount = 0
+    } else {
     this.setState({
       amount: (this.state.amount - 1)
     })
+  }
   },
 
   render: function(){
@@ -77,7 +81,6 @@ export const DebrisView = React.createClass({
             <tr>
               <td>Aluminum cans</td>
               <td><DebrisCounter/></td>
-
             </tr>
             <tr>
               <td>Plastic bags</td>

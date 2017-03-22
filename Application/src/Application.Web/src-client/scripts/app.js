@@ -22,11 +22,6 @@ const AppRouter = Backbone.Router.extend({
   },
 
   homePage: function(){
-    let debrisDataView = new DebrisModel()
-    debrisDataView.fetch().then(function(serverRes){
-      console.log('from app js', serverRes);
-    })
-
     ReactDOM.render(<ViewController fromRoute = {'HOME'}/>, document.querySelector('#app-container'))
   },
 
