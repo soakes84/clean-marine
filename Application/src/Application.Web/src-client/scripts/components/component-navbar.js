@@ -11,7 +11,6 @@ export const Navbar = React.createClass({
         {appRouteName: 'USER', displayText: 'User', hashRoute: 'user-info'},
         {appRouteName: 'ALL', displayText: 'Debris Totals', hashRoute: 'all'},
         {appRouteName: 'ABOUT', displayText: 'About', hashRoute: 'about'},
-        {appRouteName: 'ADOPT', displayText: 'Adopt', hashRoute: 'adopt'},
         {appRouteName: 'DEBRIS', displayText: 'Report Debris', hashRoute: 'debris'},
         {appRouteName: 'REGISTER', displayText: 'Register', hashRoute: 'register'},
         {appRouteName: 'LOGIN', displayText: 'Log-in', hashRoute: 'login'}
@@ -20,7 +19,6 @@ export const Navbar = React.createClass({
       routeList = [
         {appRouteName: 'HOME', displayText: 'HOME', hashRoute: ''},
         {appRouteName: 'LOGOUT', displayText: 'Log-out', hashRoute: 'logout'},
-        {appRouteName: 'ADOPT', displayText: 'Adopt', hashRoute: 'adopt'},
         {appRouteName: 'REGISTER', displayText: 'Register', hashRoute: 'register'},
         {appRouteName: 'USER', displayText: 'User', hashRoute: 'user-info'},
         {appRouteName: 'ALL', displayText: 'All', hashRoute: 'all'},

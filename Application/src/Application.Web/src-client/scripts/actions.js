@@ -28,7 +28,7 @@ export const ACTIONS = {
   },
 
   changeCurrentNav: function(selectedAppRoute, urlRoute){
-  
+    console.log(urlRoute)
     STORE.setStore('currentNavRoute', selectedAppRoute)
     window.location.hash = urlRoute
   }

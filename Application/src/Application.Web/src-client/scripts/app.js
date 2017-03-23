@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import React from 'react'
 import {DebrisModel} from './models/model-debris.js'
 import {ViewController} from './viewController.js'
+import {ACTIONS} from './actions.js';
 
 const AppRouter = Backbone.Router.extend({
   initialize: function(){
@@ -22,38 +23,52 @@ const AppRouter = Backbone.Router.extend({
   },
 
   homePage: function(){
-    ReactDOM.render(<ViewController fromRoute = {'HOME'}/>, document.querySelector('#app-container'))
+    ACTIONS.changeCurrentNav("HOME", window.location.hash)
+
+    ReactDOM.render(<ViewController />, document.querySelector('#app-container'))
   },
 
   recordDebris: function(){
-    ReactDOM.render(<ViewController fromRoute = {'DEBRIS'}/>, document.querySelector('#app-container'))
+    ACTIONS.changeCurrentNav("DEBRIS", window.location.hash)
+
+    ReactDOM.render(<ViewController />, document.querySelector('#app-container'))
   },
 
   registrationPage: function(){
-    ReactDOM.render(<ViewController fromRoute = {'REGISTRATION'}/>, document.querySelector('#app-container'))
+    ACTIONS.changeCurrentNav("REGISTER", window.location.hash)
+
+    ReactDOM.render(<ViewController/>, document.querySelector('#app-container'))
   },
 
   loginPage: function(){
-    ReactDOM.render(<ViewController fromRoute = {'LOGIN'}/>, document.querySelector('#app-container'))
+    ACTIONS.changeCurrentNav("LOGIN", window.location.hash)
+
+    ReactDOM.render(<ViewController/>, document.querySelector('#app-container'))
   },
 
   adoptABeach: function(){
-    ReactDOM.render(<ViewController fromRoute = {'ADOPT'}/>, document.querySelector('#app-container'))
+    ACTIONS.changeCurrentNav("ADOPT", window.location.hash)
+    ReactDOM.render(<ViewController/>, document.querySelector('#app-container'))
   },
 
   singleUserPage: function(){
-    ReactDOM.render(<ViewController fromRoute = {'USER'}/>, document.querySelector('#app-container'))
+    ACTIONS.changeCurrentNav("USER", window.location.hash)
+    ReactDOM.render(<ViewController/>, document.querySelector('#app-container'))
   },
 
   displayAll: function(){
-    ReactDOM.render(<ViewController fromRoute = {'ALL'}/>, document.querySelector('#app-container'))
+    ACTIONS.changeCurrentNav("ALL", window.location.hash)
+    ReactDOM.render(<ViewController/>, document.querySelector('#app-container'))
   },
 
   about: function(){
-    ReactDOM.render(<ViewController fromRoute = {'ABOUT'}/>, document.querySelector('#app-container'))
+    ACTIONS.changeCurrentNav("ABOUT", window.location.hash)
+
+    ReactDOM.render(<ViewController/>, document.querySelector('#app-container'))
   },
 
 })
+
 
 
 new AppRouter()

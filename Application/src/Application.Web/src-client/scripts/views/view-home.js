@@ -32,13 +32,21 @@ export const HomeView = React.createClass({
       <p>Jennifer 3/21/2017 Wando River 20 items</p>
     </div>
 
+   let socialmediaBar =
+  <div>
+   <a href="#" class="fa fa-facebook"></a>
+   <a href="#" class="fa fa-twitter"></a>
+  </div>
+
   return (
+      // <img src = />
       <div className='map'>
         <SimpleMap center={{lat: 32.78, lng: -79.93}} zoom={11} bootstrapURLKeys={{
     key: API_KEY,
     language: 'en'
   }}/>
     {allUserData}
+    {socialmediaBar}
       </div>
     )
   }
