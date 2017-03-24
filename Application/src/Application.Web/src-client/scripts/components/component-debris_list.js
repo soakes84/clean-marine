@@ -70,14 +70,14 @@ export const DebrisListComponent = React.createClass({
               </tr>
             </tbody>
           </table>
-          <input className = 'submit-button' type = 'submit' value = 'Submit' onClick = {this._handleFormSubmit}></input>
+          <input className = 'submit-button' type = 'submit' value = 'Submit' onSubmit = {this._handleFormSubmit}></input>
         </form>
 
         </div>
         </div>
         </div>
       )
-      
+
   }
 
 })
