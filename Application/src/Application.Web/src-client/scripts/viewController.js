@@ -60,9 +60,9 @@ export const ViewController = React.createClass({
         componentToRender = <DebrisView {...this.state}/>
         break;
       case 'ABOUT':
-      componentToRender = <AboutView {...this.state}/>
-      break;
-      default:
+        componentToRender = <AboutView {...this.state}/>
+        break;
+        default:
     }
 
     return (

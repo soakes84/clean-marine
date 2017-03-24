@@ -32,18 +32,16 @@ export const UserView = React.createClass({
       }}/>
           </div>
 
-    let inputDebris =
-    <form>
-  
-    </form>
-
-
-
+    let loggedInUser =
+    <div>
+      Do a table for the individual users information on this Page
+      </div>
 
   return (
       <div>
         {information}
-        {inputDebris}
+        {loggedInUser}
+
       </div>
     )
   }

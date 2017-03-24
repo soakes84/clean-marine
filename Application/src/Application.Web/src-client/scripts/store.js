@@ -1,6 +1,9 @@
 export const STORE = {
   _data: {
     debrisList: [],
+    amount: '',
+    latitude: '',
+    longitude: '',
     currentNavRoute: '',
     currentUser: {}
   },
@@ -11,7 +14,7 @@ export const STORE = {
 
   setStore: function(debrisProp, payload){
     this._data[debrisProp] = payload
-  
+
   },
 
   onStoreChange: function(cbFunc){
