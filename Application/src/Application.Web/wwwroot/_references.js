@@ -5,6 +5,7 @@
 /// <reference path="../src-client/scripts/components/component-debrimap.js" />
 /// <reference path="../src-client/scripts/components/component-debris_list.js" />
 /// <reference path="../src-client/scripts/components/component-navbar.js" />
+/// <reference path="../src-client/scripts/components/registration-form.js" />
 /// <reference path="../src-client/scripts/models/model-debris.js" />
 /// <reference path="../src-client/scripts/store.js" />
 /// <reference path="../src-client/scripts/viewcontroller.js" />

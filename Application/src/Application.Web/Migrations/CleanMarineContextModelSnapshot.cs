@@ -70,6 +70,8 @@ namespace Application.Web.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int?>("DebrisId");
+
                     b.Property<double>("Latitude");
 
                     b.Property<double>("Longitude");
@@ -83,6 +85,8 @@ namespace Application.Web.Migrations
                     b.Property<string>("UserName");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DebrisId");
 
                     b.HasIndex("OwnerId");
 
@@ -198,6 +202,10 @@ namespace Application.Web.Migrations
 
             modelBuilder.Entity("Application.Web.Data.Debris", b =>
                 {
+                    b.HasOne("Application.Web.Data.Debris")
+                        .WithMany("debris")
+                        .HasForeignKey("DebrisId");
+
                     b.HasOne("Application.Web.Data.ApplicationUser", "Owner")
                         .WithMany("Debris")
                         .HasForeignKey("OwnerId");

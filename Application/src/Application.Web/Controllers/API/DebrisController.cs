@@ -30,8 +30,8 @@ namespace Application.Web.Controllers.API
         [Authorize]
         public IEnumerable<Debris> GetUserDebris()
         {
-                var userId = _userManager.GetUserId(User);
-                return _context.Debris.Where(q => q.Owner.Id == userId).ToList();
+            var userId = _userManager.GetUserId(User);
+            return _context.Debris.Where(q => q.Owner.Id == userId).ToList();
         }
 
         [HttpGet]
@@ -65,22 +65,26 @@ namespace Application.Web.Controllers.API
         [HttpPost]
         [Route("~/api/debris")]
         [Authorize]
-        public async Task<IActionResult> PostDebris([FromBody] Debris debris)
+        public async Task<IActionResult> PostDebris([FromBody] List<Debris> debris)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var user = await _userManager.GetUserAsync(User);
-            debris.Owner = user;
-            debris.UserName = user.UserName;
-            debris.TimeStamp = DateTime.UtcNow;
-            _context.Debris.Add(debris);
+            foreach (var debris1 in debris)
+            {
+                var user = await _userManager.GetUserAsync(User);   
+                debris1.Owner = user;
+                debris1.UserName = user.UserName;
+                debris1.TimeStamp = DateTime.UtcNow;
+                _context.Debris.Add(debris1);
+            }
 
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetDebris", new { id = debris.Id }, debris);
+            return Ok(debris);
+
         }
 
 
