@@ -1,5 +1,6 @@
 import GoogleMapReact from 'google-map-react';
 import ReactDOM from 'react-dom';
+
 import React, {Component} from 'react';
 
 // const GoogleMap = ({ text }) => <div>{text}</div>;
@@ -30,16 +31,6 @@ export default class SimpleMap extends Component {
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
       >
-        <AnyReactComponent
-          lat={32.55}
-          lng={-79.22}
-          text={'Abandoned Ship'}
-        />
-       <AnyReactComponent
-          lat={59.98545433}
-          lng={30.324844}
-          text={'Plastic garbage'}
-        />
       </GoogleMapReact>
       </div>
     );

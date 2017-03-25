@@ -37,9 +37,7 @@ export const LoginView = React.createClass({
 					<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
 					<label htmlFor="loginkeeping">Keep me logged in</label>
 				</p>
-				<p className="login button">
-					<input type="submit" value="Login" />
-				</p>
+				 <p><button onclick="myFunction()">Log In</button></p>
 				<p className="change_link">
 					Not a member yet ?
 					<a href="#register" className="to_register">Join us</a>
