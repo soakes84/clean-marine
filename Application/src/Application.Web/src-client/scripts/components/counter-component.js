@@ -1,36 +1,25 @@
 import React from 'react'
+import {ACTIONS} from '../actions.js'
 
 export const Counter = React.createClass ({
-  getInitialState: function(amount){
-    return {
-      amount: 0
-    }
-  },
+
 
  incrementDebris: function(evt){
-   this.setState({
-     amount: (this.state.amount + 1)
-  })
+     ACTIONS.incrementDebris(this.props.debrisData, this.props.type)
  },
 
  decrementDebris: function(evt){
-   if (this.state.amount === 0) {
-     this.state.amount = 0
-   } else {
-     this.setState({
-       amount: (this.state.amount - 1)
-     })
-   }
+   ACTIONS.decrementDebris(this.props.debrisData, this.props.type)
  },
+
   render: function() {
+    let counterNumber = this.props.debrisData[this.props.type]
     return (
       <div>
         <button className='counter-action decrement red' onClick={this.decrementDebris}> - </button>
-        <div className='debrisTotal'> {this.state.amount}</div>
+        <div className='debrisTotal'>{counterNumber}</div>
         <button className='counter-action increment green' onClick={this.incrementDebris}> + </button>
       </div>
-  )
-
+    )
   }
-
 })

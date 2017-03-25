@@ -10,7 +10,7 @@ import {RegisterView} from './views/view-register.js';
 import {UserView} from './views/view-user.js';
 import {AllView} from './views/view-all.js';
 import {AboutView} from './views/view-about.js';
-import {DebrisView} from './views/view-debris.js';
+import {DebrisView} from './views/view-reportDebris.js';
 
 export const ViewController = React.createClass({
 

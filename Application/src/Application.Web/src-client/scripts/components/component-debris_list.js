@@ -1,5 +1,5 @@
 import React from 'react';
-import {DebrisView} from '../views/view-debris.js';
+import {DebrisView} from '../views/view-reportDebris.js';
 import {ACTIONS} from '../actions.js'
 import {Counter} from '../components/counter-component.js'
 import SimpleMap from '../components/component-debrimap.js'
@@ -49,24 +49,24 @@ export const DebrisListComponent = React.createClass({
             </thead>
             <tbody>
               <tr>
-                <td data-a='aluminum cans'>Aluminum cans</td>
-                <td><Counter/></td>
+                <td>Aluminum cans</td>
+                <td><Counter debrisData={this.props.debrisCounter} type="aluminum" key="0"/></td>
               </tr>
               <tr>
-                <td data-p='plastic bags'>Plastic bags</td>
-                <td><Counter/></td>
+                <td>Plastic bags</td>
+                <td><Counter debrisData={this.props.debrisCounter} type="plasticBags" key="1"/></td>
               </tr>
               <tr>
-                <td data-c='cigarette butts'>Cigarette butts</td>
-                <td><Counter/></td>
+                <td>Cigarette butts</td>
+                <td><Counter debrisData={this.props.debrisCounter} type="cigButts" key="2"/></td>
               </tr>
               <tr>
-                <td data-d='clothing'>Clothing</td>
-                <td><Counter/></td>
+                <td>Clothing</td>
+                <td><Counter debrisData={this.props.debrisCounter} type="clothing" key="3"/></td>
               </tr>
               <tr>
-                <td data-m='miscellaneous'>Miscellaneous items</td>
-                <td><Counter/></td>
+                <td>Miscellaneous items</td>
+                <td><Counter debrisData={this.props.debrisCounter} type="misc" key="4"/></td>
               </tr>
             </tbody>
           </table>

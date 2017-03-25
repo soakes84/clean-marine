@@ -5,6 +5,7 @@ import {STORE} from '../store.js';
 import {DebrisListComponent} from '../components/component-debris_list.js'
 import SimpleMap from '../components/component-debrimap.js'
 const API_KEY = 'AIzaSyCVsRPLuLQW5TRej4APIZAtgIEAhILiQ2U';
+import {GettingStartedExample} from '../components/pin-drop-component';
 
 export const UserView = React.createClass({
   getInitialState: function(){

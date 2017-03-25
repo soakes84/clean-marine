@@ -14,6 +14,23 @@ export const ACTIONS = {
     })
   },
 
+  incrementDebris: function(debrisCounterObj, debrisType){
+    let updatedCounter = debrisCounterObj
+    debrisCounterObj[debrisType] += 1
+    STORE.setStore('debrisCounter', updatedCounter)
+  },
+
+  decrementDebris: function(debrisCounterObj, debrisType){
+    let updatedDecCounter = debrisCounterObj
+    console.log(debrisCounterObj);
+    if ( debrisCounterObj[debrisType] === 0) {
+       debrisCounterObj[debrisType] = 0
+    } else {
+      debrisCounterObj[debrisType] -= 1
+      STORE.setStore('debrisCounter', updatedDecCounter)
+      }
+    },
+
   saveAllDebris: function(ary){
     $.post()
   },
