@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 
 import React, {Component} from 'react';
 
-// const GoogleMap = ({ text }) => <div>{text}</div>;
-
 const AnyReactComponent = React.createClass({
    render: function(){
       let theColor = 'red'
@@ -20,16 +18,17 @@ const AnyReactComponent = React.createClass({
    }
 });
 
-export default class SimpleMap extends Component {
 
+export default class SimpleMap extends Component {
 
   render() {
     console.log(this.props, 'okk')
     return (
-      <div style={{height: '500px'}}>
+      <div className='map' style={{height: '800px'}}>
        <GoogleMapReact
-        defaultCenter={this.props.center}
-        defaultZoom={this.props.zoom}
+         onClick =  {this._handleMapClick}
+         defaultCenter={this.props.center}
+         defaultZoom={this.props.zoom}
       >
       </GoogleMapReact>
       </div>
@@ -37,5 +36,3 @@ export default class SimpleMap extends Component {
   }
 
 }
-
-// ReactDOM.render(<SimpleMap/>, document.querySelector('#app-container'))
