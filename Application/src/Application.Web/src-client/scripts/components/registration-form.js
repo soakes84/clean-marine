@@ -17,9 +17,4 @@ const RegistrationForm = React.createClass({
        )
      }
 
-
-      console.log('????')
-      return
-
-
 });

@@ -19,30 +19,28 @@ export const LoginView = React.createClass({
 
   render: function(){
     let regForm = <div id="log-in_form" >
-	<a class="hiddenanchor" id="toregister"></a>
-	<a class="hiddenanchor" id="tologin"></a>
+	<a className="hiddenanchor" id="toregister"></a>
+	<a className="hiddenanchor" id="tologin"></a>
 	<div id="wrapper">
-		<div id="login" class="animate form">
-			<form  action="mysuperscript.php" autocomplete="on">
+		<div id="login" className="animate form">
+			<form  action="mysuperscript.php" autoComplete="on">
 				<h1>Log in</h1>
 				<p>
-					<label for="username" class="uname" data-icon="u" > Your email or username </label>
-					<input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
+					<label htmlFor="username" className="uname" data-icon="u" > Your email or username </label>
+					<input id="username" name="username" required="required" type="text" placeholder="username or email"/>
 				</p>
 				<p>
-					<label for="password" class="youpasswd" data-icon="p"> Your password </label>
-					<input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />
+					<label htmlFor="password" className="youpasswd" data-icon="p"> Your password </label>
+					<input id="password" name="password" required="required" type="password" placeholder="password" />
 				</p>
-				<p class="keeplogin">
+				<p className="keeplogin">
 					<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
-					<label for="loginkeeping">Keep me logged in</label>
+					<label htmlFor="loginkeeping">Keep me logged in</label>
 				</p>
-				<p class="login button">
-					<input type="submit" value="Login" />
-				</p>
-				<p class="change_link">
+				 <p><button onclick="myFunction()">Log In</button></p>
+				<p className="change_link">
 					Not a member yet ?
-					<a href="#toregister" class="to_register">Join us</a>
+					<a href="#register" className="to_register">Join us</a>
 				</p>
 			</form>
 		</div>

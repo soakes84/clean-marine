@@ -2,28 +2,27 @@ import React from 'react';
 import {Navbar} from '../components/component-navbar.js';
 import {ACTIONS} from '../actions.js';
 import {STORE} from '../store.js';
-import {DebrisListComponent} from '../components/component-debris_list.js';
+import {DropPinComponent} from '../components/pin-drop-component.js';
 
-export const AdoptView = React.createClass({
-  getInitialState: function(){
-    return STORE.getStoreData()
-  },
+
+export const DebrisView = React.createClass({
+
 
   componentDidMount: function(){
+    console.log('getting called');
     let component = this
 
     ACTIONS.fetchAllDebris
-
   },
 
   render: function(){
-    let side = <h3>Adopt Some Stuff</h3>
 
 
-  return (
-      <div>
-        {side}
-      </div>
+  		return (
+
+  			<div className="container">
+          <DropPinComponent {...this.props}/>
+        </div>
     )
   }
 })

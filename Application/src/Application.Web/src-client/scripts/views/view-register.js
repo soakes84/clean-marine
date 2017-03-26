@@ -21,30 +21,28 @@ export const RegisterView = React.createClass({
   <div id="register_form" >
 
 		<div id="register" class="animate form">
-			<form  action="mysuperscript.php" autocomplete="on">
+			<form>
 				<h1> Sign up </h1>
 				<p>
 					<label for="usernamesignup" class="uname" data-icon="u">Your username</label>
-					<input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+					<input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="username" />
 				</p>
 				<p>
 					<label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
-					<input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/>
+					<input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="email"/>
 				</p>
 				<p>
 					<label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-					<input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+					<input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="password"/>
 				</p>
 				<p>
-					<label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-					<input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+					<label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Confirm your password </label>
+					<input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="password"/>
 				</p>
-				<p class="signin button">
-					<input type="submit" value="Sign up"/>
-				</p>
+        <p><button onclick="myFunction()">Sign Up</button></p>
 				<p class="change_link">
 					Already a member ?
-					<a href="#tologin" class="to_register"> Go and log in </a>
+					<a href="#login" class="to_register"> Go and log in </a>
 				</p>
 			</form>
 	  </div>

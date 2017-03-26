@@ -5,18 +5,17 @@ import {ACTIONS} from './actions.js';
 
 import {HomeView} from './views/view-home.js';
 import {LoginView} from './views/view-login.js';
-import {AdoptView} from './views/view-adopt.js';
 import {RegisterView} from './views/view-register.js';
 import {UserView} from './views/view-user.js';
 import {AllView} from './views/view-all.js';
 import {AboutView} from './views/view-about.js';
-import {DebrisView} from './views/view-debris.js';
+import {DebrisView} from './views/view-reportDebris.js';
 
 export const ViewController = React.createClass({
 
   getInitialState: function(){
 
-    ACTIONS.changeCurrentNav(this.props.fromRoute, window.location.hash)
+    console.log('????')
     let storeObject = STORE.getStoreData()
 
     return storeObject
@@ -34,6 +33,7 @@ export const ViewController = React.createClass({
   },
 
   render: function(){
+    console.log(this.state, '')
 
     let componentToRender
 
@@ -47,9 +47,6 @@ export const ViewController = React.createClass({
       case 'LOGIN':
         componentToRender = <LoginView {...this.state}/>
         break;
-      case 'ADOPT':
-        componentToRender = <AdoptView {...this.state}/>
-        break;
       case 'USER':
         componentToRender = <UserView {...this.state}/>
         break;
@@ -60,9 +57,9 @@ export const ViewController = React.createClass({
         componentToRender = <DebrisView {...this.state}/>
         break;
       case 'ABOUT':
-      componentToRender = <AboutView {...this.state}/>
-      break;
-      default:
+        componentToRender = <AboutView {...this.state}/>
+        break;
+        default:
     }
 
     return (
