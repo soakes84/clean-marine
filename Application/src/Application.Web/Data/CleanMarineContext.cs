@@ -10,6 +10,10 @@ namespace Application.Web.Data
     public class CleanMarineContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Debris> Debris { get; set; }
+        public DbSet<CigTotal> CigTotal { get; set; }
+        public DbSet<PlasticBagTotal> PlasticBagTotal { get; set; }
+        public DbSet<AluminumCanTotal> AluminumCanTotal { get; set; }
+        public DbSet<PlasticBottleTotal> PlasticBottleTotal { get; set; }
 
 
         public CleanMarineContext() : base()
