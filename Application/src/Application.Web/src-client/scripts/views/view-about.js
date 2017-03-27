@@ -17,7 +17,7 @@ export const AboutView = React.createClass({
   },
 
   render: function(){
-    let side = <h3>About</h3>
+    let side = <h3>About Us</h3>
 
 
   return (

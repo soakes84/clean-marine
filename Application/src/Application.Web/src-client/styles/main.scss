@@ -1,6 +1,6 @@
 * {
 	box-sizing: border-box;
-	font-family: 'Open Sands Condensed'
+	font-family: 'Lato', sans-serif;
 }
 
 // ALL MY VARIABLES
@@ -287,4 +287,46 @@ td.text-right {
 
 display: inline-block;
 
+}
+
+.registrationform {
+ display:block;
+ text-align: center;
+
+}
+
+h3 {
+text-align: center;
+font-weight: bold;
+font-size: 50px;
+}
+
+label {
+
+padding-right: 10px;
+font-size: 16px;
+
+}
+
+#usernamesignup {
+
+	margin-left: 60px;
+	font-size: 15px;
+}
+
+#emailsignup {
+
+	margin-left: 90px;
+	font-size: 15px;
+}
+
+#passwordsignup {
+
+	margin-left: 60px;
+	font-size: 15px;
+}
+
+#passwordsignup_confirm {
+
+	font-size: 15px;
 }
