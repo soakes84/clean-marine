@@ -109,18 +109,40 @@ namespace Application.Web.Migrations
                     b.ToTable("CigTotal");
                 });
 
-            modelBuilder.Entity("Application.Web.Data.Debris", b =>
+            modelBuilder.Entity("Application.Web.Data.ClothingTotal", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<int?>("DebrisId");
 
                     b.Property<double>("Latitude");
 
                     b.Property<double>("Longitude");
 
                     b.Property<string>("OwnerId");
+
+                    b.Property<DateTime>("TimeStamp");
+
+                    b.Property<string>("UserName");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OwnerId");
+
+                    b.ToTable("ClothingTotal");
+                });
+
+            modelBuilder.Entity("Application.Web.Data.Debris", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ApplicationUserId");
+
+                    b.Property<int?>("DebrisId");
+
+                    b.Property<double>("Latitude");
+
+                    b.Property<double>("Longitude");
 
                     b.Property<int>("Quantity");
 
@@ -132,11 +154,33 @@ namespace Application.Web.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ApplicationUserId");
+
                     b.HasIndex("DebrisId");
+
+                    b.ToTable("Debris");
+                });
+
+            modelBuilder.Entity("Application.Web.Data.MiscellaneousTotal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<double>("Latitude");
+
+                    b.Property<double>("Longitude");
+
+                    b.Property<string>("OwnerId");
+
+                    b.Property<DateTime>("TimeStamp");
+
+                    b.Property<string>("UserName");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("Debris");
+                    b.ToTable("MiscellaneousTotal");
                 });
 
             modelBuilder.Entity("Application.Web.Data.PlasticBagTotal", b =>
@@ -304,14 +348,28 @@ namespace Application.Web.Migrations
                         .HasForeignKey("OwnerId");
                 });
 
+            modelBuilder.Entity("Application.Web.Data.ClothingTotal", b =>
+                {
+                    b.HasOne("Application.Web.Data.ApplicationUser", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId");
+                });
+
             modelBuilder.Entity("Application.Web.Data.Debris", b =>
                 {
+                    b.HasOne("Application.Web.Data.ApplicationUser")
+                        .WithMany("Debris")
+                        .HasForeignKey("ApplicationUserId");
+
                     b.HasOne("Application.Web.Data.Debris")
                         .WithMany("debris")
                         .HasForeignKey("DebrisId");
+                });
 
+            modelBuilder.Entity("Application.Web.Data.MiscellaneousTotal", b =>
+                {
                     b.HasOne("Application.Web.Data.ApplicationUser", "Owner")
-                        .WithMany("Debris")
+                        .WithMany()
                         .HasForeignKey("OwnerId");
                 });
 
