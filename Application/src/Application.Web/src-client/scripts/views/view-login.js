@@ -24,7 +24,7 @@ export const LoginView = React.createClass({
 	<div id="wrapper">
 		<div id="login" className="animate form">
 			<form  action="mysuperscript.php" autoComplete="on">
-				<h1>Log in</h1>
+				<h3>Log in</h3>
 				<p>
 					<label htmlFor="username" className="uname" data-icon="u" > Your email or username </label>
 					<input id="username" name="username" required="required" type="text" placeholder="username or email"/>
@@ -37,10 +37,10 @@ export const LoginView = React.createClass({
 					<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
 					<label htmlFor="loginkeeping">Keep me logged in</label>
 				</p>
-				 <p><button onclick="myFunction()">Log In</button></p>
+				 <p><button id= "log-in" onclick="myFunction()">Log In</button></p>
 				<p className="change_link">
 					Not a member yet ?
-					<a href="#register" className="to_register">Join us</a>
+					<a href="#register" className="to_register">Sign up here</a>
 				</p>
 			</form>
 		</div>
