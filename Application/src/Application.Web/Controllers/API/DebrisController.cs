@@ -62,6 +62,70 @@ namespace Application.Web.Controllers.API
             return Ok(debris);
         }
 
+        [HttpGet]
+        [Route("~/api/debris/cigtotals")]
+        public IEnumerable<CigTotal> GetCigTotals()
+        {
+            return _context.CigTotal.ToList();
+        }
+
+        [HttpGet]
+        [Route("~/api/debris/cigs")]
+        [Authorize]
+        public IEnumerable<CigTotal> GetUserCigDebris()
+        {
+            var userId = _userManager.GetUserId(User);
+            return _context.CigTotal.Where(q => q.Owner.Id == userId).ToList();
+        }
+
+        [HttpGet]
+        [Route("~/api/debris/plasticbagtotals")]
+        public IEnumerable<PlasticBagTotal> GetPlasticBagTotals()
+        {
+            return _context.PlasticBagTotal.ToList();
+        }
+
+        [HttpGet]
+        [Route("~/api/debris/plasticbags")]
+        [Authorize]
+        public IEnumerable<PlasticBagTotal> GetUserPlasticBagDebris()
+        {
+            var userId = _userManager.GetUserId(User);
+            return _context.PlasticBagTotal.Where(q => q.Owner.Id == userId).ToList();
+        }
+
+        [HttpGet]
+        [Route("~/api/debris/aluminumcantotals")]
+        public IEnumerable<AluminumCanTotal> GetAluminumCanTotals()
+        {
+            return _context.AluminumCanTotal.ToList();
+        }
+
+        [HttpGet]
+        [Route("~/api/debris/aluminumcans")]
+        [Authorize]
+        public IEnumerable<AluminumCanTotal> GetUserAluminumCanDebris()
+        {
+            var userId = _userManager.GetUserId(User);
+            return _context.AluminumCanTotal.Where(q => q.Owner.Id == userId).ToList();
+        }
+
+        [HttpGet]
+        [Route("~/api/debris/plasticbottletotals")]
+        public IEnumerable<PlasticBottleTotal> GetPlasticBottleTotals()
+        {
+            return _context.PlasticBottleTotal.ToList();
+        }
+
+        [HttpGet]
+        [Route("~/api/debris/plasticbottles")]
+        [Authorize]
+        public IEnumerable<PlasticBottleTotal> GetUserPlasticBottleDebris()
+        {
+            var userId = _userManager.GetUserId(User);
+            return _context.PlasticBottleTotal.Where(q => q.Owner.Id == userId).ToList();
+        }
+
         [HttpPost]
         [Route("~/api/debris")]
         [Authorize]
@@ -83,7 +147,7 @@ namespace Application.Web.Controllers.API
                     debri.TimeStamp = DateTime.UtcNow;
                     _context.Debris.Add(debri);
 
-                    if(debri.Type == "Plastic Bottle")
+                    if (debri.Type == "Plastic Bottle")
                     {
                         var plasticBottle = new PlasticBottleTotal();
                         plasticBottle.Owner = user;
@@ -93,7 +157,7 @@ namespace Application.Web.Controllers.API
                         plasticBottle.Longitude = debri.Longitude;
                         _context.PlasticBottleTotal.Add(plasticBottle);
                     }
-                    else if(debri.Type == "Plastic Bag")
+                    else if (debri.Type == "Plastic Bag")
                     {
                         var plasticBag = new PlasticBagTotal();
                         plasticBag.Owner = user;
@@ -103,7 +167,7 @@ namespace Application.Web.Controllers.API
                         plasticBag.Longitude = debri.Longitude;
                         _context.PlasticBagTotal.Add(plasticBag);
                     }
-                    else if(debri.Type == "Aluminum Can")
+                    else if (debri.Type == "Aluminum Can")
                     {
                         var alumCan = new AluminumCanTotal();
                         alumCan.Owner = user;
@@ -113,7 +177,7 @@ namespace Application.Web.Controllers.API
                         alumCan.Longitude = debri.Longitude;
                         _context.AluminumCanTotal.Add(alumCan);
                     }
-                    else if(debri.Type == "Cigarette Butt")
+                    else if (debri.Type == "Cigarette Butt")
                     {
                         var cigButt = new CigTotal();
                         cigButt.Owner = user;
@@ -127,38 +191,9 @@ namespace Application.Web.Controllers.API
                 debri.Quantity = 0;
             }
 
-
             await _context.SaveChangesAsync();
 
             return Ok(debris);
-        }
-
-        [HttpGet]
-        [Route("~/api/debris/cigtotals")]
-        public IEnumerable<CigTotal> GetCigTotals()
-        {
-            return _context.CigTotal.ToList();
-        }
-
-        [HttpGet]
-        [Route("~/api/debris/plasticbagtotals")]
-        public IEnumerable<PlasticBagTotal> GetPlasticBagTotals()
-        {
-            return _context.PlasticBagTotal.ToList();
-        }
-
-        [HttpGet]
-        [Route("~/api/debris/aluminumcantotals")]
-        public IEnumerable<AluminumCanTotal> GetAluminumCanTotals()
-        {
-            return _context.AluminumCanTotal.ToList();
-        }
-
-        [HttpGet]
-        [Route("~/api/debris/plasticbottletotals")]
-        public IEnumerable<PlasticBagTotal> GetPlasticBottleTotals()
-        {
-            return _context.PlasticBagTotal.ToList();
         }
     }
 }
