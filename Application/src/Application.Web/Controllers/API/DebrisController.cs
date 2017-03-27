@@ -30,8 +30,11 @@ namespace Application.Web.Controllers.API
         [Authorize]
         public IEnumerable<Debris> GetUserDebris()
         {
-            var userId = _userManager.GetUserId(User);
-            return _context.Debris.Where(q => q.Owner.Id == userId).ToList();
+            var userName = _userManager.GetUserName(User);
+            return _context.Debris.Where(q => q.UserName == userName).ToList();
+          // return _context.Debris.Where(q => q.Owner == userId).ToList();
+           
+              
         }
 
         [HttpGet]
@@ -142,7 +145,7 @@ namespace Application.Web.Controllers.API
             {
                 for (int i = 0; i <= debri.Quantity; i++)
                 {
-                    debri.Owner = user;
+                    user.Debris.Add(debri);
                     debri.UserName = user.UserName;
                     debri.TimeStamp = DateTime.UtcNow;
                     _context.Debris.Add(debri);
@@ -186,6 +189,26 @@ namespace Application.Web.Controllers.API
                         cigButt.Latitude = debri.Latitude;
                         cigButt.Longitude = debri.Longitude;
                         _context.CigTotal.Add(cigButt);
+                    }
+                    else if (debri.Type == "Clothing")
+                    {
+                        var clothing = new ClothingTotal();
+                        clothing.Owner = user;
+                        clothing.UserName = user.UserName;
+                        clothing.TimeStamp = DateTime.UtcNow;
+                        clothing.Latitude = debri.Latitude;
+                        clothing.Longitude = debri.Longitude;
+                        _context.ClothingTotal.Add(clothing);
+                    }
+                    else if (debri.Type == "Miscellaneous")
+                    {
+                        var misc = new MiscellaneousTotal();
+                        misc.Owner = user;
+                        misc.UserName = user.UserName;
+                        misc.TimeStamp = DateTime.UtcNow;
+                        misc.Latitude = debri.Latitude;
+                        misc.Longitude = debri.Longitude;
+                        _context.MiscellaneousTotal.Add(misc);
                     }
                 }
                 debri.Quantity = 0;

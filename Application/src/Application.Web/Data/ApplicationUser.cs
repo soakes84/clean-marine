@@ -10,5 +10,10 @@ namespace Application.Web.Data
     {
         public List<Debris> Debris { get; set; }
 
+        public ApplicationUser()
+        {
+            Debris = new List<Debris>();
+        }
+
     }
 }

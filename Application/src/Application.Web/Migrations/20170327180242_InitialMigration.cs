@@ -108,15 +108,38 @@ namespace Application.Web.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ClothingTotal",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Latitude = table.Column<double>(nullable: false),
+                    Longitude = table.Column<double>(nullable: false),
+                    OwnerId = table.Column<string>(nullable: true),
+                    TimeStamp = table.Column<DateTime>(nullable: false),
+                    UserName = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClothingTotal", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ClothingTotal_Users_OwnerId",
+                        column: x => x.OwnerId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Debris",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    ApplicationUserId = table.Column<string>(nullable: true),
                     DebrisId = table.Column<int>(nullable: true),
                     Latitude = table.Column<double>(nullable: false),
                     Longitude = table.Column<double>(nullable: false),
-                    OwnerId = table.Column<string>(nullable: true),
                     Quantity = table.Column<int>(nullable: false),
                     TimeStamp = table.Column<DateTime>(nullable: false),
                     Type = table.Column<string>(nullable: true),
@@ -126,13 +149,36 @@ namespace Application.Web.Migrations
                 {
                     table.PrimaryKey("PK_Debris", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_Debris_Users_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
                         name: "FK_Debris_Debris_DebrisId",
                         column: x => x.DebrisId,
                         principalTable: "Debris",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MiscellaneousTotal",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Latitude = table.Column<double>(nullable: false),
+                    Longitude = table.Column<double>(nullable: false),
+                    OwnerId = table.Column<string>(nullable: true),
+                    TimeStamp = table.Column<DateTime>(nullable: false),
+                    UserName = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MiscellaneousTotal", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Debris_Users_OwnerId",
+                        name: "FK_MiscellaneousTotal_Users_OwnerId",
                         column: x => x.OwnerId,
                         principalTable: "Users",
                         principalColumn: "Id",
@@ -293,13 +339,23 @@ namespace Application.Web.Migrations
                 column: "OwnerId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ClothingTotal_OwnerId",
+                table: "ClothingTotal",
+                column: "OwnerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Debris_ApplicationUserId",
+                table: "Debris",
+                column: "ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Debris_DebrisId",
                 table: "Debris",
                 column: "DebrisId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Debris_OwnerId",
-                table: "Debris",
+                name: "IX_MiscellaneousTotal_OwnerId",
+                table: "MiscellaneousTotal",
                 column: "OwnerId");
 
             migrationBuilder.CreateIndex(
@@ -348,7 +404,13 @@ namespace Application.Web.Migrations
                 name: "CigTotal");
 
             migrationBuilder.DropTable(
+                name: "ClothingTotal");
+
+            migrationBuilder.DropTable(
                 name: "Debris");
+
+            migrationBuilder.DropTable(
+                name: "MiscellaneousTotal");
 
             migrationBuilder.DropTable(
                 name: "PlasticBagTotal");
