@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import GoogleMapReact from 'google-map-react'
+import GoogleMapReact from 'google-map-react';
+import {CollectedDebrisTable} from '../components/component-collectedDebrisTable.js';
 
 export const DropPinComponent = React.createClass({
 
@@ -8,7 +9,7 @@ export const DropPinComponent = React.createClass({
 		return (
 
 			<div className='map'>
-        <NotSimpleMap  center={{lat: 32.78, lng: -79.93}} />
+        <NotSimpleMap  center={{lat: 32.78, lng: -79.93}} debrisData = {this.props} />
 			</div>
 
 		)
@@ -18,50 +19,71 @@ export const DropPinComponent = React.createClass({
 const NotSimpleMap = React.createClass({
 	getInitialState: function(){
 		return {
-			locationsData :{}
+			locationsData :{},
 		}
 	},
 
 
 	// ADDING PINS TO THE MAP
 	_createMapPins: function(locationObj){
-			return <MapPin lat={locationObj.lt} lng={locationObj.ln} />
+
+			return <MapPin debrisData = {this.props.debrisData} lat={locationObj.lt} lng={locationObj.ln} />
 
 	},
 
 	_handleMapClick: function(evt){
-		console.log(evt)
+		console.log(evt.x)
+
 		let locationsCopy = [...this.state.locationsData]
 		let mapLocationObject = {lt: evt.lat, ln: evt.lng }
 		locationsCopy.push(mapLocationObject)
 		this.setState({
-			locationsData : mapLocationObject
+			locationsData : mapLocationObject,
+			xPosition : evt.x
 		})
 	},
 
 	render: function(){
 		let mapCenter = {lat: 32.78, lng: -79.93}
-		console.log(this.props, 'PROOPPS')
-		console.log(this.state, "STATTEE")
+
+		if (typeof this.state.xPosition  === 'undefined') {
 		return (
-			<div style={{height: '500px'}}>
+
+			<div style={{height: '800px'}}>
 				<GoogleMapReact
-					defaultCenter = {this.props.center}
+					debrisData = {this.props}
+					center = {mapCenter}
 					defaultZoom = {10}
 					onClick = {this._handleMapClick}>
+					{this._createMapPins(this.state.locationsData)}
+				</GoogleMapReact>
+			</div>
+		)
+
+	} else {
+		return  (
+			<div style={{height: '800px'}}>
+				<GoogleMapReact
+					options={{disableDoubleClickZoom: true}}
+					debrisData = {this.props}
+					center = {mapCenter}
+					defaultZoom = {10}>
 					{this._createMapPins(this.state.locationsData)}
 				</GoogleMapReact>
 
 			</div>
 		)
 	}
+	}
 })
 
 const MapPin = React.createClass({
 	render: function(){
+
 		return (
 			<div style={{fontSize: '45px', color: '#D35400', transform: 'translate(-50%, -50%)'}}>
 				<i className="ion-ios-flag">+</i>
+				<CollectedDebrisTable debrisData = {this.props.debrisData}/>
 			</div>
 		)
 	}
