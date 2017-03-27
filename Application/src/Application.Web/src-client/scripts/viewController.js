@@ -15,7 +15,6 @@ export const ViewController = React.createClass({
 
   getInitialState: function(){
 
-    console.log('????')
     let storeObject = STORE.getStoreData()
 
     return storeObject
@@ -33,7 +32,6 @@ export const ViewController = React.createClass({
   },
 
   render: function(){
-    console.log(this.state, '')
 
     let componentToRender
 

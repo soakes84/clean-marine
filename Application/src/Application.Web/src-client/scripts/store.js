@@ -1,6 +1,7 @@
 export const STORE = {
   _data: {
-    debrisList: [],
+    debrisListAll: [],
+    debrisListSingle: {},
     amount: '',
     latitude: '',
     longitude: '',
@@ -9,6 +10,7 @@ export const STORE = {
     debrisCounter: {
       aluminum: 0,
       plasticBags: 0,
+      plasticBottles: 0,
       clothing: 0,
       misc: 0,
       cigButts: 0

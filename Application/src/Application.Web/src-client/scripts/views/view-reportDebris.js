@@ -9,7 +9,7 @@ export const DebrisView = React.createClass({
 
 
   componentDidMount: function(){
-    console.log('getting called');
+    
     let component = this
 
     ACTIONS.fetchAllDebris

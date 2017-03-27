@@ -6,7 +6,7 @@ import {DebrisListComponent} from '../components/component-debris_list.js'
 import SimpleMap from '../components/component-debrimap.js'
 const API_KEY = 'AIzaSyCVsRPLuLQW5TRej4APIZAtgIEAhILiQ2U';
 import {GettingStartedExample} from '../components/pin-drop-component';
-import UserDebrisTable from '../components/table-component'
+
 
 
 export const UserView = React.createClass({

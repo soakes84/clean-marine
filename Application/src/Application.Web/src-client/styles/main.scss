@@ -61,24 +61,22 @@ p {
 }
 
 .map {
-	position: relative;
+
 	height: 600px;
 	margin-top: 40px;
 }
 
 .formview {
 	position: fixed;
-	top: 240px;
-	left: 20px;
-	background-color: $backGroundGrey;
-	padding: 	12px;
-	box-shadow: 2px 2px black;
+	top: -300px;
+	left: 340px;
+
 }
 
 .submit-button {
-	position: absolute;
+	position: fixed;
 	left: 6px;
-	top: 260px;
+
 	width: 200px;
 	padding: 12px;
 	margin: 12px;
