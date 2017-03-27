@@ -70,6 +70,7 @@ const NotSimpleMap = React.createClass({
 					defaultZoom = {10}>
 					{this._createMapPins(this.state.locationsData)}
 				</GoogleMapReact>
+				<CollectedDebrisTable debrisData = {this.props.debrisData}/>
 
 			</div>
 		)
@@ -83,7 +84,7 @@ const MapPin = React.createClass({
 		return (
 			<div style={{fontSize: '45px', color: '#D35400', transform: 'translate(-50%, -50%)'}}>
 				<i className="ion-ios-flag">+</i>
-				<CollectedDebrisTable debrisData = {this.props.debrisData}/>
+				{/* <CollectedDebrisTable debrisData = {this.props.debrisData}/> */}
 			</div>
 		)
 	}
