@@ -23,7 +23,6 @@ namespace Application.Web.Controllers.API
             SignInManager = signInManager;
         }
 
-
         [HttpPost]
         [Route("~/api/accounts/login")]
         public async Task<IActionResult> Login([FromBody]LoginRequest model)
@@ -40,7 +39,6 @@ namespace Application.Web.Controllers.API
                 return BadRequest();
             }
         }
-
 
         [HttpPost]
         [Route("~/api/accounts/register")]

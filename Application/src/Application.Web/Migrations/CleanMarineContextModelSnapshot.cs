@@ -15,6 +15,28 @@ namespace Application.Web.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1");
 
+            modelBuilder.Entity("Application.Web.Data.AluminumCanTotal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<double>("Latitude");
+
+                    b.Property<double>("Longitude");
+
+                    b.Property<string>("OwnerId");
+
+                    b.Property<DateTime>("TimeStamp");
+
+                    b.Property<string>("UserName");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OwnerId");
+
+                    b.ToTable("AluminumCanTotal");
+                });
+
             modelBuilder.Entity("Application.Web.Data.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -65,6 +87,28 @@ namespace Application.Web.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("Application.Web.Data.CigTotal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<double>("Latitude");
+
+                    b.Property<double>("Longitude");
+
+                    b.Property<string>("OwnerId");
+
+                    b.Property<DateTime>("TimeStamp");
+
+                    b.Property<string>("UserName");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OwnerId");
+
+                    b.ToTable("CigTotal");
+                });
+
             modelBuilder.Entity("Application.Web.Data.Debris", b =>
                 {
                     b.Property<int>("Id")
@@ -77,6 +121,8 @@ namespace Application.Web.Migrations
                     b.Property<double>("Longitude");
 
                     b.Property<string>("OwnerId");
+
+                    b.Property<int>("Quantity");
 
                     b.Property<DateTime>("TimeStamp");
 
@@ -91,6 +137,50 @@ namespace Application.Web.Migrations
                     b.HasIndex("OwnerId");
 
                     b.ToTable("Debris");
+                });
+
+            modelBuilder.Entity("Application.Web.Data.PlasticBagTotal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<double>("Latitude");
+
+                    b.Property<double>("Longitude");
+
+                    b.Property<string>("OwnerId");
+
+                    b.Property<DateTime>("TimeStamp");
+
+                    b.Property<string>("UserName");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OwnerId");
+
+                    b.ToTable("PlasticBagTotal");
+                });
+
+            modelBuilder.Entity("Application.Web.Data.PlasticBottleTotal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<double>("Latitude");
+
+                    b.Property<double>("Longitude");
+
+                    b.Property<string>("OwnerId");
+
+                    b.Property<DateTime>("TimeStamp");
+
+                    b.Property<string>("UserName");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OwnerId");
+
+                    b.ToTable("PlasticBottleTotal");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole", b =>
@@ -200,6 +290,20 @@ namespace Application.Web.Migrations
                     b.ToTable("UserTokens");
                 });
 
+            modelBuilder.Entity("Application.Web.Data.AluminumCanTotal", b =>
+                {
+                    b.HasOne("Application.Web.Data.ApplicationUser", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId");
+                });
+
+            modelBuilder.Entity("Application.Web.Data.CigTotal", b =>
+                {
+                    b.HasOne("Application.Web.Data.ApplicationUser", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId");
+                });
+
             modelBuilder.Entity("Application.Web.Data.Debris", b =>
                 {
                     b.HasOne("Application.Web.Data.Debris")
@@ -208,6 +312,20 @@ namespace Application.Web.Migrations
 
                     b.HasOne("Application.Web.Data.ApplicationUser", "Owner")
                         .WithMany("Debris")
+                        .HasForeignKey("OwnerId");
+                });
+
+            modelBuilder.Entity("Application.Web.Data.PlasticBagTotal", b =>
+                {
+                    b.HasOne("Application.Web.Data.ApplicationUser", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId");
+                });
+
+            modelBuilder.Entity("Application.Web.Data.PlasticBottleTotal", b =>
+                {
+                    b.HasOne("Application.Web.Data.ApplicationUser", "Owner")
+                        .WithMany()
                         .HasForeignKey("OwnerId");
                 });
 

@@ -88,14 +88,38 @@ namespace Application.Web
                 user.Email = "t@t.com";
                 user.UserName = "BigTime";
                 await userManager.CreateAsync(user, "Testtest1");
-                var debris = new Debris() { Type = "Plastic bottle", Latitude = 32.738605, Longitude = -79.871332 };
+                var debris = new Debris() { Type = "Plastic Bottle", Latitude = 32.738605, Longitude = -79.871332 };
                 debris.Owner = user;
                 context.Debris.Add(debris);
-                debris = new Debris() { Type = "tin can", Latitude = 32.74567, Longitude = -79.93333 };
+                var plasticBottle = new PlasticBottleTotal() { Latitude = 32.738605, Longitude = -79.871332 };
+                plasticBottle.Owner = user;
+                context.PlasticBottleTotal.Add(plasticBottle);
+
+                debris = new Debris() { Type = "Cigarette Butt", Latitude = 32.74567, Longitude = -79.93333 };
                 debris.Owner = user;
                 context.Debris.Add(debris);
+                var cig = new CigTotal() { Latitude = 32.74567, Longitude = -79.93333 };
+                cig.Owner = user;
+                context.CigTotal.Add(cig);
+
+                debris = new Debris() { Type = "Aluminum Can", Latitude = 32.74567, Longitude = -79.93333 };
+                debris.Owner = user;
+                context.Debris.Add(debris);
+                var alumCan = new AluminumCanTotal() { Latitude = 32.74567, Longitude = -79.93333 };
+                alumCan.Owner = user;
+                context.AluminumCanTotal.Add(alumCan);
+
+                debris = new Debris() { Type = "Plastic Bag", Latitude = 32.74567, Longitude = -79.93333 };
+                debris.Owner = user;
+                context.Debris.Add(debris);
+                var plasticBag = new PlasticBagTotal() { Latitude = 32.74567, Longitude = -79.93333 };
+                plasticBag.Owner = user;
+                context.PlasticBagTotal.Add(plasticBag);
+
                 context.SaveChanges();                
             }
+
+
 
         }
 
