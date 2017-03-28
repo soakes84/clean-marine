@@ -1,7 +1,7 @@
 import React from 'react';
 import {Counter} from '../components/counter-component.js';
 import {STORE} from '../store.js';
-import {DebrisModel} from '../models/model-debris.js';
+import {DebrisModel, DebrisCollection} from '../models/model-debris.js';
 
 export const CollectedDebrisTable = React.createClass({
 
@@ -13,20 +13,24 @@ export const CollectedDebrisTable = React.createClass({
     let dataToBeSaved = {
       // debrisList : this.props.debrisData.debrisCounter
 
-      type: 'tin can',
-      debris: '????',
+      type: 'tin can hat',
+      // debris: '????',
       latitude: 32.55,
       longitude: -79.63,
-      timeStamp: '0001-01-01T00:00:00'
+      // timeStamp: '0001-01-01T00:00:00'
 
     }
     console.log(dataToBeSaved);
-
+// SAVE ALL METHOD Created by Travis Hubbard
+    let newDebrisCollection = new DebrisCollection()
     let newDebrisModel = new DebrisModel()
-    newDebrisModel.set(dataToBeSaved)
+    newDebrisCollection.add([dataToBeSaved])
+    console.log(newDebrisCollection.url);
 
     let viewInstance = this
-    newDebrisModel.save().then(function(){
+    newDebrisCollection.saveAll().then(function(serverRes){
+      console.log(serverRes);
+
       window.location.hash = ''
     })
   },

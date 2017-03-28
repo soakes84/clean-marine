@@ -1,7 +1,8 @@
 import Backbone from 'backbone';
 import {STORE} from './store.js';
 const $ = require('jquery');
-import {DebrisModel, DebrisCollection} from './models/model-debris.js'
+import {DebrisModel, DebrisCollection} from './models/model-debris.js';
+import {UserModel} from './models/model-user.js';
 
 
 export const ACTIONS = {
