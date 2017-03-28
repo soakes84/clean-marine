@@ -5,7 +5,7 @@ export const LoginComponent = React.createClass({
   _handleSubmit: function(evt){
     evt.preventDefault()
     let formEl = evt.target
-    let usrVal = formEl.usernameField.value
+    let usrVal = formEl.emailField.value
     		let pwVal = formEl.passwordField.value
     		ACTIONS.loginUser(usrVal, pwVal)
     	},
@@ -16,8 +16,8 @@ export const LoginComponent = React.createClass({
           return (
              <div className="auth-form">
     				<form onSubmit={this._handleSubmit}>
-    	            <h4>Username </h4>
-    					<input type="text" className="form-control" name="usernameField"/>
+    	            <h4>Email </h4>
+    					<input type="text" className="form-control" name="emailField"/>
 
     	            <h4>Password </h4>
     	            <input type="password" className="form-control" name="passwordField"/>

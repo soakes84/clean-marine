@@ -9,13 +9,13 @@ export const UserModel = Backbone.Model.extend({
   idAttribute: '_id'
 })
 
-UserModel.logIn = function(username, password){
-  if(typeof username !== 'string' || typeof password !== 'string'){
+UserModel.logIn = function(email, password){
+  if(typeof email !== 'string' || typeof password !== 'string'){
     throw new Error(`UserModel.login() must receive string 2 string paramaters for username and password`)
     }
     return $.ajax({
       method: 'POST',
-      data: JSON.stringify({username: username, password: password}),
+      data: JSON.stringify({email: email, password: password}),
       headers: {
         'Content-Type': 'application/json'
       },

@@ -7,12 +7,15 @@ import {RegisterComponent} from '../components/component-form_register.js';
 export const RegisterView = React.createClass({
 
   render: function(){
-<<<<<<< HEAD
+
     return (
       <div className = 'videoFeed'>
         <RegisterComponent/>
-=======
-    let regForm =
+      </div>
+    )
+  }
+})
+    {/* let regForm =
   <div id="register_form" >
 
 		<div id="register" className="animate form">
@@ -48,30 +51,30 @@ export const RegisterView = React.createClass({
   return (
       <div>
         {regForm}
->>>>>>> ecd05339bb640684f2b5c3ec23b61f7cbf0b63de
+
       </div>
     )
   }
-})
-//   getInitialState: function(){
-//     return STORE.getStoreData()
+}) */}
+{/* //   getInitialState: function(){ */}
+{/* //     return STORE.getStoreData()
 //   },
 //
-//   componentDidMount: function(){
-//     let component = this
+//   componentDidMount: function(){ */}
+{/* //     let component = this
 //
 //     ACTIONS.fetchAllDebris
 //
 //   },
 //
-//   _handleSubmit: function(evt){
-//     evt.preventDefault()
+//   _handleSubmit: function(evt){ */}
+{/* //     evt.preventDefault()
 //     console.log(evt.target)
 //     let fromEl = evt.target
 //   },
 //
-//   render: function(){
-//     let regForm =
+//   render: function(){ */}
+{/* //     let regForm =
 //     <div className='videoFeed'>
 //     <video autoplay loop muted class="background">
 //         <source src="https://static.videezy.com/system/resources/previews/000/002/459/original/moon-jellies-hd-stock-video.mp4" type="video/mp4" />
@@ -115,4 +118,4 @@ export const RegisterView = React.createClass({
 //       </div>
 //     )
 //   }
-// })
+// }) */}

@@ -51,14 +51,15 @@ export const ACTIONS = {
 
   registerNewUser: function(newUserInfoObj){
     UserModel.register(newUserInfoObj).then(function(serverRes){
-      ACTIONS.changeCurrentNav('DEBRIS', 'user-info')
+      ACTIONS.changeCurrentNav('LOGIN', 'login')
     })
   },
 
-  loginUser: function(userName, password){
-    UserModel.logIn(userName, password).then(function(serverRes){
+  loginUser: function(email, password){
+    UserModel.logIn(email, password).then(function(serverRes){
+      console.log('login-info', serverRes);
       STORE.setStore('currentUser', serverRes)
-      ACTIONS.changeCurrentNav('DEBRIS', 'user-info')
+      ACTIONS.changeCurrentNav('DEBRIS', 'debris')
     })
   },
 

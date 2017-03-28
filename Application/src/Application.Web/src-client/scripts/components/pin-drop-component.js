@@ -32,8 +32,7 @@ const NotSimpleMap = React.createClass({
 	},
 
 	_handleMapClick: function(evt){
-		console.log(evt.x)
-
+		console.log(evt)
 		let locationsCopy = [...this.state.locationsData]
 		let mapLocationObject = {lt: evt.lat, ln: evt.lng }
 		locationsCopy.push(mapLocationObject)
@@ -83,8 +82,7 @@ const MapPin = React.createClass({
 
 		return (
 			<div style={{fontSize: '45px', color: '#D35400', transform: 'translate(-50%, -50%)'}}>
-				<i className="ion-ios-flag">+</i>
-				{/* <CollectedDebrisTable debrisData = {this.props.debrisData}/> */}
+				<i className="ion-ios-flag"></i>
 			</div>
 		)
 	}

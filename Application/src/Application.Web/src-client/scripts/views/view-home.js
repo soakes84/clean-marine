@@ -3,7 +3,7 @@ import {Navbar} from '../components/component-navbar.js';
 import {ACTIONS} from '../actions.js';
 import {STORE} from '../store.js';
 import {DebrisListComponent} from '../components/component-debris_list.js';
-import SimpleMap from '../components/component-debrimap.js'
+import GoogleMapReact from 'google-map-react';
 import {DebrisModel} from '../models/model-debris.js'
 
 const API_KEY = 'AIzaSyCVsRPLuLQW5TRej4APIZAtgIEAhILiQ2U';
@@ -76,7 +76,7 @@ export const HomeView = React.createClass({
   return (
       // <img src = />
       <div className='map'>
-        <SimpleMap center={{lat: 32.78, lng: -79.93}} zoom={11} bootstrapURLKeys={{
+        <SimpleMap locationsData={bestPlaces} center={{lat: 32.78, lng: -79.93}} zoom={11} bootstrapURLKeys={{
     key: API_KEY,
     language: 'en'
   }}/>
@@ -85,3 +85,53 @@ export const HomeView = React.createClass({
     )
   }
 })
+
+const SimpleMap = React.createClass({
+	_createMapPins: function(placesArray){
+		let mapPinComponents = placesArray.map(function(placeObj, i){
+			return <MapPin key={Date.now()+i} lat={placeObj.lt} lng={placeObj.ln} place={placeObj.name} />
+		})
+
+		return mapPinComponents
+	},
+
+	render: function(){
+		let mapCenter = {lat: 32.78, lng: -79.93}
+
+		return (
+			<div style={{height: '500px'}}>
+				<GoogleMapReact defaultCenter={mapCenter} defaultZoom={10}>
+					{this._createMapPins(this.props.locationsData)}
+				</GoogleMapReact>>
+			</div>
+		)
+	}
+})
+
+const MapPin = React.createClass({
+	render: function(){
+		return (
+			<div style={{fontSize: '32px', color: '#D35400', textAlign: 'center'}}>
+				<i className="ion-location"></i>
+				<span style={{background: '#fff', fontSize: '16px', padding: '5px'}}>{this.props.place}</span>
+			</div>
+		)
+	}
+})
+
+
+let bestPlaces = [
+	{lt: 32.79, ln: -65.82, name: "Sullivan's Island"},
+	{lt: 32.78, ln: -70.80, name: "Sullivan's Island"},
+	{lt: 32.65603362232004, ln:
+-79.94162886624117, name: "Folly Beach"},
+  {lt: 32.66, ln: -65.90, name: "Folly Beach"},
+  {lt: 32.68, ln: -79.93, name: "Folly Beach"},
+  {lt: 32.88, ln: -79.69, name: "Dewees Island"},
+  {lt:
+32.6110747332734, ln: -80.05784361843844, name: "Kiawah Island"},
+  {lt: 32.66, ln: -80.17, name: "Kiawah Island"},
+  {lt: 32.60, ln: -80.10, name: "Seabrook Island"},
+  {lt: 32.60, ln: -80.15, name: "Seabrook Island"},
+  {lt: 32.60, ln: -80.12, name: "Seabrook Island"}
+]
