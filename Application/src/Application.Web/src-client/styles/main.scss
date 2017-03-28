@@ -1,6 +1,6 @@
 * {
 	box-sizing: border-box;
-	font-family: 'Open Sands Condensed'
+	font-family: 'Lato', sans-serif;
 }
 
 // ALL MY VARIABLES
@@ -17,7 +17,7 @@ body {
 
 h1 {
 	color: $oceanBlue;
-	font-size: 10vw;
+	font-size: 40px;
 	text-align: center;
 }
 
@@ -289,6 +289,7 @@ display: inline-block;
 
 }
 
+
 .videoFeed {
     position: fixed;
     top: 50%;
@@ -301,4 +302,65 @@ display: inline-block;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     background-size: cover;
+	}
+
+.registrationform {
+ display:block;
+ text-align: center;
+
+}
+
+h3 {
+text-align: center;
+font-weight: bold;
+font-size: 50px;
+}
+
+label {
+
+padding-right: 10px;
+font-size: 16px;
+
+}
+
+#usernamesignup {
+
+	margin-left: 60px;
+	font-size: 15px;
+}
+
+#emailsignup {
+
+	margin-left: 90px;
+	font-size: 15px;
+}
+
+#passwordsignup {
+
+	margin-left: 60px;
+	font-size: 15px;
+}
+
+#passwordsignup_confirm {
+
+	font-size: 15px;
+}
+
+#password {
+
+	margin-left: 60px;
+}
+
+#log-in {
+ font-weight: bold;
+ padding: 10px;
+ 	border-radius: 10px;
+}
+
+#register {
+
+	font-weight: bold;
+	padding: 10px;
+	border-radius: 10px;
+
 }

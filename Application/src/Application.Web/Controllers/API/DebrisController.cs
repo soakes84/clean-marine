@@ -31,9 +31,7 @@ namespace Application.Web.Controllers.API
         public IEnumerable<Debris> GetUserDebris()
         {
             var userName = _userManager.GetUserName(User);
-            return _context.Debris.Where(q => q.UserName == userName).ToList();
-          // return _context.Debris.Where(q => q.Owner == userId).ToList();
-           
+            return _context.Debris.Where(q => q.UserName == userName).ToList();           
               
         }
 
@@ -77,8 +75,8 @@ namespace Application.Web.Controllers.API
         [Authorize]
         public IEnumerable<CigTotal> GetUserCigDebris()
         {
-            var userId = _userManager.GetUserId(User);
-            return _context.CigTotal.Where(q => q.Owner.Id == userId).ToList();
+            var userName = _userManager.GetUserName(User);
+            return _context.CigTotal.Where(q => q.UserName == userName).ToList();
         }
 
         [HttpGet]
@@ -93,8 +91,8 @@ namespace Application.Web.Controllers.API
         [Authorize]
         public IEnumerable<PlasticBagTotal> GetUserPlasticBagDebris()
         {
-            var userId = _userManager.GetUserId(User);
-            return _context.PlasticBagTotal.Where(q => q.Owner.Id == userId).ToList();
+            var userName = _userManager.GetUserName(User);
+            return _context.PlasticBagTotal.Where(q => q.UserName == userName).ToList();
         }
 
         [HttpGet]
@@ -109,8 +107,8 @@ namespace Application.Web.Controllers.API
         [Authorize]
         public IEnumerable<AluminumCanTotal> GetUserAluminumCanDebris()
         {
-            var userId = _userManager.GetUserId(User);
-            return _context.AluminumCanTotal.Where(q => q.Owner.Id == userId).ToList();
+            var userName = _userManager.GetUserName(User);
+            return _context.AluminumCanTotal.Where(q => q.UserName == userName).ToList();
         }
 
         [HttpGet]
@@ -125,9 +123,37 @@ namespace Application.Web.Controllers.API
         [Authorize]
         public IEnumerable<PlasticBottleTotal> GetUserPlasticBottleDebris()
         {
-            var userId = _userManager.GetUserId(User);
-            return _context.PlasticBottleTotal.Where(q => q.Owner.Id == userId).ToList();
+            var userName = _userManager.GetUserName(User);
+            return _context.PlasticBottleTotal.Where(q => q.UserName == userName).ToList();
         }
+
+        [HttpGet]
+        [Route("~/api/debris/cleanups")]
+        public IEnumerable<CleanUp> GetCleanUps()
+        {
+            return _context.CleanUp.ToList();
+        }
+
+        [HttpGet]
+        [Route("~/api/debris/cleanup/{id}")]
+        public async Task<IActionResult> GetCleanUp(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            CleanUp cleanup = await _context.CleanUp.Include(p => p.Debris)
+                .SingleOrDefaultAsync(p => p.Id == id);
+
+            if (cleanup == null)
+            {
+                return NotFound(id);
+            }
+
+            return Ok(cleanup);
+        }
+
 
         [HttpPost]
         [Route("~/api/debris")]
@@ -140,6 +166,8 @@ namespace Application.Web.Controllers.API
             }
 
             var user = await _userManager.GetUserAsync(User);
+            var cleanUp = new CleanUp();
+            cleanUp.Quantity = 0;
 
             foreach (var debri in debris)
             {
@@ -149,6 +177,14 @@ namespace Application.Web.Controllers.API
                     debri.UserName = user.UserName;
                     debri.TimeStamp = DateTime.UtcNow;
                     _context.Debris.Add(debri);
+
+                    cleanUp.UserName = user.UserName;
+                    cleanUp.Latitude = debri.Latitude;
+                    cleanUp.Longitude = debri.Longitude;
+                    cleanUp.TimeStamp = debri.TimeStamp;
+                    cleanUp.Quantity = (cleanUp.Quantity + 1);
+                    cleanUp.Debris.Add(debri);
+
 
                     if (debri.Type == "Plastic Bottle")
                     {
@@ -211,6 +247,7 @@ namespace Application.Web.Controllers.API
                         _context.MiscellaneousTotal.Add(misc);
                     }
                 }
+                _context.CleanUp.Add(cleanUp);
                 debri.Quantity = 0;
             }
 
