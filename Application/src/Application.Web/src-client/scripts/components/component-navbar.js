@@ -57,7 +57,7 @@ export const Navbar = React.createClass({
   const RouteOption = React.createClass({
     _handleNavClick: function(evt){
 
-      ACTIONS.changeCurrentNav(this.props.appRouteName, this.props.hashRoute)
+      ACTIONS.routeTo(this.props.hashRoute)
     },
 
     render: function(){

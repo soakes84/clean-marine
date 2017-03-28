@@ -14,10 +14,6 @@ export const RecapView = React.createClass({
     return STORE.getStoreData()
   },
 
-
-  componentWillMount: function(){
-  },
-
   componentDidMount: function(){
     let component = this
 

@@ -56,7 +56,7 @@ export const RegisterView = React.createClass({
         <p><button id="register" onClick="myFunction()">Sign Up</button></p>
 				<p class="change_link">
 					Already a member ?
-					<a href="#e" className="to_register"> Log in here </a>
+					<a href="#login" className="to_register"> Log in here </a>
 				</p>
 			</form>
 	  </div>

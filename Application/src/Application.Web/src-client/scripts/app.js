@@ -11,7 +11,7 @@ const AppRouter = Backbone.Router.extend({
   },
 
   routes: {
-
+  'recap' : 'recapPage',
   'register' : 'registrationPage',
   'login' : 'loginPage',
   'user-info' : 'singleUserPage',
@@ -23,48 +23,36 @@ const AppRouter = Backbone.Router.extend({
   },
 
   homePage: function(){
-    ACTIONS.changeCurrentNav("HOME", window.location.hash)
-
-    ReactDOM.render(<ViewController />, document.querySelector('#app-container'))
+    ACTIONS.changeCurrentNav("HOME")
   },
 
   recordDebris: function(){
-    ACTIONS.changeCurrentNav("DEBRIS", window.location.hash)
-
-    ReactDOM.render(<ViewController />, document.querySelector('#app-container'))
+    ACTIONS.changeCurrentNav("DEBRIS")
   },
 
   registrationPage: function(){
-    ACTIONS.changeCurrentNav("REGISTER", window.location.hash)
-
-    ReactDOM.render(<ViewController/>, document.querySelector('#app-container'))
+    ACTIONS.changeCurrentNav("REGISTER")
   },
 
   loginPage: function(){
-    ACTIONS.changeCurrentNav("LOGIN", window.location.hash)
-
-    ReactDOM.render(<ViewController/>, document.querySelector('#app-container'))
+    ACTIONS.changeCurrentNav("LOGIN")
   },
 
   adoptABeach: function(){
-    ACTIONS.changeCurrentNav("ADOPT", window.location.hash)
-    ReactDOM.render(<ViewController/>, document.querySelector('#app-container'))
-  },
+    ACTIONS.changeCurrentNav("ADOPT")  },
 
   singleUserPage: function(){
-    ACTIONS.changeCurrentNav("USER", window.location.hash)
-    ReactDOM.render(<ViewController/>, document.querySelector('#app-container'))
-  },
+    ACTIONS.changeCurrentNav("USER")  },
 
   displayAll: function(){
-    ACTIONS.changeCurrentNav("ALL", window.location.hash)
-    ReactDOM.render(<ViewController/>, document.querySelector('#app-container'))
-  },
+    ACTIONS.changeCurrentNav("ALL")  },
 
   about: function(){
-    ACTIONS.changeCurrentNav("ABOUT", window.location.hash)
+    ACTIONS.changeCurrentNav("ABOUT") },
 
-    ReactDOM.render(<ViewController/>, document.querySelector('#app-container'))
+  recapPage: function(){
+    ACTIONS.changeCurrentNav("RECAP")
+
   },
 
 })
@@ -72,3 +60,4 @@ const AppRouter = Backbone.Router.extend({
 
 
 new AppRouter()
+ReactDOM.render(<ViewController/>, document.querySelector('#app-container'))

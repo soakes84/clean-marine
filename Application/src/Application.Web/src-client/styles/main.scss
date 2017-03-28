@@ -332,6 +332,7 @@ font-weight: bold;
 
 #log-in {
  font-weight: bold;
+ font-size: 15px;
  padding: 10px;
  	border-radius: 10px;
 }
@@ -341,6 +342,7 @@ font-weight: bold;
 	font-weight: bold;
 	padding: 10px;
 	border-radius: 10px;
+	font-size: 15px;
 }
 
 .to_register {
@@ -352,6 +354,8 @@ font-weight: bold;
 ul li {
 	list-style: none;
 	border: 1px solid black;
+	margin-right: 40px;
+	margin-top: 1px;
 }
 
 input {

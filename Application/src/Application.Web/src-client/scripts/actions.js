@@ -45,19 +45,22 @@ export const ACTIONS = {
 
   changeCurrentNav: function(selectedAppRoute, urlRoute){
     STORE.setStore('currentNavRoute', selectedAppRoute)
-    window.location.hash = urlRoute
+  },
+
+  routeTo: function(path){
+    window.location.hash = path
   },
 
   registerNewUser: function(newUserInfoObj){
     UserModel.register(newUserInfoObj).then(function(serverRes){
-      ACTIONS.changeCurrentNav('DEBRIS', 'user-info')
+      ACTIONS.routeTo('user-info')
     })
   },
 
   loginUser: function(userName, password){
     UserModel.logIn(userName, password).then(function(serverRes){
       STORE.setStore('currentUser', serverRes)
-      ACTIONS.changeCurrentNav('DEBRIS', 'user-info')
+      ACTIONS.routeTo( 'user-info')
     })
   },
 

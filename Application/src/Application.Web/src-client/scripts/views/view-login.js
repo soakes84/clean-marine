@@ -44,7 +44,7 @@ export const LoginView = React.createClass({
 				 <p><button id= "log-in" onclick="myFunction()">Log In</button></p>
 				<p className="change_link">
 					Not a member yet ?
-					<a href="#signup" className="to_register">Sign up here</a>
+					<a href="#register" className="to_register">Sign up here</a>
 				</p>
 			</form>
 		</div>
