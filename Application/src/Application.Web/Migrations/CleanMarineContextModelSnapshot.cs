@@ -109,6 +109,30 @@ namespace Application.Web.Migrations
                     b.ToTable("CigTotal");
                 });
 
+            modelBuilder.Entity("Application.Web.Data.CleanUp", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<double>("Latitude");
+
+                    b.Property<double>("Longitude");
+
+                    b.Property<string>("OwnerId");
+
+                    b.Property<int>("Quantity");
+
+                    b.Property<DateTime>("TimeStamp");
+
+                    b.Property<string>("UserName");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OwnerId");
+
+                    b.ToTable("CleanUp");
+                });
+
             modelBuilder.Entity("Application.Web.Data.ClothingTotal", b =>
                 {
                     b.Property<int>("Id")
@@ -138,6 +162,8 @@ namespace Application.Web.Migrations
 
                     b.Property<string>("ApplicationUserId");
 
+                    b.Property<int?>("CleanUpId");
+
                     b.Property<int?>("DebrisId");
 
                     b.Property<double>("Latitude");
@@ -155,6 +181,8 @@ namespace Application.Web.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("CleanUpId");
 
                     b.HasIndex("DebrisId");
 
@@ -348,6 +376,13 @@ namespace Application.Web.Migrations
                         .HasForeignKey("OwnerId");
                 });
 
+            modelBuilder.Entity("Application.Web.Data.CleanUp", b =>
+                {
+                    b.HasOne("Application.Web.Data.ApplicationUser", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId");
+                });
+
             modelBuilder.Entity("Application.Web.Data.ClothingTotal", b =>
                 {
                     b.HasOne("Application.Web.Data.ApplicationUser", "Owner")
@@ -360,6 +395,10 @@ namespace Application.Web.Migrations
                     b.HasOne("Application.Web.Data.ApplicationUser")
                         .WithMany("Debris")
                         .HasForeignKey("ApplicationUserId");
+
+                    b.HasOne("Application.Web.Data.CleanUp")
+                        .WithMany("Debris")
+                        .HasForeignKey("CleanUpId");
 
                     b.HasOne("Application.Web.Data.Debris")
                         .WithMany("debris")
