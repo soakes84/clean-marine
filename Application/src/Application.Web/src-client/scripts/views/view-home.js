@@ -17,22 +17,8 @@ export const HomeView = React.createClass({
 
     let side = <h3>Home Page</h3>
     let allUserData =
-    // <div className='collectorPage'>
-    //   <h2>Top Five Collectors</h2>
-    //   <p>UserName Date Location Amount</p>
-    //   <hr/>
-    //   <p>Jennifer 3/21/2017 Wando River 20 items</p>
-    //   <hr/>
-    //   <p>Jennifer 3/21/2017 Wando River 20 items</p>
-    //   <hr/>
-    //   <p>Jennifer 3/21/2017 Wando River 20 items</p>
-    //   <hr/>
-    //   <p>Jennifer 3/21/2017 Wando River 20 items</p>
-    //   <hr/>
-    //   <p>Jennifer 3/21/2017 Wando River 20 items</p>
-    // </div>
     <div class="table-title">
-      <h3>User Data</h3>
+      <h3>Top Five Users</h3>
 
       <table class="table-fill">
       <thead>

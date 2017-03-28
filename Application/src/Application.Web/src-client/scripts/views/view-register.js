@@ -28,7 +28,7 @@ export const RegisterView = React.createClass({
 
 		<div id="register" className="animate form">
 			<form>
-				<h1> Sign up </h1>
+				<h3> Register </h3>
 				<p>
 					<label for="usernamesignup" className="uname" data-icon="u">Your username</label>
 					<input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="username" />
@@ -45,7 +45,7 @@ export const RegisterView = React.createClass({
 					<label for="passwordsignup_confirm" className="youpasswd" data-icon="p">Confirm your password </label>
 					<input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="password"/>
 				</p>
-        <p><button onClick="myFunction()">Sign Up</button></p>
+        <p><button id="register" onClick="myFunction()">Sign Up</button></p>
 				<p class="change_link">
 					Already a member ?
 					<a href="#login" className="to_register"> Go and log in </a>
