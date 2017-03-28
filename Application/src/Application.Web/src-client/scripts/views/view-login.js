@@ -27,10 +27,14 @@ export const LoginView = React.createClass({
 				<h3>Log in</h3>
 				<p>
 					<label htmlFor="username" className="uname" data-icon="u" > Your email or username </label>
+        </p>
+        <p>
 					<input id="username" name="username" required="required" type="text" placeholder="username or email"/>
 				</p>
 				<p>
 					<label htmlFor="password" className="youpasswd" data-icon="p"> Your password </label>
+        </p>
+        <p>
 					<input id="password" name="password" required="required" type="password" placeholder="password" />
 				</p>
 				<p className="keeplogin">

@@ -13,7 +13,8 @@ export const Navbar = React.createClass({
         {appRouteName: 'ABOUT', displayText: 'About', hashRoute: 'about'},
         {appRouteName: 'DEBRIS', displayText: 'Report Debris', hashRoute: 'debris'},
         {appRouteName: 'REGISTER', displayText: 'Register', hashRoute: 'register'},
-        {appRouteName: 'LOGIN', displayText: 'Log-in', hashRoute: 'login'}
+        {appRouteName: 'LOGIN', displayText: 'Log-in', hashRoute: 'login'},
+        {appRouteName: 'RECAP', displayText: 'Recap', hashRoute: 'recap'}
       ]
     } else {
       routeList = [
@@ -23,7 +24,8 @@ export const Navbar = React.createClass({
         {appRouteName: 'USER', displayText: 'User', hashRoute: 'user-info'},
         {appRouteName: 'ALL', displayText: 'All', hashRoute: 'all'},
         {appRouteName: 'ABOUT', displayText: 'About', hashRoute: 'about'},
-        {appRouteName: 'DEBRIS', displayText: 'Debris', hashRoute: 'debris'}
+        {appRouteName: 'DEBRIS', displayText: 'Debris', hashRoute: 'debris'},
+        {appRouteName: 'RECAP', displayText: 'Recap', hashRoute: 'recap'}
       ]
     }
 

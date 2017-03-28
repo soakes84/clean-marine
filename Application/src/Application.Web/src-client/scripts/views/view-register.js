@@ -31,18 +31,26 @@ export const RegisterView = React.createClass({
 				<h3> Register </h3>
 				<p>
 					<label for="usernamesignup" className="uname" data-icon="u">Your username</label>
+       </p>
+       <p>
 					<input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="username" />
 				</p>
 				<p>
 					<label for="emailsignup" className="youmail" data-icon="e" > Your email</label>
+        </p>
+        <p>
 					<input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="email"/>
 				</p>
 				<p>
 					<label for="passwordsignup" className="youpasswd" data-icon="p">Your password </label>
+        </p>
+        <p>
 					<input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="password"/>
 				</p>
 				<p>
 					<label for="passwordsignup_confirm" className="youpasswd" data-icon="p">Confirm your password </label>
+        </p>
+        <p>
 					<input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="password"/>
 				</p>
         <p><button id="register" onClick="myFunction()">Sign Up</button></p>

@@ -10,6 +10,7 @@ import {UserView} from './views/view-user.js';
 import {AllView} from './views/view-all.js';
 import {AboutView} from './views/view-about.js';
 import {DebrisView} from './views/view-reportDebris.js';
+import {RecapView} from './views/view-recap.js';
 
 export const ViewController = React.createClass({
 
@@ -56,6 +57,9 @@ export const ViewController = React.createClass({
         break;
       case 'ABOUT':
         componentToRender = <AboutView {...this.state}/>
+        break;
+      case 'RECAP':
+        componentToRender = <RecapView {...this.state}/>
         break;
         default:
     }

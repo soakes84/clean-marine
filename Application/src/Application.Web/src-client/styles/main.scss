@@ -22,7 +22,6 @@ h1 {
 }
 
 p {
-	text-align: center;
 	color: $oceanBlue;
 }
 
@@ -289,9 +288,8 @@ display: inline-block;
 
 }
 
-.registrationform {
- display:block;
- text-align: center;
+#registerform {
+ border-style: solid;
 
 }
 
@@ -305,24 +303,22 @@ label {
 
 padding-right: 10px;
 font-size: 16px;
-
+text-align:center;
+font-weight: bold;
 }
 
 #usernamesignup {
 
-	margin-left: 60px;
 	font-size: 15px;
 }
 
 #emailsignup {
 
-	margin-left: 90px;
 	font-size: 15px;
 }
 
 #passwordsignup {
 
-	margin-left: 60px;
 	font-size: 15px;
 }
 
@@ -332,8 +328,6 @@ font-size: 16px;
 }
 
 #password {
-
-	margin-left: 60px;
 }
 
 #log-in {
@@ -352,4 +346,14 @@ font-size: 16px;
 .to_register {
 
 	margin-left: 10px;
+	text-align:center;
+}
+
+ul li {
+	list-style: none;
+	border: 1px solid black;
+}
+
+input {
+font-size: 16px;
 }
