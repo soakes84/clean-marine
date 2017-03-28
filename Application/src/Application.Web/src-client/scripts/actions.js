@@ -46,12 +46,17 @@ export const ACTIONS = {
 
   changeCurrentNav: function(selectedAppRoute, urlRoute){
     STORE.setStore('currentNavRoute', selectedAppRoute)
-    window.location.hash = urlRoute
+  },
+
+  routeTo: function(path){
+    window.location.hash = path
   },
 
   registerNewUser: function(newUserInfoObj){
     UserModel.register(newUserInfoObj).then(function(serverRes){
-      ACTIONS.changeCurrentNav('LOGIN', 'login')
+
+      ACTIONS.routeTo('user-info')
+
     })
   },
 
@@ -59,7 +64,8 @@ export const ACTIONS = {
     UserModel.logIn(email, password).then(function(serverRes){
       console.log('login-info', serverRes);
       STORE.setStore('currentUser', serverRes)
-      ACTIONS.changeCurrentNav('DEBRIS', 'debris')
+
+      ACTIONS.routeTo( 'user-info')
     })
   },
 

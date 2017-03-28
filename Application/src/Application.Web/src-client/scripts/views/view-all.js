@@ -38,7 +38,7 @@ export const AllView = React.createClass({
   <td class="text-left">Folly Beach</td>
   <td class="text-left">Cigarettes</td>
   <td class="text-left">13</td>
-  <td class="text-left"><a href="#">Recap</a></td>
+  <td class="text-left"><a href="#recap">Recap</a></td>
   </tr>
   <tr>
   <td class="text-left">February</td>
@@ -46,7 +46,7 @@ export const AllView = React.createClass({
   <td class="text-left">Folly Beach</td>
   <td class="text-left">Abandoned Ships</td>
   <td class="text-left">2</td>
-  <td class="text-left"><a href="#">Recap</a></td>
+  <td class="text-left"><a href="#recap">Recap</a></td>
   </tr>
   <tr>
   <td class="text-left">March</td>
@@ -54,7 +54,7 @@ export const AllView = React.createClass({
   <td class="text-left">Folly Beach</td>
   <td class="text-left">Beer Cans</td>
   <td class="text-left">6</td>
-  <td class="text-left"><a href="#">Recap</a></td>
+  <td class="text-left"><a href="#recap">Recap</a></td>
   </tr>
   <tr>
   <td class="text-left">April</td>
@@ -62,7 +62,7 @@ export const AllView = React.createClass({
   <td class="text-left">Folly Beach</td>
   <td class="text-left">Trust Funds</td>
   <td class="text-left">24</td>
-  <td class="text-left"><a href="#">Recap</a></td>
+  <td class="text-left"><a href="#recap">Recap</a></td>
   </tr>
   <tr>
   <td class="text-left">May</td>
@@ -70,7 +70,7 @@ export const AllView = React.createClass({
   <td class="text-left">Myrtle Beach</td>
   <td class="text-left">Plastic Bags</td>
   <td class="text-left">8</td>
-  <td class="text-left"><a href="#">Recap</a></td>
+  <td class="text-left"><a href="#recap">Recap</a></td>
 
 
 
@@ -81,7 +81,7 @@ export const AllView = React.createClass({
   <td class="text-left">Folly Beach</td>
   <td class="text-left">Cigarettes</td>
   <td class="text-left">13</td>
-  <td class="text-left"><a href="#">Recap</a></td>
+  <td class="text-left"><a href="#recap">Recap</a></td>
   </tr>
   <tr>
   <td class="text-left">January</td>
@@ -89,7 +89,7 @@ export const AllView = React.createClass({
   <td class="text-left">Folly Beach</td>
   <td class="text-left">Cigarettes</td>
   <td class="text-left">13</td>
-  <td class="text-left"><a href="#">Recap</a></td>
+  <td class="text-left"><a href="#recap">Recap</a></td>
   </tr>
   <tr>
   <td class="text-left">January</td>
@@ -97,7 +97,7 @@ export const AllView = React.createClass({
   <td class="text-left">Folly Beach</td>
   <td class="text-left">Cigarettes</td>
   <td class="text-left">13</td>
-  <td class="text-left"><a href="#">Recap</a></td>
+  <td class="text-left"><a href="#recap">Recap</a></td>
   </tr>
   <tr>
   <td class="text-left">January</td>
@@ -105,7 +105,7 @@ export const AllView = React.createClass({
   <td class="text-left">Folly Beach</td>
   <td class="text-left">Cigarettes</td>
   <td class="text-left">13</td>
-  <td class="text-left"><a href="#">Recap</a></td>
+  <td class="text-left"><a href="#recap">Recap</a></td>
   </tr>
   <tr>
   <td class="text-left">January</td>
@@ -113,7 +113,7 @@ export const AllView = React.createClass({
   <td class="text-left">Folly Beach</td>
   <td class="text-left">Cigarettes</td>
   <td class="text-left">13</td>
-  <td class="text-left"><a href="#">Recap</a></td>
+  <td class="text-left"><a href="#recap">Recap</a></td>
   </tr>
   </tbody>
   </table>

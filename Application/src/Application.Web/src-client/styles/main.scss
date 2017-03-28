@@ -22,7 +22,6 @@ h1 {
 }
 
 p {
-	text-align: center;
 	color: $oceanBlue;
 }
 
@@ -290,6 +289,7 @@ display: inline-block;
 }
 
 
+
 .videoFeed {
     position: fixed;
     top: 50%;
@@ -304,9 +304,10 @@ display: inline-block;
     background-size: cover;
 	}
 
-.registrationform {
- display:block;
- text-align: center;
+
+#registerform {
+ border-style: solid;
+
 
 }
 
@@ -320,24 +321,22 @@ label {
 
 padding-right: 10px;
 font-size: 16px;
-
+text-align:center;
+font-weight: bold;
 }
 
 #usernamesignup {
 
-	margin-left: 60px;
 	font-size: 15px;
 }
 
 #emailsignup {
 
-	margin-left: 90px;
 	font-size: 15px;
 }
 
 #passwordsignup {
 
-	margin-left: 60px;
 	font-size: 15px;
 }
 
@@ -347,12 +346,11 @@ font-size: 16px;
 }
 
 #password {
-
-	margin-left: 60px;
 }
 
 #log-in {
  font-weight: bold;
+ font-size: 15px;
  padding: 10px;
  	border-radius: 10px;
 }
@@ -362,5 +360,26 @@ font-size: 16px;
 	font-weight: bold;
 	padding: 10px;
 	border-radius: 10px;
+
+
+
+	font-size: 15px;
+}
+
+.to_register {
+
+	margin-left: 10px;
+	text-align:center;
+}
+
+ul li {
+	list-style: none;
+	border: 1px solid black;
+	margin-right: 40px;
+	margin-top: 1px;
+}
+
+input {
+font-size: 16px;
 
 }
