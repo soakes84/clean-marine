@@ -16,6 +16,7 @@ namespace Application.Web.Data
         public DbSet<PlasticBottleTotal> PlasticBottleTotal { get; set; }
         public DbSet<ClothingTotal> ClothingTotal { get; set; }
         public DbSet<MiscellaneousTotal> MiscellaneousTotal { get; set; }
+        public DbSet<CleanUp> CleanUp { get; set; }
 
 
         public CleanMarineContext() : base()

@@ -108,6 +108,30 @@ namespace Application.Web.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CleanUp",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Latitude = table.Column<double>(nullable: false),
+                    Longitude = table.Column<double>(nullable: false),
+                    OwnerId = table.Column<string>(nullable: true),
+                    Quantity = table.Column<int>(nullable: false),
+                    TimeStamp = table.Column<DateTime>(nullable: false),
+                    UserName = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CleanUp", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CleanUp_Users_OwnerId",
+                        column: x => x.OwnerId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ClothingTotal",
                 columns: table => new
                 {
@@ -126,38 +150,6 @@ namespace Application.Web.Migrations
                         name: "FK_ClothingTotal_Users_OwnerId",
                         column: x => x.OwnerId,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Debris",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    ApplicationUserId = table.Column<string>(nullable: true),
-                    DebrisId = table.Column<int>(nullable: true),
-                    Latitude = table.Column<double>(nullable: false),
-                    Longitude = table.Column<double>(nullable: false),
-                    Quantity = table.Column<int>(nullable: false),
-                    TimeStamp = table.Column<DateTime>(nullable: false),
-                    Type = table.Column<string>(nullable: true),
-                    UserName = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Debris", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Debris_Users_ApplicationUserId",
-                        column: x => x.ApplicationUserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Debris_Debris_DebrisId",
-                        column: x => x.DebrisId,
-                        principalTable: "Debris",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -317,6 +309,45 @@ namespace Application.Web.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Debris",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    ApplicationUserId = table.Column<string>(nullable: true),
+                    CleanUpId = table.Column<int>(nullable: true),
+                    DebrisId = table.Column<int>(nullable: true),
+                    Latitude = table.Column<double>(nullable: false),
+                    Longitude = table.Column<double>(nullable: false),
+                    Quantity = table.Column<int>(nullable: false),
+                    TimeStamp = table.Column<DateTime>(nullable: false),
+                    Type = table.Column<string>(nullable: true),
+                    UserName = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Debris", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Debris_Users_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Debris_CleanUp_CleanUpId",
+                        column: x => x.CleanUpId,
+                        principalTable: "CleanUp",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Debris_Debris_DebrisId",
+                        column: x => x.DebrisId,
+                        principalTable: "Debris",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AluminumCanTotal_OwnerId",
                 table: "AluminumCanTotal",
@@ -339,6 +370,11 @@ namespace Application.Web.Migrations
                 column: "OwnerId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_CleanUp_OwnerId",
+                table: "CleanUp",
+                column: "OwnerId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ClothingTotal_OwnerId",
                 table: "ClothingTotal",
                 column: "OwnerId");
@@ -347,6 +383,11 @@ namespace Application.Web.Migrations
                 name: "IX_Debris_ApplicationUserId",
                 table: "Debris",
                 column: "ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Debris_CleanUpId",
+                table: "Debris",
+                column: "CleanUpId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Debris_DebrisId",
@@ -432,6 +473,9 @@ namespace Application.Web.Migrations
 
             migrationBuilder.DropTable(
                 name: "UserTokens");
+
+            migrationBuilder.DropTable(
+                name: "CleanUp");
 
             migrationBuilder.DropTable(
                 name: "Roles");
