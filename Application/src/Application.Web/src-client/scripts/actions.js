@@ -75,5 +75,11 @@ export const ACTIONS = {
         STORE.setStore('currentUser', serverRes.user)
       }
     })
+  },
+
+  logOutUser: function(){
+    UserModel.logOut()
+    ACTIONS.routeTo('')
+
   }
 }

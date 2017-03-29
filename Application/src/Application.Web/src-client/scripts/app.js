@@ -14,6 +14,7 @@ const AppRouter = Backbone.Router.extend({
   'recap' : 'recapPage',
   'register' : 'registrationPage',
   'login' : 'loginPage',
+  'logout' : 'logOutPage',
   'user-info' : 'singleUserPage',
   'adopt' : 'adoptABeach',
   'debris' : 'recordDebris',
@@ -23,23 +24,17 @@ const AppRouter = Backbone.Router.extend({
   },
 
   homePage: function(){
-    ACTIONS.changeCurrentNav("HOME")
-  },
+    ACTIONS.changeCurrentNav("HOME")},
 
   recordDebris: function(){
-    ACTIONS.changeCurrentNav("DEBRIS")
-  },
+    ACTIONS.changeCurrentNav("DEBRIS")},
 
   registrationPage: function(){
-    ACTIONS.changeCurrentNav("REGISTER")
-  },
+    ACTIONS.changeCurrentNav("REGISTER")},
 
   loginPage: function(){
-    ACTIONS.changeCurrentNav("LOGIN")
-  },
+    ACTIONS.changeCurrentNav("LOGIN")},
 
-  adoptABeach: function(){
-    ACTIONS.changeCurrentNav("ADOPT")  },
 
   singleUserPage: function(){
     ACTIONS.changeCurrentNav("USER")  },
@@ -51,9 +46,11 @@ const AppRouter = Backbone.Router.extend({
     ACTIONS.changeCurrentNav("ABOUT") },
 
   recapPage: function(){
-    ACTIONS.changeCurrentNav("RECAP")
+    ACTIONS.changeCurrentNav("RECAP")  },
 
-  },
+  logOutPage: function(){
+    ACTIONS.changeCurrentNav("LOGOUT")  },
+
 
 })
 

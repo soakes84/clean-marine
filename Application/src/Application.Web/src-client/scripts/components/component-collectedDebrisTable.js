@@ -9,15 +9,10 @@ export const CollectedDebrisTable = React.createClass({
 
     evt.preventDefault()
     let formEl = evt.target
-
+console.log(this.props);
     let dataToBeSaved = {
-      // debrisList : this.props.debrisData.debrisCounter
+  
 
-      type: 'tin can hat',
-      // debris: '????',
-      latitude: 32.55,
-      longitude: -79.63,
-      // timeStamp: '0001-01-01T00:00:00'
 
     }
     console.log(dataToBeSaved);
@@ -31,7 +26,7 @@ export const CollectedDebrisTable = React.createClass({
     newDebrisCollection.saveAll().then(function(serverRes){
       console.log(serverRes);
 
-      window.location.hash = ''
+      window.location.hash = 'user-info'
     })
   },
 
