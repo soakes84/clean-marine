@@ -22,7 +22,7 @@ const AnyReactComponent = React.createClass({
 export default class SimpleMap extends Component {
 
   render() {
-    console.log(this.props, 'okk')
+  
     return (
       <div className='map' style={{height: '800px'}}>
        <GoogleMapReact

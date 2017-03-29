@@ -14,15 +14,15 @@ export const LoginComponent = React.createClass({
           let currentRatingShown = this.props.shownRatingType
 
           return (
-             <div className="auth-form hiddenanchor">
+             <div className="login_page">
     				<form onSubmit={this._handleSubmit}>
     	            <h4>Email </h4>
-    					<input type="text" className="form-control" name="emailField"/>
+    					<input type="text" className="form-control container_field" name="emailField"/>
 
     	            <h4>Password </h4>
-    	            <input type="password" className="form-control" name="passwordField"/>
+    	            <input type="password" className="form-control container_field" name="passwordField"/>
 
-    	            <button style={{margin : "10px" } }className="btn btn-block btn-success btn-lg" type="submit">+</button>
+    	            <button style={{margin : "10px" } }className="btn btn-block btn-success btn-lg" type="submit">Submit</button>
     				</form>
 
     			</div>

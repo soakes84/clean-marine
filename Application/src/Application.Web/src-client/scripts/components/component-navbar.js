@@ -5,10 +5,10 @@ export const Navbar = React.createClass({
   _getMenuOptions: function(currentUserOnStore){
 
     let routeList
-    if (typeof currentUser !== 'undefined'){
-      console.log(currentUserOnStore);
+    if (this.props.currentNavRoute === 'HOME'){
+      console.log(this.props.currentNavRoute);
       routeList = [
-        {appRouteName: 'HOME', displayText: 'HOME', hashRoute: ''},
+        {appRouteName: 'HOME', displayText: 'Home', hashRoute: ''},
 
         {appRouteName: 'ALL', displayText: 'Debris Totals', hashRoute: 'all'},
 
@@ -17,7 +17,8 @@ export const Navbar = React.createClass({
         {appRouteName: 'LOGIN', displayText: 'Log-in', hashRoute: 'login'}
 
       ]
-    } else {
+    } else if (this.props.currentNavRoute === 'DEBRIS'){
+
       routeList = [
         {appRouteName: 'HOME', displayText: 'Home', hashRoute: ''},
         {appRouteName: 'LOGOUT', displayText: 'Log-out', hashRoute: 'logout'},
@@ -28,6 +29,33 @@ export const Navbar = React.createClass({
         {appRouteName: 'DEBRIS', displayText: 'Report Debris', hashRoute: 'debris'},
 
       ]
+
+    }  else if (this.props.currentNavRoute === 'ALL' && this.props.currentUser !== 'undefined'){
+
+      routeList = [
+        {appRouteName: 'HOME', displayText: 'Home', hashRoute: ''},
+        {appRouteName: 'LOGOUT', displayText: 'Log-out', hashRoute: 'logout'},
+
+        {appRouteName: 'USER', displayText: 'User', hashRoute: 'user-info'},
+        {appRouteName: 'ALL', displayText: 'All', hashRoute: 'all'},
+
+        {appRouteName: 'DEBRIS', displayText: 'Report Debris', hashRoute: 'debris'},
+
+      ]
+
+    } else {
+
+      routeList = [
+        {appRouteName: 'HOME', displayText: 'Home', hashRoute: ''},
+
+        {appRouteName: 'ALL', displayText: 'Debris Totals', hashRoute: 'all'},
+
+
+        {appRouteName: 'REGISTER', displayText: 'Register', hashRoute: 'register'},
+        {appRouteName: 'LOGIN', displayText: 'Log-in', hashRoute: 'login'}
+
+      ]
+
     }
 
     return routeList
@@ -48,7 +76,7 @@ export const Navbar = React.createClass({
     render: function(){
 
       return (
-        <nav className='styling'>
+        <nav className=''>
 
           {this._showNavOptionsJSX(this.props.currentNavRoute, this.props.currentUser)}
         </nav>
@@ -63,10 +91,10 @@ export const Navbar = React.createClass({
     },
 
     render: function(){
-      let navOptionClassName = 'nav-option button small'
+      let navOptionClassName = 'nav-option'
 
       if(this.props.appRouteName === this.props._currentNavRoute){
-        navOptionClassName = 'nav-option nav-option--active button small'
+        navOptionClassName = 'nav-option nav-option--active'
       }
 
       return (

@@ -10,7 +10,9 @@ export const DebrisCollection = Backbone.Collection.extend({
   model: DebrisModel,
   url: '/api/debris',
   saveAll: function(){
-    console.log( 'saving to server:', JSON.stringify(this.toJSON()) )
+    console.log(this)
+    console.log(this.toJSON())
+    console.log( 'saving to server:', JSON.stringify() )
       return $.ajax({
         url: this.url,
         method: 'POST',

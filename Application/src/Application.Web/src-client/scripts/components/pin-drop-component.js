@@ -46,11 +46,11 @@ const NotSimpleMap = React.createClass({
 
 	render: function(){
 		let mapCenter = {lat: 32.78, lng: -79.93}
-console.log(this.state);
+
 		if (typeof this.state.xPosition  === 'undefined') {
 		return (
 
-			<div style={{height: '800px'}}>
+			<div style={{height: '600px'}}>
 				<GoogleMapReact
 					debrisData = {this.props}
 					center = {mapCenter}
@@ -71,7 +71,7 @@ console.log(this.state);
 					defaultZoom = {10}>
 					{this._createMapPins(this.state.locationsData)}
 				</GoogleMapReact>
-				<CollectedDebrisTable debrisData = {this.props.debrisData}/>
+				<CollectedDebrisTable debrisData = {this.props.debrisData} coordinates = {this.state.locationsData}/>
 
 			</div>
 		)
