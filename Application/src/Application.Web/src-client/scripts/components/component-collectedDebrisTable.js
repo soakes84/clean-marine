@@ -11,8 +11,13 @@ export const CollectedDebrisTable = React.createClass({
     let formEl = evt.target
 console.log(this.props);
     let dataToBeSaved = {
-  
+      // debrisList : this.props.debrisData.debrisCounter
 
+      type: 'tin',
+      // debris: '????',
+      latitude: 32.55,
+      longitude: -79.63,
+      // timeStamp: '0001-01-01T00:00:00'
 
     }
     console.log(dataToBeSaved);

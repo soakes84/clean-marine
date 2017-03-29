@@ -29,7 +29,7 @@ export const Navbar = React.createClass({
 
       ]
     }
-  
+
     return routeList
   },
 
@@ -71,7 +71,7 @@ export const Navbar = React.createClass({
 
       return (
         <div onClick = {this._handleNavClick} className = {navOptionClassName}>
-            <a>{this.props.displayText}</a>
+            {this.props.displayText}
 
         </div>
       )
