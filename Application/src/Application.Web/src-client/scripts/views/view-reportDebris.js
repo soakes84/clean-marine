@@ -9,7 +9,7 @@ export const DebrisView = React.createClass({
 
 
   componentDidMount: function(){
-    
+
     let component = this
 
     ACTIONS.fetchAllDebris
@@ -21,6 +21,7 @@ export const DebrisView = React.createClass({
   		return (
 
   			<div className="container">
+          <h1>Please click the map to record your location and add debris</h1>
           <DropPinComponent {...this.props}/>
         </div>
     )

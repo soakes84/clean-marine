@@ -10,6 +10,9 @@ export const LoginView = React.createClass({
 
     return (
       <div className='container'>
+        <video autoplay loop muted class="background">
+        <source src="https://static.videezy.com/system/resources/previews/000/004/205/original/Waves_on_the_sand.mp4" type="video/mp4" />
+    </video>
         <LoginComponent/>
       </div>
     )

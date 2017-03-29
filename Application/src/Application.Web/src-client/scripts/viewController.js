@@ -33,12 +33,27 @@ export const ViewController = React.createClass({
   },
 
   render: function(){
+    let bestPlaces = [
+    	{lt: 32.79, ln: -65.82, name: "Sullivan's Island"},
+    	{lt: 32.78, ln: -70.80, name: "Sullivan's Island"},
+    	{lt: 32.65603362232004, ln:
+    -79.94162886624117, name: "Folly Beach"},
+      {lt: 32.66, ln: -65.90, name: "Folly Beach"},
+      {lt: 32.68, ln: -79.93, name: "Folly Beach"},
+      {lt: 32.88, ln: -79.69, name: "Dewees Island"},
+      {lt:
+    32.6110747332734, ln: -80.05784361843844, name: "Kiawah Island"},
+      {lt: 32.66, ln: -80.17, name: "Kiawah Island"},
+      {lt: 32.60, ln: -80.10, name: "Seabrook Island"},
+      {lt: 32.60, ln: -80.15, name: "Seabrook Island"},
+      {lt: 32.60, ln: -80.12, name: "Seabrook Island"}
+    ]
 
     let componentToRender
 
     switch(this.state.currentNavRoute){
       case 'HOME':
-        componentToRender = <HomeView {...this.state}/>
+        componentToRender = <HomeView {...this.state} locationsData={bestPlaces}/>
         break;
       case 'REGISTER':
         componentToRender = <RegisterView {...this.state}/>

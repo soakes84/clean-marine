@@ -22,6 +22,7 @@ export const UserView = React.createClass({
     let component = this
 
     ACTIONS.fetchAllDebris
+    console.log(this.props);
 
   },
 

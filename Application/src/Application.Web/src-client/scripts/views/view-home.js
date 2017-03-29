@@ -12,7 +12,7 @@ export const HomeView = React.createClass({
   render: function(){
     let debrisDataView = new DebrisModel()
     debrisDataView.fetch().then(function(serverRes){
-      console.log(serverRes);
+
     })
 
     let side = <h3>Home Page</h3>
@@ -74,13 +74,13 @@ export const HomeView = React.createClass({
 
 
   return (
-      // <img src = />
+
       <div className='map'>
-        <SimpleMap locationsData={bestPlaces} center={{lat: 32.78, lng: -79.93}} zoom={11} bootstrapURLKeys={{
+        <SimpleMap locationsData={this.props.locationsData} center={{lat: 32.78, lng: -79.93}} zoom={11} bootstrapURLKeys={{
     key: API_KEY,
     language: 'en'
   }}/>
-    {allUserData}
+
       </div>
     )
   }
@@ -113,25 +113,8 @@ const MapPin = React.createClass({
 		return (
 			<div style={{fontSize: '32px', color: '#D35400', textAlign: 'center'}}>
 				<i className="ion-location"></i>
-				<span style={{background: '#fff', fontSize: '16px', padding: '5px'}}>{this.props.place}</span>
+				{/* <span style={{background: '#fff', fontSize: '16px', padding: '5px'}}>{this.props.name}</span> */}
 			</div>
 		)
 	}
 })
-
-
-let bestPlaces = [
-	{lt: 32.79, ln: -65.82, name: "Sullivan's Island"},
-	{lt: 32.78, ln: -70.80, name: "Sullivan's Island"},
-	{lt: 32.65603362232004, ln:
--79.94162886624117, name: "Folly Beach"},
-  {lt: 32.66, ln: -65.90, name: "Folly Beach"},
-  {lt: 32.68, ln: -79.93, name: "Folly Beach"},
-  {lt: 32.88, ln: -79.69, name: "Dewees Island"},
-  {lt:
-32.6110747332734, ln: -80.05784361843844, name: "Kiawah Island"},
-  {lt: 32.66, ln: -80.17, name: "Kiawah Island"},
-  {lt: 32.60, ln: -80.10, name: "Seabrook Island"},
-  {lt: 32.60, ln: -80.15, name: "Seabrook Island"},
-  {lt: 32.60, ln: -80.12, name: "Seabrook Island"}
-]

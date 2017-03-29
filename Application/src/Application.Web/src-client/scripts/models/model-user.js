@@ -49,7 +49,7 @@ UserModel.getCurrentUser =  function(){
 }
 
 UserModel.logOut =  function(){
-	console.log('logging in!')
+	console.log('logging out!')
 	return $.ajax({
 		method: 'GET',
 		url: '/api/accounts/logout'

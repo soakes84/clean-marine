@@ -14,7 +14,7 @@ export const LoginComponent = React.createClass({
           let currentRatingShown = this.props.shownRatingType
 
           return (
-             <div className="auth-form">
+             <div className="auth-form hiddenanchor">
     				<form onSubmit={this._handleSubmit}>
     	            <h4>Email </h4>
     					<input type="text" className="form-control" name="emailField"/>
