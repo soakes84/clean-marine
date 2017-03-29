@@ -25,7 +25,7 @@ export const RecapView = React.createClass({
   render: function(){
 
     let information =
-          <div>
+          <div id= "map-component">
             <SimpleMap className = 'map' center={{lat: 32.78, lng: -79.93}} zoom={11} bootstrapURLKeys={{
         key: API_KEY,
         language: 'en'
@@ -36,7 +36,7 @@ export const RecapView = React.createClass({
     <div class = 'recap-info'>
     <h3>Summary</h3>
 
-    <ul class = 'data-table'>
+    <ul id = 'data-table'>
 
       <li>Date: <p>12/22/16 </p></li>
       <li>Area: <p>Folly Beach </p></li>
@@ -52,10 +52,10 @@ export const RecapView = React.createClass({
     let loggedInUser =
 
   <div class = "wrapper">
-  <div class="table-title">
+  <div id="table-title">
 
 
-    <table class="table-fill">
+    <table id="table-fill">
     <thead>
     <tr>
     <th class="text-left">Item Type</th>
@@ -81,8 +81,6 @@ export const RecapView = React.createClass({
   </div>
 
 </div>
-
-
 
   return (
       <div>

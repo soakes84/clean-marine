@@ -47,7 +47,7 @@ export const Navbar = React.createClass({
     render: function(){
 
       return (
-        <nav className='styling'>
+        <nav className='navbar'>
           {this._showNavOptionsJSX(this.props.currentNavRoute, this.props.currentUser)}
         </nav>
       )
