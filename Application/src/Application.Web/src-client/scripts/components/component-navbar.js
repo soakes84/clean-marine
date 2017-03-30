@@ -99,6 +99,7 @@ export const Navbar = React.createClass({
 
       return (
         <div onClick = {this._handleNavClick} className = {navOptionClassName}>
+        
             {this.props.displayText}
 
         </div>

@@ -17,57 +17,29 @@ export const HomeView = React.createClass({
 
     let side = <h3>Home Page</h3>
     let allUserData =
-    <div class="table-title">
+    <div className="table-title">
       <h3>Top Five Users</h3>
 
       <table class="table-fill">
       <thead>
       <tr>
-      <th class="text-left">Date</th>
-      <th class="text-left">Area</th>
-      <th class="text-left">Item Type</th>
-      <th class="text-left"># Items</th>
-      <th class="text-left">Details</th>
+      <th className="text-left">Date</th>
+      <th className="text-left">Area</th>
+      <th className="text-left">Item Type</th>
+      <th className="text-left"># Items</th>
+      <th className="text-left">Further Detail</th>
       </tr>
       </thead>
-      <tbody class="table-hover">
+      <tbody className="table-hover">
       <tr>
-      <td class="text-left">January</td>
-      <td class="text-left">Folly Beach</td>
-      <td class="text-left">Cigarettes</td>
-      <td class="text-left">13</td>
-      <td class="text-left"><a href="#">Recap</a></td>
+      <td className="text-left">January</td>
+      <td className="text-left">Folly Beach</td>
+      <td className="text-left">Cigarettes</td>
+      <td className="text-left">13</td>
+      <td className="text-left">Recap</td>
       </tr>
-      <tr>
-      <td class="text-left">February</td>
-      <td class="text-left">Folly Beach</td>
-      <td class="text-left">Abandoned Ships</td>
-      <td class="text-left">2</td>
-      <td class="text-left"><a href="#">Recap</a></td>
-      </tr>
-      <tr>
-      <td class="text-left">March</td>
-      <td class="text-left">Folly Beach</td>
-      <td class="text-left">Beer Cans</td>
-      <td class="text-left">6</td>
-      <td class="text-left"><a href="#">Recap</a></td>
-      </tr>
-      <tr>
-      <td class="text-left">April</td>
-      <td class="text-left">Folly Beach</td>
-      <td class="text-left">Trust Funds</td>
-      <td class="text-left">24</td>
-      <td class="text-left"><a href="#">Recap</a></td>
-      </tr>
-      <tr>
-      <td class="text-left">May</td>
-      <td class="text-left">Myrtle Beach</td>
-      <td class="text-left">Plastic Bags</td>
-      <td class="text-left">8</td>
-      <td class="text-left"><a href="#">Recap</a></td>
 
 
-      </tr>
       </tbody>
       </table>
     </div>
@@ -76,11 +48,14 @@ export const HomeView = React.createClass({
   return (
 
       <div className='map'>
+        <h1>Clean Marine</h1>
+
         <SimpleMap locationsData={this.props.locationsData} center={{lat: 32.78, lng: -79.93}} zoom={11} bootstrapURLKeys={{
     key: API_KEY,
     language: 'en'
   }}/>
-
+{side}
+{allUserData}
       </div>
     )
   }
