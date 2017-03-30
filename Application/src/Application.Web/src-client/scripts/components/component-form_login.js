@@ -16,10 +16,10 @@ export const LoginComponent = React.createClass({
           return (
              <div className="login_page">
     				<form onSubmit={this._handleSubmit}>
-    	        <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="email"/>
+    	        <input id="emailsignup" name="emailField" required="required" type="email" placeholder="email"/>
 
 
-    	           <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="password"/>
+    	           <input id="passwordsignup" name="passwordField" required="required" type="password" placeholder="password"/>
 
 
     	            <button style={{margin : "10px" } }  type="submit">Submit</button>

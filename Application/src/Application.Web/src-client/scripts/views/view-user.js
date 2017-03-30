@@ -55,7 +55,7 @@ const ListOfDebris = React.createClass({
     console.log('ummm ok?');
      return (
        <div className='container'>
-         
+
          <h3>UserName:{this.props.data.userName}</h3>
          <ul>
            <li>Type:{this.props.data.type}</li>

@@ -33,7 +33,7 @@ export const ACTIONS = {
     },
 
   saveAllDebris: function(ary){
-    $.post()
+    $.post(ary)
   },
 
   fetchAllDebris: function(){

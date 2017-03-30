@@ -21,12 +21,13 @@ export const Navbar = React.createClass({
 
       routeList = [
         {appRouteName: 'HOME', displayText: 'Home', hashRoute: ''},
-        {appRouteName: 'LOGOUT', displayText: 'Log-out', hashRoute: 'logout'},
+
 
         {appRouteName: 'USER', displayText: 'User', hashRoute: 'user-info'},
         {appRouteName: 'ALL', displayText: 'All', hashRoute: 'all'},
 
         {appRouteName: 'DEBRIS', displayText: 'Report Debris', hashRoute: 'debris'},
+        {appRouteName: 'LOGOUT', displayText: 'Log-out', hashRoute: 'logout'}
 
       ]
 
@@ -34,12 +35,13 @@ export const Navbar = React.createClass({
 
       routeList = [
         {appRouteName: 'HOME', displayText: 'Home', hashRoute: ''},
-        {appRouteName: 'LOGOUT', displayText: 'Log-out', hashRoute: 'logout'},
+
 
         {appRouteName: 'USER', displayText: 'User', hashRoute: 'user-info'},
         {appRouteName: 'ALL', displayText: 'All', hashRoute: 'all'},
 
         {appRouteName: 'DEBRIS', displayText: 'Report Debris', hashRoute: 'debris'},
+        {appRouteName: 'LOGOUT', displayText: 'Log-out', hashRoute: 'logout'}
 
       ]
 
@@ -50,7 +52,7 @@ export const Navbar = React.createClass({
 
         {appRouteName: 'ALL', displayText: 'Debris Totals', hashRoute: 'all'},
 
-
+        {appRouteName: 'DEBRIS', displayText: 'Report Debris', hashRoute: 'debris'},
         {appRouteName: 'REGISTER', displayText: 'Register', hashRoute: 'register'},
         {appRouteName: 'LOGIN', displayText: 'Log-in', hashRoute: 'login'}
 
@@ -99,7 +101,7 @@ export const Navbar = React.createClass({
 
       return (
         <div onClick = {this._handleNavClick} className = {navOptionClassName}>
-        
+
             {this.props.displayText}
 
         </div>
