@@ -62,7 +62,8 @@ export const ViewController = React.createClass({
         componentToRender = <LoginView {...this.state}/>
         break;
       case 'USER':
-        componentToRender = <UserView {...this.state}/>
+        componentToRender = <UserView/>
+
         break;
       case 'ALL':
         componentToRender = <AllView {...this.state}/>

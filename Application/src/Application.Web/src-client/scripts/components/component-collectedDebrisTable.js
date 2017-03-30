@@ -11,14 +11,17 @@ export const CollectedDebrisTable = React.createClass({
     let formEl = evt.target
 
   let debrisItemsObj = this.props.debrisData.debrisCounter
+  console.log('HEEEEEREEE', this.props.coordinates.lt);
 
   let arrayOfData = Object.keys(debrisItemsObj).map((keyString)=>{
     return {
       type: keyString,
       quantity: debrisItemsObj[keyString],
-      latitude: this.props.coordinates.lat,
-      longitude: this.props.coordinates.lng
+      latitude: this.props.coordinates.lt,
+      longitude: this.props.coordinates.ln
     }
+    ACTIONS.saveAllDebris(arrayOfData)
+    console.log(arrayOfData);
   })
 
 // SAVE ALL METHOD Created by Travis Hubbard

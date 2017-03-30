@@ -8,10 +8,11 @@ export const RegisterComponent = React.createClass({
       return (
         <div className="auth-form">
   				<form className = 'reg-form' onSubmit={this._handleSignup}>
-            <h1>Sign up</h1>
-            <h4>Email </h4>
+            <h2>Sign up</h2>
+
 
            <input id="emailsignup" name="emailField" required="required" type="email" placeholder="email"/>
+
             <h4>Password </h4>
             <input id="password" className="form-control" name="passwordField" placeholder= "password"/>
             <h4>Username </h4>
@@ -19,6 +20,8 @@ export const RegisterComponent = React.createClass({
              <div>
             <button className="createaccount-btn" type="submit">Create Account</button>
           </div>
+
+
   				</form>
 			  </div>
       )

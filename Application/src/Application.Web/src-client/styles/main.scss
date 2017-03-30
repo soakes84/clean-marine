@@ -52,6 +52,7 @@ p {
 }
 
 nav  {
+
 	display: inline-block;
 
   width: 100%;
@@ -329,11 +330,15 @@ font-weight: bold;
 }
 
 #emailsignup {
-
+	padding: 2px;
 	font-size: 15px;
+	margin: 30px;
+
 }
 
 #passwordsignup {
+	padding: 2px;
+	margin: 30px;
 
 
 }
@@ -372,6 +377,7 @@ input {
 font-size: 16px;
 
 }
+
 
 
 
@@ -421,12 +427,13 @@ margin-top: 20px;
 
 }
 
-h4 {
-
-	font-size: 20px;
-}
 
 .recap{
 
 	font-size: 10px;
+}
+
+h4 {
+	font-size: 30px;
+
 }

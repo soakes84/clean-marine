@@ -143,7 +143,7 @@ namespace Application.Web.Controllers.API
                 return BadRequest(ModelState);
             }
 
-            CleanUp cleanup = await _context.CleanUp.Include(p => p.Debris)
+            var cleanup = await _context.CleanUp.Include(p => p.Debris)
                 .SingleOrDefaultAsync(p => p.Id == id);
 
             if (cleanup == null)
@@ -152,6 +152,15 @@ namespace Application.Web.Controllers.API
             }
 
             return Ok(cleanup);
+        }
+
+        [HttpGet]
+        [Route("~/api/debris/cleanups/user")]
+        public IEnumerable<CleanUp> GetUserCleanups()
+        {
+            var userName = _userManager.GetUserName(User);
+            return _context.CleanUp.Where(q => q.UserName == userName).ToList();
+             
         }
 
 
