@@ -2,13 +2,13 @@ import Backbone from 'backbone';
 import $ from 'jquery';
 
 export const DebrisModel = Backbone.Model.extend({
-  urlRoot: '/api/debris',
+  urlRoot: '/api/debris/all',
   idAttribute: 'id'
 })
 
 export const DebrisCollection = Backbone.Collection.extend({
   model: DebrisModel,
-  url: '/api/debris',
+  url: '/api/debris/all',
   saveAll: function(){
     console.log(this)
     console.log(this.toJSON())

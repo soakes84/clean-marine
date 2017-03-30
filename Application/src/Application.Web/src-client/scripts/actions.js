@@ -41,6 +41,7 @@ export const ACTIONS = {
     let debrisCollectionInstance = new DebrisCollection()
     debrisCollectionInstance.fetch().then(function(serverRes){
       STORE.setStore('debrisList', serverRes)
+      console.log(serverRes);
     })
   },
 
