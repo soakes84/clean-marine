@@ -7,10 +7,11 @@ export const RegisterComponent = React.createClass({
 
       return (
         <div className="auth-form">
-  				<form onSubmit={this._handleSignup}>
+  				<form className = 'reg-form' onSubmit={this._handleSignup}>
             <h1>Sign up</h1>
             <h4>Email </h4>
-  			    <input type="text" className="form-control" name="emailField"/>
+
+           <input id="emailsignup" name="emailField" required="required" type="email" placeholder="email"/>
             <h4>Password </h4>
             <input type="password" className="form-control" name="passwordField"/>
             <h4>Username </h4>

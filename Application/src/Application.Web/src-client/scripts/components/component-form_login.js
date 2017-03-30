@@ -16,13 +16,13 @@ export const LoginComponent = React.createClass({
           return (
              <div className="login_page">
     				<form onSubmit={this._handleSubmit}>
-    	            <h4>Email </h4>
-    					<input type="text" className="form-control container_field" name="emailField"/>
+    	        <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="email"/>
 
-    	            <h4>Password </h4>
-    	            <input type="password" className="form-control container_field" name="passwordField"/>
 
-    	            <button style={{margin : "10px" } }className="btn btn-block btn-success btn-lg" type="submit">Submit</button>
+    	           <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="password"/>
+
+
+    	            <button style={{margin : "10px" } }  type="submit">Submit</button>
     				</form>
 
     			</div>
