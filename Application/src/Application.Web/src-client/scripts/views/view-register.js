@@ -9,121 +9,12 @@ export const RegisterView = React.createClass({
   render: function(){
 
     return (
-      <div className = 'videoFeed'>
+      <div className='container'>
+        <video autoPlay loop muted className="background">
+        <source src="https://static.videezy.com/system/resources/previews/000/004/941/original/Jellyfish_4K_Living_Background.mp4" type="video/mp4"/>
+    </video>
         <RegisterComponent/>
       </div>
     )
   }
 })
-    {/* let regForm =
-  <div id="register_form" >
-
-		<div id="register" className="animate form">
-			<form>
-				<h3> Register </h3>
-				<p>
-					<label for="usernamesignup" className="uname" data-icon="u">Your username</label>
-       </p>
-       <p>
-					<input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="username" />
-				</p>
-				<p>
-					<label for="emailsignup" className="youmail" data-icon="e" > Your email</label>
-        </p>
-        <p>
-					<input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="email"/>
-				</p>
-				<p>
-					<label for="passwordsignup" className="youpasswd" data-icon="p">Your password </label>
-        </p>
-        <p>
-					<input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="password"/>
-				</p>
-				<p>
-					<label for="passwordsignup_confirm" className="youpasswd" data-icon="p">Confirm your password </label>
-        </p>
-        <p>
-					<input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="password"/>
-				</p>
-        <p><button id="register" onClick="myFunction()">Sign Up</button></p>
-				<p class="change_link">
-					Already a member ?
-					<a href="#login" className="to_register"> Log in here </a>
-				</p>
-			</form>
-	  </div>
-    </div>
-
-
-
-  return (
-      <div>
-        {regForm}
-
-      </div>
-    )
-  }
-}) */}
-{/* //   getInitialState: function(){ */}
-{/* //     return STORE.getStoreData()
-//   },
-//
-//   componentDidMount: function(){ */}
-{/* //     let component = this
-//
-//     ACTIONS.fetchAllDebris
-//
-//   },
-//
-//   _handleSubmit: function(evt){ */}
-{/* //     evt.preventDefault()
-//     console.log(evt.target)
-//     let fromEl = evt.target
-//   },
-//
-//   render: function(){ */}
-{/* //     let regForm =
-//     <div className='videoFeed'>
-//     <video autoplay loop muted class="background">
-//         <source src="https://static.videezy.com/system/resources/previews/000/002/459/original/moon-jellies-hd-stock-video.mp4" type="video/mp4" />
-//     </video>
-//   <div id="register_form" >
-//
-// 		<div id="register" className="animate form">
-// 			<form>
-// 				<h1> Sign up </h1>
-// 				<p>
-// 					<label for="usernamesignup" className="uname" data-icon="u">Your username</label>
-// 					<input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="username" />
-// 				</p>
-// 				<p>
-// 					<label for="emailsignup" className="youmail" data-icon="e" > Your email</label>
-// 					<input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="email"/>
-// 				</p>
-// 				<p>
-// 					<label for="passwordsignup" className="youpasswd" data-icon="p">Your password </label>
-// 					<input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="password"/>
-// 				</p>
-// 				<p>
-// 					<label for="passwordsignup_confirm" className="youpasswd" data-icon="p">Confirm your password </label>
-// 					<input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="password"/>
-// 				</p>
-//         <p><button onClick="myFunction()">Sign Up</button></p>
-// 				<p class="change_link">
-// 					Already a member ?
-// 					<a href="#login" className="to_register"> Go and log in </a>
-// 				</p>
-// 			</form>
-// 	  </div>
-//     </div>
-//   </div>
-//
-//
-//
-//   return (
-//       <div>
-//         {regForm}
-//       </div>
-//     )
-//   }
-// }) */}

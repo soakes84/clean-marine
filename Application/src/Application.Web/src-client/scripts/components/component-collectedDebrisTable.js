@@ -9,28 +9,33 @@ export const CollectedDebrisTable = React.createClass({
 
     evt.preventDefault()
     let formEl = evt.target
-console.log(this.props);
-    let dataToBeSaved = {
-  
 
+  let debrisItemsObj = this.props.debrisData.debrisCounter
 
+  let arrayOfData = Object.keys(debrisItemsObj).map((keyString)=>{
+    return {
+      type: keyString,
+      quantity: debrisItemsObj[keyString],
+      latitude: this.props.coordinates.lat,
+      longitude: this.props.coordinates.lng
     }
-    console.log(dataToBeSaved);
+  })
+
 // SAVE ALL METHOD Created by Travis Hubbard
     let newDebrisCollection = new DebrisCollection()
     let newDebrisModel = new DebrisModel()
-    newDebrisCollection.add([dataToBeSaved])
+    newDebrisCollection.add(arrayOfData)
     console.log(newDebrisCollection.url);
 
     let viewInstance = this
     newDebrisCollection.saveAll().then(function(serverRes){
-      console.log(serverRes);
+      console.log('serverres',serverRes);
 
       window.location.hash = 'user-info'
     })
   },
 
-  render: function(amount){
+  render: function(){
 
   return (
       <form className='formview' type= 'submit'>
