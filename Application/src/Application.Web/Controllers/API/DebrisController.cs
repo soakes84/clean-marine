@@ -156,7 +156,6 @@ namespace Application.Web.Controllers.API
 
         [HttpGet]
         [Route("~/api/debris/cleanups/user")]
-        [Authorize]
         public IEnumerable<CleanUp> GetUserCleanups()
         {
             var userName = _userManager.GetUserName(User);
