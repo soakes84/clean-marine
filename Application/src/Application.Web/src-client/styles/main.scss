@@ -58,12 +58,13 @@ p {
 
 nav  {
 	display: inline-block;
-
-  width: 100%;
-  height: 80px;
+	margin: 10px 80px;
+  width: 90%;
+  height: 60px;
   text-align: center;
 	box-shadow:  -5px 10px 10px 0px grey;
 	margin-bottom: 16px;
+	background-color: white;
 }
 
 .nav-option {
@@ -72,7 +73,14 @@ nav  {
 }
 
 
+.auth-form {
+	font-weight: bold;
 
+}
+
+.reg-form {
+	color: white;
+}
 
 .nav-option--active {
 	background-color: $red;
