@@ -39,6 +39,7 @@ export const Navbar = React.createClass({
         {appRouteName: 'USER', displayText: 'User', hashRoute: 'user-info'},
         {appRouteName: 'ALL', displayText: 'All', hashRoute: 'all'},
 
+        {appRouteName: 'RECAP', displayText: 'Recap', hashRoute: 'recap'},
         {appRouteName: 'DEBRIS', displayText: 'Report Debris', hashRoute: 'debris'},
 
       ]

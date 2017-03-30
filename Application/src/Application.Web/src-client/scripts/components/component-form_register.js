@@ -13,10 +13,12 @@ export const RegisterComponent = React.createClass({
 
            <input id="emailsignup" name="emailField" required="required" type="email" placeholder="email"/>
             <h4>Password </h4>
-            <input type="password" className="form-control" name="passwordField"/>
+            <input id="password" className="form-control" name="passwordField" placeholder= "password"/>
             <h4>Username </h4>
-  			    <input type="text" className="form-control" name="usernameField"/>
-            <button className="btn btn-block btn-success btn-lg" type="submit">Create Account</button>
+  			    <input type="text" className="form-control" name="usernameField" placeholder= "username"/>
+             <div>
+            <button className="createaccount-btn" type="submit">Create Account</button>
+          </div>
   				</form>
 			  </div>
       )

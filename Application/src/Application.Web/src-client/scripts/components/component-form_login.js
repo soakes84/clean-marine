@@ -14,17 +14,19 @@ export const LoginComponent = React.createClass({
           let currentRatingShown = this.props.shownRatingType
 
           return (
-             <div className="login_page">
+          <div className="login_page">
     				<form onSubmit={this._handleSubmit}>
+              <h1>Log In</h1>
+                <h4> Email </h4>
     	        <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="email"/>
 
-
+                <h4>Password </h4>
     	           <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="password"/>
 
-
-    	            <button style={{margin : "10px" } }  type="submit">Submit</button>
-    				</form>
-
+                <div>
+    	            <button className= "login-btn"  type="submit">Submit</button>
+                </div>
+           </form>
     			</div>
           )
        }

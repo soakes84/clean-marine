@@ -52,6 +52,7 @@ const AppRouter = Backbone.Router.extend({
     ACTIONS.changeCurrentNav("LOGOUT")  },
 
 
+
 })
 
 

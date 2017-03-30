@@ -8,7 +8,7 @@ export const DropPinComponent = React.createClass({
 	render: function(){
 		return (
 
-			<div className='map'>
+			<div className='drop-pin-map'>
         <NotSimpleMap  center={{lat: 32.78, lng: -79.93}} debrisData = {this.props} />
 			</div>
 
