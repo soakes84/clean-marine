@@ -15,12 +15,12 @@ export const HomeView = React.createClass({
 
     })
 
-    let side = <h3>Home Page</h3>
+
     let allUserData =
     <div className="table-title">
       <h3>Top Five Users</h3>
 
-      <table className="table-fill">
+      <table>
       <thead>
       <tr>
       <th className="text-left">Date</th>
@@ -47,49 +47,49 @@ export const HomeView = React.createClass({
 
   return (
 
-      <div className='map'>
+      <div className='home-map'>
         <h1>Clean Marine</h1>
 
         <SimpleMap locationsData={this.props.locationsData} center={{lat: 32.78, lng: -79.93}} zoom={11} bootstrapURLKeys={{
     key: API_KEY,
     language: 'en'
   }}/>
- {side}
- {allUserData}
+
+{allUserData}
       </div>
     )
   }
- })
+})
 
- const SimpleMap = React.createClass({
-     _createMapPins: function(placesArray){
-         let mapPinComponents = placesArray.map(function(placeObj, i){
-             return <MapPin key={Date.now()+i} lat={placeObj.lt} lng={placeObj.ln} place={placeObj.name} />
-         })
+const SimpleMap = React.createClass({
+	_createMapPins: function(placesArray){
+		let mapPinComponents = placesArray.map(function(placeObj, i){
+			return <MapPin key={Date.now()+i} lat={placeObj.lt} lng={placeObj.ln} place={placeObj.name} />
+		})
 
-         return mapPinComponents
-     },
+		return mapPinComponents
+	},
 
-     render: function(){
-         let mapCenter = {lat: 32.78, lng: -79.93}
+	render: function(){
+		let mapCenter = {lat: 32.78, lng: -79.93}
 
-         return (
-             <div style={{height: '500px'}}>
-                 <GoogleMapReact defaultCenter={mapCenter} defaultZoom={10}>
-                     {this._createMapPins(this.props.locationsData)}
-                 </GoogleMapReact>>
-             </div>
-         )
-     }
- })
+		return (
+			<div style={{height: '500px'}}>
+				<GoogleMapReact defaultCenter={mapCenter} defaultZoom={10}>
+					{this._createMapPins(this.props.locationsData)}
+				</GoogleMapReact>
+			</div>
+		)
+	}
+})
 
- const MapPin = React.createClass({
-     render: function(){
-         return (
-             <div style={{fontSize: '32px', color: '#D35400 ', textAlign: 'center'}}>
-                 <i className="ion-location"></i>
-                 {/* <span style={{background: '#fff', fontSize: '16px', padding: '5px'}}>{this.props.name}</span> */}
-             </div>
-         )
-     }
- })
+const MapPin = React.createClass({
+	render: function(){
+		return (
+			<div style={{fontSize: '32px', color: '#D35400', textAlign: 'center'}}>
+				<i className="ion-location"></i>
+				{/* <span style={{background: '#fff', fontSize: '16px', padding: '5px'}}>{this.props.name}</span> */}
+			</div>
+		)
+	}
+})

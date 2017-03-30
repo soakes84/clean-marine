@@ -75,7 +75,7 @@ export const ViewController = React.createClass({
         componentToRender = <AboutView {...this.state}/>
         break;
       case 'RECAP':
-        componentToRender = <RecapView {...this.state}/>
+        componentToRender = <RecapView {...this.state} locationsData={bestPlaces}/>
         break;
         default:
     }

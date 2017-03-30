@@ -15,14 +15,15 @@ export const LoginComponent = React.createClass({
 
           return (
           <div className="login_page">
+            <img src='/images/logo.png'></img>
     				<form onSubmit={this._handleSubmit}>
 
-              <h1>Log In</h1>
-                <h4> Email </h4>
-    	        <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="email"/>
 
-                <h4>Password </h4>
-    	           <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="password"/>
+
+    	        <input id="emailsignup" name="emailField" required="required" type="email" placeholder="email"/>
+
+
+    	           <input id="passwordsignup" name="passwordField" required="required" type="password" placeholder="password"/>
 
 
                 <div>

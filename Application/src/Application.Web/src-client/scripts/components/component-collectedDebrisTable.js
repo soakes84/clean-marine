@@ -11,7 +11,7 @@ export const CollectedDebrisTable = React.createClass({
     let formEl = evt.target
 
   let debrisItemsObj = this.props.debrisData.debrisCounter
-  console.log('HEEEEEREEE', this.props.coordinates.lt);
+
 
   let arrayOfData = Object.keys(debrisItemsObj).map((keyString)=>{
     return {

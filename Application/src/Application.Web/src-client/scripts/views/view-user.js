@@ -57,13 +57,12 @@ const ListOfDebris = React.createClass({
   render: function(){
     console.log('ummm ok?');
      return (
-       <div className='container'>
+       <div className='data-fields'>
 
-         <h3>UserName:{this.props.data.userName}</h3>
+         <h6>UserName: {this.props.data.userName}</h6>
          <ul>
-           <li>Type:{this.props.data.type}</li>
-           <li>quantity:{this.props.data.quantity}</li>
-           <li>latitude: {this.props.data.latitude}</li>
+           <li>Type: {this.props.data.type}</li>
+            <li>latitude: {this.props.data.latitude}</li>
            <li>longitude: {this.props.data.longitude}</li>
          </ul>
        </div>

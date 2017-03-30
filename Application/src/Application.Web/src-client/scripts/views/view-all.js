@@ -50,9 +50,9 @@ export const AllView = React.createClass({
     render: function(){
       console.log('ummm ok?');
        return (
-         <div className='container'>
+         <div className='data-fields'>
 
-           <h3>UserName:{this.props.data.userName}</h3>
+           <h3 className='user-field'>{this.props.data.userName}</h3>
            <ul>
              <li>Type:{this.props.data.type}</li>
              <li>quantity:{this.props.data.quantity}</li>
