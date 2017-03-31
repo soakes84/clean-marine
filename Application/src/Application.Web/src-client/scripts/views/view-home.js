@@ -4,51 +4,53 @@ import {ACTIONS} from '../actions.js';
 import {STORE} from '../store.js';
 import {DebrisListComponent} from '../components/component-debris_list.js';
 import GoogleMapReact from 'google-map-react';
-import {DebrisModel} from '../models/model-debris.js'
+import {DebrisModelAll} from '../models/model-debris.js'
 
 const API_KEY = 'AIzaSyCVsRPLuLQW5TRej4APIZAtgIEAhILiQ2U';
 export const HomeView = React.createClass({
 
-  render: function(){
-    let debrisDataView = new DebrisModel()
-    debrisDataView.fetch().then(function(serverRes){
 
+  render: function(){
+    let debrisDataView = new DebrisModelAll()
+    debrisDataView.fetch().then(function(serverRes){
+console.log(serverRes);
     })
 
 
     let allUserData =
     <div className="table-title">
-      <h3>Top Five Users</h3>
+      <h3 className = 'clean'>Upcoming Group Cleanups</h3>
 
-      <table>
-      <thead>
-      <tr>
-      <th className="text-left">Date</th>
-      <th className="text-left">Area</th>
-      <th className="text-left">Item Type</th>
-      <th className="text-left"># Items</th>
-      <th className="text-left">Further Detail</th>
-      </tr>
-      </thead>
-      <tbody className="table-hover">
-      <tr>
-      <td className="text-left">January</td>
-      <td className="text-left">Folly Beach</td>
-      <td className="text-left">Cigarettes</td>
-      <td className="text-left">13</td>
-      <td className="text-left">Recap</td>
-      </tr>
-
-
-      </tbody>
-      </table>
+            <table id="homedatatable">
+            <thead>
+            <tr>
+            <th class="text-left">Date</th>
+            <th class="text-left">Area</th>
+            </tr>
+            </thead>
+            <tbody class="table-hover">
+            <tr>
+            <td class="text-left">April 25th</td>
+            <td class="text-left">Seabrook Island</td>
+            </tr>
+            <tr>
+            <td class="text-left">April 26th</td>
+            <td class="text-left">Dewees Island</td>
+            </tr>
+            <tr>
+            <td class="text-left">May 20th</td>
+            <td class="text-left">Folly Beach</td>
+            </tr>
+            </tbody>
+            </table>
     </div>
 
 
   return (
 
       <div className='home-map'>
-        <h1>Clean Marine</h1>
+
+        <img className='homeLogo' src='/images/logo.png'></img>
 
         <SimpleMap locationsData={this.props.locationsData} center={{lat: 32.78, lng: -79.93}} zoom={11} bootstrapURLKeys={{
     key: API_KEY,

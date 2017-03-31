@@ -41,7 +41,7 @@ export const CollectedDebrisTable = React.createClass({
   render: function(){
 
   return (
-      <form className='formview' type= 'submit'>
+      <form className='formview-table' type= 'submit'>
         <table>
           <thead>
             <tr>

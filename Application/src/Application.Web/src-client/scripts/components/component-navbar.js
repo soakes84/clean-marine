@@ -1,48 +1,73 @@
 import React from 'react';
 import {ACTIONS} from '../actions.js';
+import {STORE} from '../store.js';
 
 export const Navbar = React.createClass({
   _getMenuOptions: function(currentUserOnStore){
 
+    STORE.getStoreData
+    let user = this.props.currentUser.name
+
     let routeList
-    if (this.props.currentNavRoute === 'HOME'){
-      console.log(this.props.currentNavRoute);
+    if (this.props.currentNavRoute === 'HOME' && typeof user !== 'undefined'){
+
       routeList = [
         {appRouteName: 'HOME', displayText: 'Home', hashRoute: ''},
-
-        {appRouteName: 'ALL', displayText: 'Debris Totals', hashRoute: 'all'},
-
-
-        {appRouteName: 'REGISTER', displayText: 'Register', hashRoute: 'register'},
-        {appRouteName: 'LOGIN', displayText: 'Log-in', hashRoute: 'login'}
+        {appRouteName: 'USER', displayText: 'User', hashRoute: 'user-info'},
+        {appRouteName: 'DEBRIS', displayText: 'Report Debris', hashRoute: 'debris'},
+        {appRouteName: 'ALL', displayText: 'All Debris', hashRoute: 'all'},
+        {appRouteName: 'LOGOUT', displayText: 'Log-out', hashRoute: 'logout'}
 
       ]
     } else if (this.props.currentNavRoute === 'DEBRIS'){
 
       routeList = [
         {appRouteName: 'HOME', displayText: 'Home', hashRoute: ''},
-
-
         {appRouteName: 'USER', displayText: 'User', hashRoute: 'user-info'},
-        {appRouteName: 'ALL', displayText: 'All', hashRoute: 'all'},
-
         {appRouteName: 'DEBRIS', displayText: 'Report Debris', hashRoute: 'debris'},
+        {appRouteName: 'ALL', displayText: 'All Debris', hashRoute: 'all'},
+        {appRouteName: 'LOGOUT', displayText: 'Log-out', hashRoute: 'logout'}
+      ]
+
+    }  else if (this.props.currentNavRoute === 'ALL' && typeof user !== 'undefined'){
+
+      routeList = [
+        {appRouteName: 'HOME', displayText: 'Home', hashRoute: ''},
+        {appRouteName: 'USER', displayText: 'User', hashRoute: 'user-info'},
+        {appRouteName: 'DEBRIS', displayText: 'Report Debris', hashRoute: 'debris'},
+        {appRouteName: 'ALL', displayText: 'All Debris', hashRoute: 'all'},
         {appRouteName: 'LOGOUT', displayText: 'Log-out', hashRoute: 'logout'}
 
       ]
 
-    }  else if (this.props.currentNavRoute === 'ALL' && this.props.currentUser !== 'undefined'){
+    }  else if (this.props.currentNavRoute === 'USER'){
 
       routeList = [
         {appRouteName: 'HOME', displayText: 'Home', hashRoute: ''},
-
-
         {appRouteName: 'USER', displayText: 'User', hashRoute: 'user-info'},
-        {appRouteName: 'ALL', displayText: 'All', hashRoute: 'all'},
-
-        {appRouteName: 'RECAP', displayText: 'Recap', hashRoute: 'recap'},
         {appRouteName: 'DEBRIS', displayText: 'Report Debris', hashRoute: 'debris'},
+        {appRouteName: 'ALL', displayText: 'All Debris', hashRoute: 'all'},
         {appRouteName: 'LOGOUT', displayText: 'Log-out', hashRoute: 'logout'}
+
+      ]
+
+    }  else if (this.props.currentNavRoute === 'ALL' && typeof user !== 'undefined') {
+
+      routeList = [
+        {appRouteName: 'HOME', displayText: 'Home', hashRoute: ''},
+        {appRouteName: 'ALL', displayText: 'All Debris', hashRoute: 'all'},
+        {appRouteName: 'REGISTER', displayText: 'Register', hashRoute: 'register'},
+        {appRouteName: 'LOGOUT', displayText: 'Log-out', hashRoute: 'logout'}
+
+      ]
+
+    }  else if (this.props.currentNavRoute === 'LOGOUT'){
+
+      routeList = [
+        {appRouteName: 'HOME', displayText: 'Home', hashRoute: ''},
+        {appRouteName: 'ALL', displayText: 'All', hashRoute: 'all'},
+        {appRouteName: 'REGISTER', displayText: 'Register', hashRoute: 'register'},
+        {appRouteName: 'LOGIN', displayText: 'Log-in', hashRoute: 'login'}
 
       ]
 
@@ -50,10 +75,7 @@ export const Navbar = React.createClass({
 
       routeList = [
         {appRouteName: 'HOME', displayText: 'Home', hashRoute: ''},
-
         {appRouteName: 'ALL', displayText: 'Debris Totals', hashRoute: 'all'},
-
-        {appRouteName: 'DEBRIS', displayText: 'Report Debris', hashRoute: 'debris'},
         {appRouteName: 'REGISTER', displayText: 'Register', hashRoute: 'register'},
         {appRouteName: 'LOGIN', displayText: 'Log-in', hashRoute: 'login'}
 
@@ -67,10 +89,10 @@ export const Navbar = React.createClass({
   _showNavOptionsJSX: function(currentNavRoute, currentUser){
 
     let theMenuRoutes = this._getMenuOptions(currentUser)
-    console.log(currentNavRoute);
+    console.log(currentNavRoute, currentUser);
 
     let componentsList = theMenuRoutes.map(function(routeObj, i){
-      return <RouteOption {...routeObj} key={i} _currentNavRoute = {currentNavRoute}/>
+      return <RouteOption {...routeObj} key={i} _currentNavRoute = {currentNavRoute} _currentUser = {currentUser}/>
     })
 
     return componentsList

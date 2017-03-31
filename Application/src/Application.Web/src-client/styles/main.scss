@@ -18,23 +18,28 @@ body {
 }
 
 h1 {
-	color: $oceanBlue;
+	color: #008280;
 	font-size: 40px;
 	text-align: center;
-	text-shadow: 2px 2px 6px #6A7994;
+	text-shadow: 1px 1px 1px #6A7994;
 }
 
 p {
 	color: $oceanBlue;
 }
 
+.homeLogo {
+	position: fixed;
+	right: 640px;
+	bottom: 10px;
+	width: 300px;
+}
+
 .green {
 	background-color: #00807F;
 	color: #fff;
-	width: 26px;
+	width: 30px;
 	font-weight: bold;
-	box-shadow: 2px 2px 4px #112;
-	text-shadow: 1px 1px 1px #112;
 	padding: 6px;
 
 }
@@ -43,10 +48,9 @@ p {
 	background-color: #E24A00;
 	color: #fff;
 	font-weight: bold;
-	box-shadow: 2px 2px 4px #112;
-	text-shadow: 1px 1px 1px #112;
 	padding: 6px;
-	width: 26px;
+	width: 30px;
+	text-align: center;
 
 }
 
@@ -61,7 +65,7 @@ p {
   height: 70px;
   text-align: center;
 	box-shadow:  -5px 5px 5px 0px grey;
-	margin-bottom: 16px;
+
 }
 
 .nav-option {
@@ -69,20 +73,16 @@ p {
 	padding: 20px;
 	font-size: 26px;
 	margin-left: 20px;
-	text-shadow: 1px 1px 3px #112;
+	text-shadow: 1px 1px 1px #6A7994;
 
 }
 
 .data-fields {
-	opacity: 1;
+
 	width: 20%;
 	border: none;
 	font-size: 14px;
 	padding: 4px;
-}
-
-nav li:last-child {
-    border-right: none;
 }
 
 .reg-form_signup {
@@ -102,15 +102,16 @@ nav li:last-child {
 	height: 550px;
 	}
 
-.formview {
+.formview-table {
 	position: fixed;
-	bottom: 100px;
-	right: 30px;
-	height:  500px;
+	top: 100px;
+	right: 40px;
+	height:  610px;
 	width: 320px;
 	border: 2px solid black;
-	box-shadow: 4px 4px 7px #112;
-	margin-bottom: 20px;
+	box-shadow: 2px 2px 4px #112;
+	background-color: white;
+
 }
 
 .drop-pin-map
@@ -121,11 +122,11 @@ margin: 50px;
 
 
 .submit-button {
-    box-shadow: 3px 3px 7px #112;
-    text-shadow: 3px 3px 6px #112;
-    position: fixed;
-    top: 685px;
-    left: 1145px;
+    box-shadow: 1px 1px 2px #112;
+    text-shadow: 1px 1px 2px #112;
+    position: relative;
+    top: 4px;
+    left: auto;
     width: 80px;
     height: 60px;
     padding: 12px;
@@ -168,7 +169,7 @@ div.table-title {
   background: white;
   border-radius:3px;
   border-collapse: collapse;
-  height: 320px;
+  height: 100px;
   margin: auto;
   padding:5px;
   width: 100%;
@@ -179,119 +180,34 @@ div.table-title {
 th {
   color:white;
   background:#1b1e24;
-  border-bottom:4px solid #9ea7af;
-  border-right: 1px solid #343a45;
-  font-size:23px;
+
+  font-size: 20px;
   font-weight: 100;
-  padding:24px;
+
   text-align:left;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   vertical-align: middle;
 	height: 100px;
 }
 
-th:first-child {
-  border-top-left-radius:3px;
-}
-
-th:last-child {
-  border-top-right-radius:3px;
-  border-right: none;
-}
-
-tr {
-	height: 20px;
-  border-top: 1px solid #C1C3D1;
-  border-bottom-: 1px solid #C1C3D1;
-  color:#666B85;
-  font-size:16px;
-  font-weight:normal;
-  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
-}
-
-tr:hover td {
-  background:#666B85;
-  color:#FFFFFF;
-  border-top: 1px solid #22262e;
-  border-bottom: 1px solid #22262e;
-}
-
-tr:first-child {
-  border-top:none;
-}
-
-tr:last-child {
-  border-bottom:none;
-}
-
-tr:nth-child(odd) td {
-  background:#EBEBEB;
-}
-
-tr:nth-child(odd):hover td {
-  background:#4E5066;
-}
-
-tr:last-child td:first-child {
-  border-bottom-left-radius:3px;
-}
-
-tr:last-child td:last-child {
-  border-bottom-right-radius:3px;
-}
-
 td {
 	color: black;
 	height: 80px;
   background:#FFFFFF;
-  padding:20px;
+
 	width: 300px;
   text-align:left;
   vertical-align:middle;
   font-weight:300;
-  font-size:18px;
-  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-  border-right: 1px solid #C1C3D1;
-}
-
-td:last-child {
-  border-right: 0px;
-}
-
-th.text-left {
-  text-align: left;
-}
-
-th.text-center {
-  text-align: center;
-}
-
-th.text-right {
-  text-align: right;
-}
-
-td.text-left {
-  text-align: left;
-}
-
-td.text-center {
-  text-align: center;
-}
-
-td.text-right {
-  text-align: right;
+  font-size: 18px;
 }
 
 .log-in_form {
-
  display: block;
-
 }
 
 .log-in_form p {
-
 display: inline-block;
-
 }
 
 .login_page {
@@ -307,7 +223,6 @@ display: inline-block;
 }
 .container {
 	text-align: center;
-
 }
 
 .background {
@@ -327,7 +242,7 @@ display: inline-block;
 
 
 #registerform {
- border-style: solid;
+ border-style: 2px black solid;
 
 
 }
@@ -383,13 +298,18 @@ width: 45%;
 margin-bottom: -100px;
 
 }
+.clean {
+	position: fixed;
+	right: 220px;
+	top: 134px;
+}
 
 #homedatatable {
+position: fixed;
+right: 130px;
+top: 270px;
 
-padding-left: 0px;
-width: 10%;
-margin-top: -505px;
-margin-left: 660px;
+background-color: white;
 
 }
 
@@ -455,10 +375,12 @@ ul {
 	padding: 10px;
 	border: none;
 	margin-left: 12px;
+	font-weight: 600;
 }
 li {
 padding: 10px;
 border: none;
+font-weight: 600;
 }
 
 h6 {
@@ -475,11 +397,55 @@ h6 {
 .all-debris {
 	font-size: 40px;
 	text-align: center;
-	margin-left: 400px;
+	color: black;
+	margin: 0;
+	padding: 30px;
+
 
 }
 
 .all-user-data {
 	font-size: 14px;
 
+}
+
+.background-field-all {
+	background-color: #FFDCB5;
+
+}
+
+table {
+	margin: 0;
+	padding: 0;
+}
+
+ul , li {
+	border: none;
+}
+
+
+.map-for-all {
+	margin: 10px auto;
+	border: 1px solid black;
+	padding: 2px;
+}
+
+.data-fields-all {
+	border: 1px solid black;
+	width: 20%;
+	background-color: lightgrey;
+	padding: 0 0 8px 20px;
+	margin-left: 56px;
+	margin-top: 40px;
+	display: inline-block;
+	color: black;
+}
+
+.user-field-all {
+	color: black;
+	font-size: 24px;
+}
+
+.all-users {
+	color: black;
 }

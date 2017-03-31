@@ -56,7 +56,7 @@ export const ACTIONS = {
   registerNewUser: function(newUserInfoObj){
     UserModel.register(newUserInfoObj).then(function(serverRes){
 
-      ACTIONS.routeTo('user-info')
+      ACTIONS.routeTo('login')
 
     })
   },
@@ -66,7 +66,7 @@ export const ACTIONS = {
       console.log('login-info', serverRes);
       STORE.setStore('currentUser', serverRes)
 
-      ACTIONS.routeTo( 'user-info')
+      ACTIONS.routeTo( 'debris')
     })
   },
 

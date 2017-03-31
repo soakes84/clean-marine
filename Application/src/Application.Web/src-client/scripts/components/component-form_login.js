@@ -1,5 +1,6 @@
 import React from 'react';
 import {ACTIONS} from '../actions.js';
+import {STORE} from '../store.js';
 
 export const LoginComponent = React.createClass({
   _handleSubmit: function(evt){
@@ -7,6 +8,7 @@ export const LoginComponent = React.createClass({
     let formEl = evt.target
     let usrVal = formEl.emailField.value
     		let pwVal = formEl.passwordField.value
+        STORE.setStore('currentUser', formEl.emailField.value)
     		ACTIONS.loginUser(usrVal, pwVal)
     	},
 

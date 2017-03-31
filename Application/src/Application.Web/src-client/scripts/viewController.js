@@ -38,22 +38,29 @@ export const ViewController = React.createClass({
     	{lt: 32.78, ln: -70.80, name: "Sullivan's Island"},
     	{lt: 32.65603362232004, ln:
     -79.94162886624117, name: "Folly Beach"},
-      {lt: 32.66, ln: -65.90, name: "Folly Beach"},
-      {lt: 32.68, ln: -79.93, name: "Folly Beach"},
+      {lt: 32.72, ln: -65.90, name: "Folly Beach"},
+      {lt: 32.88, ln: -79.93, name: "Folly Beach"},
       {lt: 32.88, ln: -79.69, name: "Dewees Island"},
       {lt:
     32.6110747332734, ln: -80.05784361843844, name: "Kiawah Island"},
-      {lt: 32.66, ln: -80.17, name: "Kiawah Island"},
-      {lt: 32.60, ln: -80.10, name: "Seabrook Island"},
-      {lt: 32.60, ln: -80.15, name: "Seabrook Island"},
-      {lt: 32.60, ln: -80.12, name: "Seabrook Island"}
+      {lt: 32.61, ln: -80.17, name: "Kiawah Island"},
+      {lt: 32.63, ln: -80.10, name: "Seabrook Island"},
+      {lt: 32.63, ln: -80.15, name: "Seabrook Island"},
+      {lt: 32.63, ln: -80.12, name: "Seabrook Island"}
+    ]
+
+    let groupClean = [
+      {lt: 32.79, ln: -65.82, name: "Sullivan's Island"},
+      {lt: 32.70, ln: -79.93, name: "Folly Beach"},
+        {lt: 32.88, ln: -79.69, name: "Dewees Island"},
+        {lt: 32.63, ln: -80.12, name: "Seabrook Island"}
     ]
 
     let componentToRender
 
     switch(this.state.currentNavRoute){
       case 'HOME':
-        componentToRender = <HomeView {...this.state} locationsData={bestPlaces}/>
+        componentToRender = <HomeView {...this.state} locationsData={groupClean}/>
         break;
       case 'REGISTER':
         componentToRender = <RegisterView {...this.state}/>
@@ -62,11 +69,11 @@ export const ViewController = React.createClass({
         componentToRender = <LoginView {...this.state}/>
         break;
       case 'USER':
-        componentToRender = <UserView/>
+        componentToRender = <UserView {...this.state}/>
 
         break;
       case 'ALL':
-        componentToRender = <AllView {...this.state}/>
+        componentToRender = <AllView {...this.state} locationsData={bestPlaces}/>
         break;
       case 'DEBRIS':
         componentToRender = <DebrisView {...this.state}/>
