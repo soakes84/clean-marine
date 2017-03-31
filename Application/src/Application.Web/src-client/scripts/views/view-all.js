@@ -36,8 +36,8 @@ export const AllView = React.createClass({
       let debrisArray = this.state.debris
 
       return (
-        <div>
-          <h1>Accumulated Collected Debris</h1>
+        <div className='background-field'>
+          <h7 className='all-debris'>Accumulated Collected Debris</h7>
           <hr />
           {this._debrisCall(debrisArray)}
         </div>
@@ -48,14 +48,12 @@ export const AllView = React.createClass({
   const ListOfDebris = React.createClass({
 
     render: function(){
-      console.log('ummm ok?');
        return (
          <div className='data-fields'>
 
-           <h3 className='user-field'>{this.props.data.userName}</h3>
-           <ul>
+           <h5 className='user-field'>{this.props.data.userName}</h5>
+           <ul className ='all-user-data'>
              <li>Type:{this.props.data.type}</li>
-             <li>quantity:{this.props.data.quantity}</li>
              <li>latitude: {this.props.data.latitude}</li>
              <li>longitude: {this.props.data.longitude}</li>
            </ul>

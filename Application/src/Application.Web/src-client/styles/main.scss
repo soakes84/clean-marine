@@ -74,6 +74,7 @@ p {
 }
 
 .data-fields {
+	opacity: 1;
 	width: 20%;
 	border: none;
 	font-size: 14px;
@@ -345,48 +346,6 @@ text-align:center;
 font-weight: bold;
 }
 
-#usernamesignup {
-
-	font-size: 15px;
-}
-
-#emailsignup {
-	padding: 2px;
-	font-size: 15px;
-	margin: 30px;
-
-}
-
-#passwordsignup {
-	padding: 2px;
-	margin: 30px;
-
-
-}
-
-#passwordsignup_confirm {
-
-	font-size: 15px;
-}
-
-#password {
-	font-size: 15px;
-}
-
-#log-in {
- font-weight: bold;
- font-size: 15px;
- padding: 10px;
- 	border-radius: 10px;
-}
-
-#register {
-
-	font-weight: bold;
-	padding: 10px;
-	border-radius: 10px;
-	font-size: 15px;
-}
 
 .to_register {
 
@@ -434,10 +393,6 @@ margin-left: 660px;
 
 }
 
-#userdatatable {
-	margin-left: 220px;
-}
-
 .createaccount-btn {
 
 margin-top: 20px;
@@ -449,7 +404,7 @@ margin-top: 20px;
 	color: white;
 }
 
-.login-btn{
+.login-btn {
 	margin-top: 80px;
   background: #a3d1c4;
   background-image: -webkit-linear-gradient(top, #a3d1c4, #2980b9);
@@ -510,4 +465,21 @@ h6 {
 	font-size: 18px;
 	text-align: center;
 	margin: 16px 0 0 0;
+}
+
+.user-field {
+	font-size: 24px;
+	text-align: center;
+}
+
+.all-debris {
+	font-size: 40px;
+	text-align: center;
+	margin-left: 400px;
+
+}
+
+.all-user-data {
+	font-size: 14px;
+
 }
